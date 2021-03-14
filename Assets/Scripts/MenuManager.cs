@@ -1,0 +1,36 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class MenuManager : MonoBehaviour
+{
+    public GameObject MenuObject;
+
+    public GameObject ListTestObject;
+
+    private void Start()
+    {
+        EnableMenu();
+    }
+
+    public void EnableMenu()
+    {
+        MenuObject.SetActive(true);
+        ListTestObject.SetActive(false);
+    }
+
+    public void EnableList()
+    {
+        MenuObject.SetActive(false);
+        ListTestObject.SetActive(true);
+    }
+    public void Exit()
+    {
+        Application.Quit();
+    }
+    public void LoadGame(string TestName)
+    {
+        SceneManager.LoadScene(1);
+    }
+}
