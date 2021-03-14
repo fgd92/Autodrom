@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Sensor : MonoBehaviour
+public class Dashboard : MonoBehaviour
 {
     Vector3 speed;
     Vector3 old_position;
