@@ -7,20 +7,21 @@ public class Dashboard : MonoBehaviour
 {
     Vector3 speed;
     Vector3 old_position;
-    public CarController CarController;
     public Text ViewSpeed;
 
     Transform carTransform;
+    CarController carController;
 
     void Start()
     {
         old_position = transform.position;
-        carTransform = CarController.transform;
+        carController = FindObjectOfType<CarController>();
+        carTransform = carController.transform;
     }
     void FixedUpdate()
     {
         speed = ((carTransform.transform.position - old_position) / Time.fixedDeltaTime); 
         old_position = carTransform.transform.position; 
-        ViewSpeed.text = (speed.magnitude * 60).ToString();
+        ViewSpeed.text = Mathf.RoundToInt(speed.magnitude * 3.6f).ToString();
     }
 }

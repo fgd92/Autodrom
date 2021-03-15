@@ -16,6 +16,8 @@ public class CarController : MonoBehaviour
     private float currentSteerAngle;
     private float currentbreakForce;
     private bool isBreaking;
+    private float minAngle = -29;
+    private float maxAngle = 29;
 
     [SerializeField] private float motorForce;
     [SerializeField] private float breakForce;
@@ -54,6 +56,26 @@ public class CarController : MonoBehaviour
     {
         horizontalInput = Input.GetAxis(HORIZONTAL);
         verticalInput = Input.GetAxis(VERTICAL);
+
+        float angle = frontRightWheelTransform.localRotation.eulerAngles.y * 
+            (frontRightWheelTransform.localRotation.y / Math.Abs(frontRightWheelTransform.localRotation.y));
+
+        //if (!Mathf.Approximately(horizontalInput, 0))
+        //{
+            if (angle > minAngle && angle < maxAngle)
+            {
+                Debug.Log(angle);
+                rule.Rotate(Vector3.up, horizontalInput);
+            }
+        //}
+        //else
+        //{
+        //    if (!Mathf.Approximately(angle, 0))
+        //    {
+        //        rule.Rotate(Vector3.up, rule.rotation.eulerAngles.normalized.magnitude);
+        //    }
+        //}
+
         isBreaking = Input.GetKey(KeyCode.Space);
     }
 
