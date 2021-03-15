@@ -9,7 +9,7 @@ public class Conus : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-wa        if (collision.transform.CompareTag("Player"))
+        if (collision.transform.CompareTag("Player"))
             AddScoreEvent?.Invoke();
     }
 }
