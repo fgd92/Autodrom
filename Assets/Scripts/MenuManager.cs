@@ -6,8 +6,8 @@ using UnityEngine.SceneManagement;
 public class MenuManager : MonoBehaviour
 {
     public GameObject MenuObject;
-
-    public GameObject ListTestObject;
+    public GameObject ListExerciseObject;
+    public ExercisesScriptableObject exercisesScriptable;    
 
     private void Start()
     {
@@ -17,20 +17,21 @@ public class MenuManager : MonoBehaviour
     public void EnableMenu()
     {
         MenuObject.SetActive(true);
-        ListTestObject.SetActive(false);
+        ListExerciseObject.SetActive(false);
     }
 
     public void EnableList()
     {
         MenuObject.SetActive(false);
-        ListTestObject.SetActive(true);
+        ListExerciseObject.SetActive(true);
     }
     public void Exit()
     {
         Application.Quit();
     }
-    public void LoadGame(string TestName)
+    public void LoadGame(int idExercise)
     {
-        SceneManager.LoadScene(1);
+        exercisesScriptable.CurrentExercise = idExercise;
+        SceneManager.LoadScene(2);
     }
 }
