@@ -15,7 +15,7 @@ public class Dashboard : MonoBehaviour
     void Start()
     {
         old_position = transform.position;
-        carTransform = CarController.transform;
+        carTransform = transform;
     }
     void FixedUpdate()
     {
