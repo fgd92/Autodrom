@@ -520,7 +520,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1342392354884358987}
   m_LocalRotation: {x: -0.016579868, y: -0, z: -0, w: 0.99986255}
-  m_LocalPosition: {x: 0, y: 0.32957292, z: 0.17389393}
+  m_LocalPosition: {x: 0, y: 0.30199993, z: 0.102}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1342392356068341891}
@@ -882,7 +882,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1342392355230600729}
   m_LocalRotation: {x: 0.020577103, y: 0.966363, z: -0.24638386, w: 0.07081118}
-  m_LocalPosition: {x: -0.99104357, y: 2.3795698, z: 2.8401406}
+  m_LocalPosition: {x: -0.99104357, y: 2.4047441, z: 2.9129093}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1342392354903067138}
@@ -925,7 +925,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 0
-    m_SensorSize: {x: 1.0961326, y: 1}
+    m_SensorSize: {x: 2.165725, y: 1}
     Iso: 200
     ShutterSpeed: 0.005
     Aperture: 16
@@ -2114,8 +2114,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1342392356562228144}
-  m_LocalRotation: {x: -0.0043867133, y: 0.98190105, z: -0.18835014, w: -0.019372843}
-  m_LocalPosition: {x: 0.2704184, y: 2.399565, z: 3.069033}
+  m_LocalRotation: {x: -0.004284076, y: 0.9819118, z: -0.18834266, w: -0.018920392}
+  m_LocalPosition: {x: 0.26411414, y: 2.374372, z: 2.996828}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1342392356481084363}
@@ -2158,7 +2158,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 0
-    m_SensorSize: {x: 1.0961326, y: 1}
+    m_SensorSize: {x: 2.165725, y: 1}
     Iso: 200
     ShutterSpeed: 0.005
     Aperture: 16
@@ -2199,7 +2199,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1342392356652808066}
   m_LocalRotation: {x: -0.14722887, y: 0.864019, z: -0.34394655, w: -0.33689114}
-  m_LocalPosition: {x: 2.5053062, y: 2.5281668, z: -1.6392585}
+  m_LocalPosition: {x: 2.5053062, y: 2.5533412, z: -1.5664899}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1342392355393144537}
@@ -2242,7 +2242,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 0
-    m_SensorSize: {x: 1.0961326, y: 1}
+    m_SensorSize: {x: 2.165725, y: 1}
     Iso: 200
     ShutterSpeed: 0.005
     Aperture: 16
@@ -6804,7 +6804,7 @@ GameObject:
   - component: {fileID: 7025843749023200046}
   m_Layer: 0
   m_Name: Tractor
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

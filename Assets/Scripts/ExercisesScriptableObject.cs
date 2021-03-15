@@ -7,6 +7,9 @@ public class ExercisesScriptableObject : ScriptableObject
     public List<string> ExerciseList;
     public int CurrentExercise;
 
+    public int MinScore;
+    public int MaxScore;
+
     public void GetDataInListById(int id)
     {
 
