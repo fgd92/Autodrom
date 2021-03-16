@@ -5,11 +5,11 @@ using UnityEngine;
 public delegate void OnEnd();
 public class Exercise : MonoBehaviour
 {
+    public ExercisesScriptableObject exercisesScriptable;
     public GameObject Player;
     public Transform StartPoint;
-    public event OnEnd OnEndEvent;
     public int MaxScore;
-
+    public event OnEnd OnEndEvent;
 
     void Start()
     {
@@ -19,6 +19,14 @@ public class Exercise : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
+        {
+            int currentScore = GameManager.CurrentScore;
+
+            exercisesScriptable.IsPassed = currentScore < 5;
+            exercisesScriptable.Attempts += 1;
+            exercisesScriptable.Score = currentScore;
+            
             OnEndEvent?.Invoke();
+        }
     }
 }

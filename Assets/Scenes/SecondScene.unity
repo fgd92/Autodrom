@@ -337,9 +337,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42c0817b14dd871489465442e9a027e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  exercisesScriptable: {fileID: 11400000, guid: 7738836c43638ba4dbe57d0ef89d05d7,
+    type: 2}
   Player: {fileID: 7025843749023200047, guid: b53be5b81fa0582489a8b260a8ff2c00, type: 3}
   StartPoint: {fileID: 1163033009}
-  MaxScore: 5
+  MaxScore: 4
 --- !u!65 &70581337
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -519,9 +521,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42c0817b14dd871489465442e9a027e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  exercisesScriptable: {fileID: 11400000, guid: 5d665ee6bea05ce4495cdb8e06ed29c4,
+    type: 2}
   Player: {fileID: 7025843749023200047, guid: b53be5b81fa0582489a8b260a8ff2c00, type: 3}
   StartPoint: {fileID: 1656088853}
-  MaxScore: 5
+  MaxScore: 4
 --- !u!4 &189066737
 Transform:
   m_ObjectHideFlags: 0
@@ -905,9 +909,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42c0817b14dd871489465442e9a027e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  exercisesScriptable: {fileID: 11400000, guid: 734b19dbb187c654dbe159e430bb1568,
+    type: 2}
   Player: {fileID: 7025843749023200047, guid: b53be5b81fa0582489a8b260a8ff2c00, type: 3}
   StartPoint: {fileID: 1401636220}
-  MaxScore: 5
+  MaxScore: 4
 --- !u!4 &454470958
 Transform:
   m_ObjectHideFlags: 0
@@ -2071,15 +2077,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb34b6eabe6b95d45a821ad9563950cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  exercisesScriptable: {fileID: 11400000, guid: 7738836c43638ba4dbe57d0ef89d05d7,
-    type: 2}
   ExercisesListObjects:
   - {fileID: 70581334}
   - {fileID: 454470955}
   - {fileID: 1448525688}
   - {fileID: 189066734}
   - {fileID: 1799092707}
-  CurrentScore: 0
   MaxScoretext: {fileID: 727037735}
   CurrentScoreText: {fileID: 1009272073}
 --- !u!4 &1013605831
@@ -3201,9 +3204,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42c0817b14dd871489465442e9a027e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  exercisesScriptable: {fileID: 11400000, guid: a0bf00cd4edbef049a60485c73d4be1b,
+    type: 2}
   Player: {fileID: 7025843749023200047, guid: b53be5b81fa0582489a8b260a8ff2c00, type: 3}
   StartPoint: {fileID: 172592290}
-  MaxScore: 5
+  MaxScore: 4
 --- !u!4 &1448525691
 Transform:
   m_ObjectHideFlags: 0
@@ -3629,7 +3634,7 @@ GameObject:
   - component: {fileID: 1721911747}
   - component: {fileID: 1721911746}
   m_Layer: 5
-  m_Name: Canvas2
+  m_Name: GameCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3759,9 +3764,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42c0817b14dd871489465442e9a027e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  exercisesScriptable: {fileID: 11400000, guid: 73ddaf202e6beae43a18bf4b61636b05,
+    type: 2}
   Player: {fileID: 7025843749023200047, guid: b53be5b81fa0582489a8b260a8ff2c00, type: 3}
   StartPoint: {fileID: 234466648}
-  MaxScore: 5
+  MaxScore: 4
 --- !u!4 &1799092710
 Transform:
   m_ObjectHideFlags: 0

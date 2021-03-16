@@ -2,13 +2,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
-{
-    public ExercisesScriptableObject exercisesScriptable;
+{    
     public List<GameObject> ExercisesListObjects;
-    public int CurrentScore;
+    public static int CurrentExercise;    
+    public static int CurrentScore;
     
     public Text MaxScoretext;
     public Text CurrentScoreText;
@@ -17,7 +18,7 @@ public class GameManager : MonoBehaviour
 
     public void Start()
     {
-        GameObject ExerciseObject = ExercisesListObjects[exercisesScriptable.CurrentExercise];
+        GameObject ExerciseObject = ExercisesListObjects[CurrentExercise];
         ExerciseObject.SetActive(true);
         exercise = ExerciseObject.GetComponent<Exercise>();
         exercise.OnEndEvent += Exercise_OnEndEvent;
@@ -25,6 +26,12 @@ public class GameManager : MonoBehaviour
         SetUI();
 
         FindActiveConus(ExerciseObject);
+    }
+
+    private void Exercise_OnEndEvent()
+    {
+        LoadMenu();
+        CurrentScore = 0;
     }
 
     private void FindActiveConus(GameObject exerciseObject)
@@ -47,8 +54,8 @@ public class GameManager : MonoBehaviour
         CurrentScoreText.text = "Штрафные баллы: " + CurrentScore;
     }
 
-    private void Exercise_OnEndEvent()
+    public void LoadMenu()
     {
-        print("Упражнение окончено");
+        SceneManager.LoadScene(0);
     }
 }

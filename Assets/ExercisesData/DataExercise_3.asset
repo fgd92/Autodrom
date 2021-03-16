@@ -10,9 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9bd19ab68b0d9e641be4c3aa73d3db0d, type: 3}
-  m_Name: DataExercise
+  m_Name: DataExercise_3
   m_EditorClassIdentifier: 
-  ExerciseList:
-  - Estacada
-  - Estacada2
-  - Estacada3
+  Attempts: 0
+  Score: 0
+  IsPassed: 0
