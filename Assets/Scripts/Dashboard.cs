@@ -7,10 +7,16 @@ public class Dashboard : MonoBehaviour
 {
     Vector3 speed;
     Vector3 old_position;
-    public Text ViewSpeed;
+    public Transform ArrowSpeedometer;
+    public Transform ArrowTachospeedometer;
 
     Transform carTransform;
     CarController carController;
+
+    private float minAngle = -43;
+    private float maxAngle = 43;
+    private float maxSpeed = 45;
+
 
     void Start()
     {
@@ -20,8 +26,13 @@ public class Dashboard : MonoBehaviour
     }
     void FixedUpdate()
     {
-        speed = ((carTransform.transform.position - old_position) / Time.fixedDeltaTime); 
-        old_position = carTransform.transform.position; 
-        ViewSpeed.text = Mathf.RoundToInt(speed.magnitude * 3.6f).ToString();
+        ShowSpeed();
+    }
+
+    private void ShowSpeed()
+    {
+        speed = ((carTransform.transform.position - old_position) / Time.fixedDeltaTime);
+        old_position = carTransform.transform.position;
+        ArrowSpeedometer.localRotation = Quaternion.AngleAxis(Mathf.LerpAngle(minAngle, maxAngle, speed.magnitude / maxSpeed), Vector3.up);
     }
 }
