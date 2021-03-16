@@ -16,8 +16,9 @@ public class CarController : MonoBehaviour
     private float currentSteerAngle;
     private float currentbreakForce;
     private bool isBreaking;
-    private float minAngle = -29;
-    private float maxAngle = 29;
+
+    private float minAngle = -30;
+    private float maxAngle = 30;
 
     [SerializeField] private float motorForce;
     [SerializeField] private float breakForce;
@@ -45,38 +46,37 @@ public class CarController : MonoBehaviour
     private void FixedUpdate()
     {
         GetInput();
+        RotateRule();
         HandleMotor();
         HandleSteering();
         UpdateWheels();
         Speed = _rigidbody.velocity.magnitude * Time.fixedDeltaTime * 100;
     }
 
-
     private void GetInput()
     {
         horizontalInput = Input.GetAxis(HORIZONTAL);
         verticalInput = Input.GetAxis(VERTICAL);
 
-        float angle = frontRightWheelTransform.localRotation.eulerAngles.y * 
-            (frontRightWheelTransform.localRotation.y / Math.Abs(frontRightWheelTransform.localRotation.y));
+        isBreaking = Input.GetKey(KeyCode.Space);
+    }
 
-        //if (!Mathf.Approximately(horizontalInput, 0))
-        //{
+    private void RotateRule()
+    {
+        float angle = Mathf.RoundToInt(frontRightWheelTransform.localRotation.eulerAngles.y);
+
+        if (angle > 180)
+        {
+            angle = 360 - angle;
+        }
+
+        if (!Mathf.Approximately(horizontalInput, 0))
+        {
             if (angle > minAngle && angle < maxAngle)
             {
-                Debug.Log(angle);
-                rule.Rotate(Vector3.up, horizontalInput);
+                rule.Rotate(Vector3.up, horizontalInput * 5);
             }
-        //}
-        //else
-        //{
-        //    if (!Mathf.Approximately(angle, 0))
-        //    {
-        //        rule.Rotate(Vector3.up, rule.rotation.eulerAngles.normalized.magnitude);
-        //    }
-        //}
-
-        isBreaking = Input.GetKey(KeyCode.Space);
+        }
     }
 
     private void HandleMotor()
