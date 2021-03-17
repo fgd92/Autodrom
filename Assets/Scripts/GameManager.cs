@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
-{    
+{
+    [Header("Упражнения")]
     public List<GameObject> ExercisesListObjects;
     public static int CurrentExercise;    
     public static int CurrentScore;
@@ -28,7 +27,6 @@ public class GameManager : MonoBehaviour
 
     public void Start()
     {
-
         LockCursor(true);
 
         DisplayEndmenu(false);
@@ -37,7 +35,6 @@ public class GameManager : MonoBehaviour
         ExerciseObject.SetActive(true);
         exercise = ExerciseObject.GetComponent<Exercise>();
         exercise.OnEndEvent += Exercise_OnEndEvent;
-
         exercise.exercisesScriptable.Attempts += 1;
 
         SetUI();
