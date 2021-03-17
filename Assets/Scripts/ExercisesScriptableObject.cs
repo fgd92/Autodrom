@@ -7,5 +7,5 @@ public class ExercisesScriptableObject : ScriptableObject
     public int Attempts;
     public int Score;
     public bool IsPassed;
-
+    public bool PrematureTermination;
 }

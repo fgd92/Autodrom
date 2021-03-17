@@ -8,6 +8,7 @@ public class MenuManager : MonoBehaviour
 {
     public GameObject MenuObject;
     public GameObject ListExerciseObject;
+    public GameObject HowToPlayObject;
     public Transform ExerciseContent;
 
     public Text ExamResultText;
@@ -23,12 +24,20 @@ public class MenuManager : MonoBehaviour
     {
         MenuObject.SetActive(true);
         ListExerciseObject.SetActive(false);
+        HowToPlayObject.SetActive(false);
     }
 
     public void EnableList()
     {
         MenuObject.SetActive(false);
         ListExerciseObject.SetActive(true);
+        HowToPlayObject.SetActive(false);
+    }
+    public void EnableHowToPlayMenu()
+    {
+        MenuObject.SetActive(false);
+        ListExerciseObject.SetActive(false);
+        HowToPlayObject.SetActive(true);
     }
     public void Exit()
     {
@@ -48,6 +57,7 @@ public class MenuManager : MonoBehaviour
             exerciseUI.exercisesScriptable.Attempts = 0;
             exerciseUI.exercisesScriptable.Score = 0;
             exerciseUI.exercisesScriptable.IsPassed = false;
+            exerciseUI.exercisesScriptable.PrematureTermination = false;
             exerciseUI.UpdateUI();
         }
     }

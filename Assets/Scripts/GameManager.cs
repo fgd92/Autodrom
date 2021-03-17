@@ -20,11 +20,17 @@ public class GameManager : MonoBehaviour
     public Text EndScoreText;
     public Button RestartButton;
     public GameObject EndMenu;
+    [Header("Меню паузы")]
+    public GameObject PauseMenu;
+    public Button PauseRestartButton;
 
     private Exercise exercise;
 
     public void Start()
     {
+
+        LockCursor(true);
+
         DisplayEndmenu(false);
 
         GameObject ExerciseObject = ExercisesListObjects[CurrentExercise];
@@ -32,25 +38,54 @@ public class GameManager : MonoBehaviour
         exercise = ExerciseObject.GetComponent<Exercise>();
         exercise.OnEndEvent += Exercise_OnEndEvent;
 
+        exercise.exercisesScriptable.Attempts += 1;
+
         SetUI();
 
         FindActiveConus(ExerciseObject);
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            PauseMenu.SetActive(!PauseMenu.activeSelf);            
+            Time.timeScale = PauseMenu.activeSelf == true ? 0 : 1;
+            LockCursor(!PauseMenu.activeSelf);
+            PauseRestartButton.interactable = exercise.exercisesScriptable.Attempts < 2; 
+        }
+    }
+
+    public void LoadSceneFromPauseMenu(int idScene)
+    {             
+        LoadScene(idScene);
+    }
+
+    private static void LockCursor(bool isLock)
+    {
+        Cursor.visible = !isLock;
+        Cursor.lockState = isLock==true ? CursorLockMode.Locked : CursorLockMode.None;
     }
 
     private void DisplayEndmenu(bool enable)
     {
         GameUI.SetActive(!enable);
         EndMenu.SetActive(enable);
+        PauseMenu.SetActive(false);
     }
 
     private void Exercise_OnEndEvent()
     {
         Time.timeScale = 0;
+        LockCursor(false);
         DisplayEndmenu(true);
         MarkText.text = "Ваша оценка:  \n" + (exercise.exercisesScriptable.IsPassed == true ? "сдал" : "не сдал");
         RestartButton.interactable = exercise.exercisesScriptable.Attempts < 2;
-        EndScoreText.text = "Вы набрали " + CurrentScore + " штрафных баллов";
         AttempsText.text = exercise.exercisesScriptable.Attempts < 2 ? "У вас есть еще одна попытка" : "Ваши попытки кончились";
+        if (!exercise.exercisesScriptable.PrematureTermination)
+            EndScoreText.text = "Вы набрали " + CurrentScore + " штрафных баллов";
+        else
+            EndScoreText.text = "Вы выехали за границу упражнения";
         CurrentScore = 0;
     }
 
