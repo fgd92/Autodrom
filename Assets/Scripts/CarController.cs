@@ -6,7 +6,10 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class CarController : MonoBehaviour
 {
+    public LayerMask LayerMaskButton;
+
     private Rigidbody _rigidbody;
+    private Camera camera;
 
     private const string HORIZONTAL = "Horizontal";
     private const string VERTICAL = "Vertical";
@@ -20,37 +23,76 @@ public class CarController : MonoBehaviour
     private float minAngle = -30;
     private float maxAngle = 30;
 
-    [SerializeField] private float motorForce;
-    [SerializeField] private float breakForce;
-    [SerializeField] private float maxSteerAngle;
 
-    [SerializeField] private WheelCollider frontLeftWheelCollider;
-    [SerializeField] private WheelCollider frontRightWheelCollider;
-    [SerializeField] private WheelCollider rearLeftWheelCollider;
-    [SerializeField] private WheelCollider rearRightWheelCollider;
+    [SerializeField] 
+    private float motorForce;
+    [SerializeField] 
+    private float breakForce;
+    [SerializeField]
+    private float maxSteerAngle;
 
-    [SerializeField] private Transform frontLeftWheelTransform;
-    [SerializeField] private Transform frontRightWheelTransform;
-    [SerializeField] private Transform rearLeftWheelTransform;
-    [SerializeField] private Transform rearRightWheelTransform;
+    [SerializeField] 
+    private WheelCollider frontLeftWheelCollider;
+    [SerializeField] 
+    private WheelCollider frontRightWheelCollider;
+    [SerializeField] 
+    private WheelCollider rearLeftWheelCollider;
+    [SerializeField] 
+    private WheelCollider rearRightWheelCollider;
 
-    [SerializeField] private Transform rule;
+    [SerializeField]
+    private Transform frontLeftWheelTransform;
+    [SerializeField]
+    private Transform frontRightWheelTransform;
+    [SerializeField] 
+    private Transform rearLeftWheelTransform;
+    [SerializeField]
+    private Transform rearRightWheelTransform;
 
-    [NonSerialized]public float Speed;
+    [SerializeField]
+    private Transform rule;
+    [SerializeField]
+    private Transform button;
 
     private void Start()
     {
+        camera = Camera.main;
         _rigidbody = GetComponent<Rigidbody>();
     }
+    IEnumerator PressingButton()
+    {
+        Vector3 startPosition = button.position;
+        Vector3 targetPosition = new Vector3(startPosition.x, startPosition.y - 0.015f, startPosition.z);
+        float time = 0.5f;
 
+        for (float i = 0; i < time; i+= Time.deltaTime)
+        {
+            button.localPosition = Vector3.Lerp(startPosition, targetPosition, i / time);
+
+            yield return null;
+        }
+    }
     private void FixedUpdate()
     {
+        RaycastHit raycastHit;
+        Ray ray = camera.ScreenPointToRay(Input.mousePosition);
+
+        if (Physics.Raycast(ray, out raycastHit, LayerMaskButton))
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                if (raycastHit.transform.name == button.name)
+                {
+                    StartCoroutine(PressingButton());
+                }
+            }
+        }
+
         GetInput();
         RotateRule();
         HandleMotor();
         HandleSteering();
         UpdateWheels();
-        Speed = _rigidbody.velocity.magnitude * Time.fixedDeltaTime * 100;
     }
 
     private void GetInput()
@@ -70,12 +112,9 @@ public class CarController : MonoBehaviour
             angle = 360 - angle;
         }
 
-        if (!Mathf.Approximately(horizontalInput, 0))
+        if (angle > minAngle && angle < maxAngle)
         {
-            if (angle > minAngle && angle < maxAngle)
-            {
-                rule.Rotate(Vector3.up, horizontalInput * 5);
-            }
+            rule.Rotate(Vector3.up, horizontalInput * 5);
         }
     }
 
