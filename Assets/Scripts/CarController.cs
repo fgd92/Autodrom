@@ -73,8 +73,8 @@ public class CarController : MonoBehaviour
 
     private void RotateRule()
     {
-
-        rule.Rotate(Vector3.up, horizontalInput * maxSteerAngle);
+        if(currentSteerAngle > -30 && currentSteerAngle < 30)
+            rule.Rotate(Vector3.up, horizontalInput * maxSteerAngle);
     }
 
     private void HandleMotor()
