@@ -6,10 +6,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class CarController : MonoBehaviour
 {
-    public LayerMask LayerMaskButton;
-
-    private Rigidbody _rigidbody;
-    private Camera camera;
+    public float RPMWheel = 0;
 
     private const string HORIZONTAL = "Horizontal";
     private const string VERTICAL = "Vertical";
@@ -31,6 +28,7 @@ public class CarController : MonoBehaviour
     [SerializeField]
     private float maxSteerAngle;
 
+    [Header("Wheel Collider")]
     [SerializeField] 
     private WheelCollider frontLeftWheelCollider;
     [SerializeField] 
@@ -40,6 +38,7 @@ public class CarController : MonoBehaviour
     [SerializeField] 
     private WheelCollider rearRightWheelCollider;
 
+    [Header("Wheel transform")]
     [SerializeField]
     private Transform frontLeftWheelTransform;
     [SerializeField]
@@ -49,50 +48,19 @@ public class CarController : MonoBehaviour
     [SerializeField]
     private Transform rearRightWheelTransform;
 
+    [Header("Rule")]
     [SerializeField]
     private Transform rule;
-    [SerializeField]
-    private Transform button;
 
-    private void Start()
-    {
-        camera = Camera.main;
-        _rigidbody = GetComponent<Rigidbody>();
-    }
-    IEnumerator PressingButton()
-    {
-        Vector3 startPosition = button.position;
-        Vector3 targetPosition = new Vector3(startPosition.x, startPosition.y - 0.015f, startPosition.z);
-        float time = 0.5f;
-
-        for (float i = 0; i < time; i+= Time.deltaTime)
-        {
-            button.localPosition = Vector3.Lerp(startPosition, targetPosition, i / time);
-
-            yield return null;
-        }
-    }
     private void FixedUpdate()
     {
-        RaycastHit raycastHit;
-        Ray ray = camera.ScreenPointToRay(Input.mousePosition);
-
-        if (Physics.Raycast(ray, out raycastHit, LayerMaskButton))
-        {
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                if (raycastHit.transform.name == button.name)
-                {
-                    StartCoroutine(PressingButton());
-                }
-            }
-        }
-
         GetInput();
         RotateRule();
         HandleMotor();
         HandleSteering();
         UpdateWheels();
+
+        RPMWheel = (frontLeftWheelCollider.rpm + frontRightWheelCollider.rpm + rearLeftWheelCollider.rpm + rearRightWheelCollider.rpm) / 4;
     }
 
     private void GetInput()
@@ -105,17 +73,8 @@ public class CarController : MonoBehaviour
 
     private void RotateRule()
     {
-        float angle = Mathf.RoundToInt(frontRightWheelTransform.localRotation.eulerAngles.y);
 
-        if (angle > 180)
-        {
-            angle = 360 - angle;
-        }
-
-        if (angle > minAngle && angle < maxAngle)
-        {
-            rule.Rotate(Vector3.up, horizontalInput * 5);
-        }
+        rule.Rotate(Vector3.up, horizontalInput * maxSteerAngle);
     }
 
     private void HandleMotor()

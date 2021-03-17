@@ -13,7 +13,9 @@ public enum Steps
     Seventh,
     Eighth,
     Ninth,
-    Tenth
+    Tenth,
+    Eleven,
+    Neutral
 }
 
 public class Reductor : MonoBehaviour
