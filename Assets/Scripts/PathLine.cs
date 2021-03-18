@@ -1,17 +1,30 @@
 ﻿using UnityEngine;
 
+public delegate void OnEnter(PathLine pathLine);
+public delegate void ChekExit(PathLine pathLine);
 public class PathLine : MonoBehaviour
 {
-    private bool isPassed;
+    public int Index;
+    public bool IsPassed;
+    public event OnEnter OnEnterEvent;
+    public event ChekExit ChekExitEvent;
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            if (!isPassed)
+            if (!IsPassed)
             {
-                isPassed = true;
-                transform.parent.GetComponent<PathController>().CountPathParts();
+                IsPassed = true;
+                OnEnterEvent?.Invoke(this);                
             }
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            //при выходе проверять равен ли текущий старому
+            ChekExitEvent(this);
         }
     }
 }

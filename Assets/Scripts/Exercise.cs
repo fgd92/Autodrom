@@ -44,10 +44,7 @@ public class Exercise : MonoBehaviour
     {
         if (withMiddleMistake) AddMiddleMistakeInvoke();
 
-        int currentScore = GameManager.CurrentScore;
-
-        currentScore -= CountPathLinesLeft * 3;
-
+        int currentScore = GameManager.CurrentScore;       
         exercisesScriptable.IsPassed = currentScore < 5;
         exercisesScriptable.Score = currentScore;
         OnEndEvent?.Invoke();
