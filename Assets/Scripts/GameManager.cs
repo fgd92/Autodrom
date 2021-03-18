@@ -35,11 +35,18 @@ public class GameManager : MonoBehaviour
         ExerciseObject.SetActive(true);
         exercise = ExerciseObject.GetComponent<Exercise>();
         exercise.OnEndEvent += Exercise_OnEndEvent;
+        exercise.AddMiddleMistake += Exercise_AddMiddleMistake;
         exercise.exercisesScriptable.Attempts += 1;
 
         SetUI();
 
         FindActiveConus(ExerciseObject);
+    }
+
+    private void Exercise_AddMiddleMistake()
+    {
+        CurrentScore += 3;
+        SetUI();
     }
 
     private void Update()
@@ -90,13 +97,13 @@ public class GameManager : MonoBehaviour
     {
         for (int i = 0; i < exerciseObject.transform.GetChild(0).childCount; i++)
         {
-            exerciseObject.transform.GetChild(0).GetChild(i).GetComponent<Conus>().AddScoreEvent += GameManager_AddScoreEvent;            
+            exerciseObject.transform.GetChild(0).GetChild(i).GetComponent<Conus>().AddGrossMistake += GameManager_AddScoreEvent;            
         }
     }
 
     private void GameManager_AddScoreEvent()
     {
-        CurrentScore += 1;
+        CurrentScore += 5;
         SetUI();
     }
 
