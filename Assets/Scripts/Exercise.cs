@@ -8,28 +8,18 @@ public class Exercise : MonoBehaviour
     public GameObject Player;
     public Transform StartPoint;
     public int MaxScore;
+    public int CountPathLinesLeft;
 
     public event OnEnd OnEndEvent;
     public event AddMiddleMistake AddMiddleMistake;
 
     void Start()
     {
-        Instantiate(Player, StartPoint.position, Quaternion.identity);
+        GameObject tractor = Instantiate(Player, StartPoint.position, Quaternion.identity);
+        Destroy(tractor.GetComponent<HingeJoint>());
         exercisesScriptable.PrematureTermination = false;
     }
 
-    //private void OnTriggerEnter(Collider other)
-    //{        
-    //    if (other.CompareTag("Player"))
-    //    {            
-            
-            
-    //        //int currentScore = GameManager.CurrentScore;
-    //        //exercisesScriptable.IsPassed = currentScore < 5;            
-    //        //exercisesScriptable.Score = currentScore;
-    //        //OnEndEvent?.Invoke();
-    //    }
-    //}
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Player"))
@@ -42,11 +32,24 @@ public class Exercise : MonoBehaviour
 
                 OnEndEvent?.Invoke();
             }
-            else if (collision.contacts[0].thisCollider.CompareTag("FinishLine"))
-            {
-                //пересек линию стоп
-                AddMiddleMistake?.Invoke();
-            }
         }
+    }
+
+    public void AddMiddleMistakeInvoke()
+    {
+        AddMiddleMistake?.Invoke();
+    }
+
+    public void EndExercise(bool withMiddleMistake)
+    {
+        if (withMiddleMistake) AddMiddleMistakeInvoke();
+
+        int currentScore = GameManager.CurrentScore;
+
+        currentScore -= CountPathLinesLeft * 3;
+
+        exercisesScriptable.IsPassed = currentScore < 5;
+        exercisesScriptable.Score = currentScore;
+        OnEndEvent?.Invoke();
     }
 }

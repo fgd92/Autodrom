@@ -6496,34 +6496,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &5759220634395487440
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5759220634395487452}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b6dd1fe813bcdf4c8a356dca2f38658, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  LayerMaskButton:
-    serializedVersion: 2
-    m_Bits: 512
-  motorForce: 900
-  breakForce: 5000
-  maxSteerAngle: 30
-  frontLeftWheelCollider: {fileID: 6038483068653470805}
-  frontRightWheelCollider: {fileID: 6038483069368726542}
-  rearLeftWheelCollider: {fileID: 6038483070202447932}
-  rearRightWheelCollider: {fileID: 6038483069491046090}
-  frontLeftWheelTransform: {fileID: 2401556612189439682}
-  frontRightWheelTransform: {fileID: 5302753653715855365}
-  rearLeftWheelTransform: {fileID: 5807978776112518625}
-  rearRightWheelTransform: {fileID: 6073648750174546978}
-  rule: {fileID: 4597704538903057371}
-  button: {fileID: 7077082040853210918}
 --- !u!54 &5759220634395487441
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6553,23 +6525,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 140, y: 95.922005, z: 317.74588}
   m_Center: {x: 0, y: 17.759974, z: 76.51467}
---- !u!114 &5759220634395487443
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5759220634395487452}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 04c8dd49874a02142a08b4aa42a05166, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ArrowSpeedometer: {fileID: 4620781144721906619}
-  ArrowTachospeedometer: {fileID: 0}
-  ArrowVoltage: {fileID: 0}
-  ArrowOilPressure: {fileID: 0}
-  ArrowTemprature: {fileID: 0}
 --- !u!1 &5759220634395487452
 GameObject:
   m_ObjectHideFlags: 0
@@ -6580,10 +6535,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8770625582781750991}
   - component: {fileID: 5759220634395487441}
-  - component: {fileID: 5759220634395487440}
-  - component: {fileID: 5759220634395487443}
   - component: {fileID: 5759220634395487442}
-  - component: {fileID: 5759220634395487453}
   m_Layer: 0
   m_Name: Tractor_2
   m_TagString: Player
@@ -6591,19 +6543,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &5759220634395487453
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5759220634395487452}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 87d0cd0817a441c4ea3d66ada8096e7a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CurrentSteps: 0
 --- !u!4 &5807978776112518625
 Transform:
   m_ObjectHideFlags: 0
