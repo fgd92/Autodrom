@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 153.67656, g: 177.37753, b: 240.90862, a: 1}
+  m_IndirectSpecularColor: {r: 153.93846, g: 177.66638, b: 241.31975, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -488,15 +488,15 @@ WheelCollider:
     damper: 9000
     targetPosition: 0.02
   m_SuspensionDistance: 0.1
-  m_ForceAppPointDistance: 0
-  m_Mass: 15
+  m_ForceAppPointDistance: 0.51
+  m_Mass: 2
   m_WheelDampingRate: 0.0001
   m_ForwardFriction:
-    m_ExtremumSlip: 1
-    m_ExtremumValue: 0.1
-    m_AsymptoteSlip: 0.8
-    m_AsymptoteValue: 0.5
-    m_Stiffness: 1
+    m_ExtremumSlip: 0.1
+    m_ExtremumValue: 1
+    m_AsymptoteSlip: 0.1
+    m_AsymptoteValue: 1
+    m_Stiffness: 0
   m_SidewaysFriction:
     m_ExtremumSlip: 0.2
     m_ExtremumValue: 1
@@ -1511,15 +1511,15 @@ WheelCollider:
     damper: 9000
     targetPosition: 0.02
   m_SuspensionDistance: 0.1
-  m_ForceAppPointDistance: 0
-  m_Mass: 15
+  m_ForceAppPointDistance: 0.51
+  m_Mass: 2
   m_WheelDampingRate: 0.0001
   m_ForwardFriction:
-    m_ExtremumSlip: 1
-    m_ExtremumValue: 0.1
-    m_AsymptoteSlip: 0.8
-    m_AsymptoteValue: 0.5
-    m_Stiffness: 1
+    m_ExtremumSlip: 0.1
+    m_ExtremumValue: 1
+    m_AsymptoteSlip: 0.1
+    m_AsymptoteValue: 1
+    m_Stiffness: 0
   m_SidewaysFriction:
     m_ExtremumSlip: 0.2
     m_ExtremumValue: 1
@@ -2328,15 +2328,15 @@ WheelCollider:
     damper: 9000
     targetPosition: 0.02
   m_SuspensionDistance: 0.1
-  m_ForceAppPointDistance: 0
-  m_Mass: 15
+  m_ForceAppPointDistance: 0.51
+  m_Mass: 2
   m_WheelDampingRate: 0.0001
   m_ForwardFriction:
-    m_ExtremumSlip: 1
-    m_ExtremumValue: 0.1
-    m_AsymptoteSlip: 0.8
-    m_AsymptoteValue: 0.5
-    m_Stiffness: 1
+    m_ExtremumSlip: 0.1
+    m_ExtremumValue: 1
+    m_AsymptoteSlip: 0.1
+    m_AsymptoteValue: 1
+    m_Stiffness: 0
   m_SidewaysFriction:
     m_ExtremumSlip: 0.2
     m_ExtremumValue: 1
@@ -3007,15 +3007,15 @@ WheelCollider:
     damper: 9000
     targetPosition: 0.02
   m_SuspensionDistance: 0.1
-  m_ForceAppPointDistance: 0
-  m_Mass: 15
+  m_ForceAppPointDistance: 0.51
+  m_Mass: 2
   m_WheelDampingRate: 0.0001
   m_ForwardFriction:
-    m_ExtremumSlip: 1
-    m_ExtremumValue: 0.1
-    m_AsymptoteSlip: 0.8
-    m_AsymptoteValue: 0.5
-    m_Stiffness: 1
+    m_ExtremumSlip: 0.1
+    m_ExtremumValue: 1
+    m_AsymptoteSlip: 0.1
+    m_AsymptoteValue: 1
+    m_Stiffness: 0
   m_SidewaysFriction:
     m_ExtremumSlip: 0.2
     m_ExtremumValue: 1
@@ -5768,6 +5768,7 @@ MonoBehaviour:
     MinAngle: -43
     MaxAngle: 43
     MaxValue: 40
+  Speed: 0
 --- !u!114 &2027144285734774058
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5777,10 +5778,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 2027144285734774054}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b6dd1fe813bcdf4c8a356dca2f38658, type: 3}
+  m_Script: {fileID: 11500000, guid: 766980d068467d44f828870a48a4b9bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RPMWheel: 0
   motorForce: 900
   breakForce: 5000
   maxSteerAngle: 30
@@ -7757,6 +7757,7 @@ GameObject:
   - component: {fileID: 9001851670173109101}
   - component: {fileID: 5383589079813863808}
   - component: {fileID: 5383589079813863807}
+  - component: {fileID: 5383589079813863809}
   m_Layer: 0
   m_Name: Trailer
   m_TagString: Untagged
@@ -7793,6 +7794,30 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &5383589079813863809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5383589079813863806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 130b7774b2a8b6c4da47805214d3c06e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  motorForce: 800
+  breakForce: 5000
+  maxSteerAngle: 30
+  frontLeftWheelCollider: {fileID: 335583109}
+  frontRightWheelCollider: {fileID: 1280004172}
+  rearLeftWheelCollider: {fileID: 763021075}
+  rearRightWheelCollider: {fileID: 1621987731}
+  frontLeftWheelTransform: {fileID: 8729306695662124814}
+  frontRightWheelTransform: {fileID: 3307398907179898716}
+  rearLeftWheelTransform: {fileID: 1298410752097721191}
+  rearRightWheelTransform: {fileID: 4782304770342479261}
+  rule: {fileID: 0}
 --- !u!33 &5403657320063936079
 MeshFilter:
   m_ObjectHideFlags: 0
