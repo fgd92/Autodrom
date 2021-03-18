@@ -1,54 +1,87 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
-[ExecuteInEditMode]
 public class TrafficLight : MonoBehaviour
 {
     public Material Green;
     public Material Red;
-    public Material Orange;
+    public Material Yellow;
     public Material Gray;
 
-    public GameObject First;
-    public GameObject Second;
-    public GameObject Third;
+    public MeshRenderer First;
+    public MeshRenderer Second;
+    public MeshRenderer Third;
 
     public float TimeForSwitch = 4f;
+    private int increment = 1;
     private float currentTime = 0;
     private int currentIndex = 0;
-    private Dictionary<int, Material> Colors = new Dictionary<int, Material>();
-    private List<GameObject> LightsValue = new List<GameObject>();
+    private List<Material> colors = new List<Material>();
+    private List<MeshRenderer> lights = new List<MeshRenderer>();
 
 
     void Start()
     {
-        Colors.Add(0, Red);
-        Colors.Add(1, Orange);
-        Colors.Add(2, Green);
+        colors.Add(Red);
+        colors.Add(Yellow);
+        colors.Add(Green);
 
-        LightsValue.Add(First);
-        LightsValue.Add(Second);
-        LightsValue.Add(Third);
-
+        lights.Add(First);
+        lights.Add(Second);
+        lights.Add(Third);
     }
 
 
     void Update()
     {
         currentTime += Time.deltaTime;
-
+        
         if(currentTime >= TimeForSwitch)
         {
             currentTime = 0;
-            currentIndex++;
-
-            if (currentIndex > 2)
+            
+            currentIndex+= increment;
+        
+            if (currentIndex == lights.Count - 1)
             {
-                currentIndex = 0;
+                increment = -1;
             }
+            else if(currentIndex == 0)
+            {
+                increment = 1;
+            }
+        
+            SwitchLight(currentIndex);
+        }
+    }
 
+    // IEnumerator SwitchingLight()
+    // {
+    //     SwitchLight(0);
+    //     yield return new WaitForSeconds(TimeForSwitch);
+    //     SwitchLight(1);
+    //     yield return new WaitForSeconds(TimeForSwitch);
+    //     SwitchLight(2);
+    //     yield return new WaitForSeconds(TimeForSwitch);
+    //     SwitchLight(1);
+    //     yield return new WaitForSeconds(TimeForSwitch);
+    //
+    //     StartCoroutine(SwitchingLight());
+    //
+    // }
+    
+    private void SwitchLight(int index)
+    {
+        lights[index].material = colors[index];
 
+        for (int i = 0; i < lights.Count; i++)
+        {
+            if (i != index)
+            {
+                lights[i].material = Gray;
+            }
         }
     }
 }
