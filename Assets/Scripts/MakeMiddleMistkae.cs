@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class FinishLineTrigger : MonoBehaviour
+public class MakeMiddleMistkae : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {

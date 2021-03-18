@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8584941907077230094}
   - component: {fileID: 8584941907077230095}
   - component: {fileID: 8584941907077230092}
-  - component: {fileID: 8584941907077230081}
+  - component: {fileID: 4661442271746893560}
   m_Layer: 0
   m_Name: FinishLinePlane
   m_TagString: FinishLine
@@ -94,7 +94,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 10, y: 3.69, z: 30}
   m_Center: {x: 0, y: 1.74, z: -11.41}
---- !u!114 &8584941907077230081
+--- !u!114 &4661442271746893560
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -103,6 +103,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 8584941907077230090}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93bca11d3be02194f9d046259d71fefc, type: 3}
+  m_Script: {fileID: 11500000, guid: ec7b27199bb2b644fb49bcce33d1ad78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
