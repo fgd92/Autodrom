@@ -82,6 +82,11 @@ public class Car : MonoBehaviour
         frontLeftWheelCollider.steerAngle = currentSteerAngle;
         frontRightWheelCollider.steerAngle = currentSteerAngle;
     }
+    protected void HandleSteering(float angle)
+    {
+        frontLeftWheelCollider.steerAngle = angle;
+        frontRightWheelCollider.steerAngle = angle;
+    }
 
     protected void UpdateWheels()
     {
