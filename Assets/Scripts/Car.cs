@@ -72,8 +72,6 @@ public class Car : MonoBehaviour
         {
             for (int i = 0; i < rule.childCount; i++)
             {
-                //float angle = horizontalInput * maxSteerAngle;
-                //angle = ruleComponents[i].localRotation.eulerAngles.y + angle;
                 ruleComponents[i].localRotation = Quaternion.Euler(0, frontLeftWheelCollider.steerAngle, 0);
 
             }
