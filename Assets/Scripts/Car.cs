@@ -72,14 +72,11 @@ public class Car : MonoBehaviour
         {
             for (int i = 0; i < rule.childCount; i++)
             {
-                float velocity = 0;
-                //ruleComponents[i].localRotation.eulerAngles.y
-                float angle = Mathf.Clamp(horizontalInput * maxSteerAngle * 2,-60, 60);
-               // angle = Mathf.SmoothDampAngle(ruleComponents[i].eulerAngles.y, angle,ref velocity, Time.deltaTime);
+                float angle = Mathf.Clamp( horizontalInput * maxSteerAngle,-60, 60);
+                angle = angle + ruleComponents[i].localRotation.eulerAngles.y;
                 ruleComponents[i].localRotation = Quaternion.Euler(0,angle, 0);
 
             }
-            //rule.Rotate(Vector3.up, horizontalInput * maxSteerAngle);
         }
     }
     protected void HandleMotor()
