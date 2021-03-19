@@ -15,7 +15,7 @@ public class Exercise : MonoBehaviour
 
     void Start()
     {
-        GameObject tractor = Instantiate(Player, StartPoint.position, Quaternion.identity);
+        GameObject tractor = Instantiate(Player, StartPoint.position, StartPoint.rotation);
         Destroy(tractor.GetComponent<HingeJoint>());
         exercisesScriptable.PrematureTermination = false;
     }
