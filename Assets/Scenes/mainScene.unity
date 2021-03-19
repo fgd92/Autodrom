@@ -1459,6 +1459,11 @@ PrefabInstance:
       propertyPath: m_Size.x
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 2643750065512331170, guid: 35236725e657f7846b91e89b155f2176,
+        type: 3}
+      propertyPath: m_Mass
+      value: 3500
+      objectReference: {fileID: 0}
     - target: {fileID: 2643750065512331173, guid: 35236725e657f7846b91e89b155f2176,
         type: 3}
       propertyPath: m_ConnectedBody
