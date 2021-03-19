@@ -8,7 +8,7 @@ public class Measure
     public float MinAngle;
     public float MaxAngle;
     public float MaxValue;
-    public void SetAngle(float currentValue)
+    public void SetValue(float currentValue)
     {
         if(Arrow != null)
             Arrow.transform.localRotation = Quaternion.AngleAxis(Mathf.Lerp(MinAngle, MaxAngle, currentValue / MaxValue), Vector3.up);

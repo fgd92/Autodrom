@@ -33,8 +33,8 @@ public class Dashboard : MonoBehaviour
     {
         CalculateSpeed();
 
-        Speedometer.SetAngle(Speed);
-        Tachometer.SetAngle(carController.RPMWheel);
-        Temprature.SetAngle(25);
+        Speedometer.SetValue(Speed);
+        Tachometer.SetValue(carController.RPMWheel);
+        Temprature.SetValue(25);
     }
 }
