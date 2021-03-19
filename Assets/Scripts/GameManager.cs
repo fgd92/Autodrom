@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -13,6 +14,7 @@ public class GameManager : MonoBehaviour
     public Text MaxScoretext;
     public Text CurrentScoreText;
     public GameObject GameUI;
+    public Image AttentionSignImage;
     [Header("Меню проигрыша")]
     public Text AttempsText;
     public Text MarkText;
@@ -43,11 +45,6 @@ public class GameManager : MonoBehaviour
         FindActiveConus(ExerciseObject);
     }
 
-    private void Exercise_AddMiddleMistake()
-    {
-        CurrentScore += 3;
-        SetUI();
-    }
 
     private void Update()
     {
@@ -100,11 +97,20 @@ public class GameManager : MonoBehaviour
             exerciseObject.transform.GetChild(0).GetChild(i).GetComponent<Conus>().AddGrossMistake += GameManager_AddScoreEvent;            
         }
     }
+    private void Exercise_AddMiddleMistake()
+    {
+        CurrentScore += 3;
+        SetUI();
+        StopCoroutine(nameof(AnimationAttentionSign));
+        StartCoroutine(nameof(AnimationAttentionSign), 2f);
+    }
 
     private void GameManager_AddScoreEvent()
     {
         CurrentScore += 5;
         SetUI();
+        StopCoroutine(nameof(AnimationAttentionSign));
+        StartCoroutine(nameof(AnimationAttentionSign), 2f);
     }
 
     private void SetUI()
@@ -112,6 +118,37 @@ public class GameManager : MonoBehaviour
         MaxScoretext.text = "Максимальное количество штрафных баллов - " + exercise.MaxScore;
         CurrentScoreText.text = "Штрафные баллы: " + CurrentScore;
     }
+
+    private IEnumerator AnimationAttentionSign(float speed)
+    {
+        AttentionSignImage.gameObject.SetActive(true);
+        AttentionSignImage.color = new Color(AttentionSignImage.color.r, AttentionSignImage.color.g, AttentionSignImage.color.b, 1);
+
+        while (AttentionSignImage.color.a > 0)
+        {
+            AttentionSignImage.color = new Color(AttentionSignImage.color.r, AttentionSignImage.color.g, AttentionSignImage.color.b, AttentionSignImage.color.a - (Time.deltaTime * speed));
+            yield return null;
+        }
+
+        yield return new WaitForSeconds(0.5f);
+
+        while (AttentionSignImage.color.a < 1)
+        {
+            AttentionSignImage.color = new Color(AttentionSignImage.color.r, AttentionSignImage.color.g, AttentionSignImage.color.b, AttentionSignImage.color.a + (Time.deltaTime * speed));
+            yield return null;
+        }
+
+        while (AttentionSignImage.color.a > 0)
+        {
+            AttentionSignImage.color = new Color(AttentionSignImage.color.r, AttentionSignImage.color.g, AttentionSignImage.color.b, AttentionSignImage.color.a - (Time.deltaTime * speed));
+            yield return null;
+        }
+
+        yield return new WaitForSeconds(0.5f);
+
+        AttentionSignImage.gameObject.SetActive(false);
+    }
+   
 
     public void LoadScene(int idScene)
     {
