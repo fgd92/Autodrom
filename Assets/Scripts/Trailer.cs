@@ -15,7 +15,7 @@ public class Trailer : Car
         //float angle = Vector3.Angle(transform.forward, (tractorPosition - trailerPositon).normalized);
         //float angle = Vector3.SignedAngle(tractorPosition, trailerPositon, transform.forward);
         
-        HandleSteering(Tractor.transform.rotation.eulerAngles.y - transform.rotation.eulerAngles.y);
+        HandleSteering(transform.rotation.eulerAngles.y - Tractor.transform.rotation.eulerAngles.y);
         UpdateWheels();
     }
 }

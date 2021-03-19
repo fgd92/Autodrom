@@ -1444,15 +1444,75 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2643750065512331169, guid: 35236725e657f7846b91e89b155f2176,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 32.209408
+      objectReference: {fileID: 0}
+    - target: {fileID: 2643750065512331169, guid: 35236725e657f7846b91e89b155f2176,
+        type: 3}
+      propertyPath: m_Center.y
+      value: -14.096326
+      objectReference: {fileID: 0}
+    - target: {fileID: 2643750065512331169, guid: 35236725e657f7846b91e89b155f2176,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 2643750065512331173, guid: 35236725e657f7846b91e89b155f2176,
         type: 3}
       propertyPath: m_ConnectedBody
       value: 
       objectReference: {fileID: 5383589079813863808}
+    - target: {fileID: 2643750065512331173, guid: 35236725e657f7846b91e89b155f2176,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2643750065512331173, guid: 35236725e657f7846b91e89b155f2176,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: 0.271
+      objectReference: {fileID: 0}
+    - target: {fileID: 2643750065512331173, guid: 35236725e657f7846b91e89b155f2176,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.z
+      value: 5.0300007
+      objectReference: {fileID: 0}
     - target: {fileID: 2643750065512331183, guid: 35236725e657f7846b91e89b155f2176,
         type: 3}
       propertyPath: m_Name
       value: Tractor
+      objectReference: {fileID: 0}
+    - target: {fileID: 4076215411531678322, guid: 35236725e657f7846b91e89b155f2176,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 105
+      objectReference: {fileID: 0}
+    - target: {fileID: 4076215411531678322, guid: 35236725e657f7846b91e89b155f2176,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 51.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4076215411531678323, guid: 35236725e657f7846b91e89b155f2176,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4076215411531678324, guid: 35236725e657f7846b91e89b155f2176,
+        type: 3}
+      propertyPath: m_Range
+      value: 0.41
+      objectReference: {fileID: 0}
+    - target: {fileID: 4076215411531678324, guid: 35236725e657f7846b91e89b155f2176,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 4.89
+      objectReference: {fileID: 0}
+    - target: {fileID: 4076215411531678325, guid: 35236725e657f7846b91e89b155f2176,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 4.89
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35236725e657f7846b91e89b155f2176, type: 3}
@@ -1819,7 +1879,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   motorForce: 800
   breakForce: 5000
-  maxSteerAngle: 30
+  maxSteerAngle: 45
   frontLeftWheelCollider: {fileID: 335583109}
   frontRightWheelCollider: {fileID: 1280004172}
   rearLeftWheelCollider: {fileID: 763021075}
