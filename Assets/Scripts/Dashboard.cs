@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class Dashboard : MonoBehaviour
 {
-
     public Measure Speedometer;
     public Measure Tachometer;
     public Measure Voltage;
