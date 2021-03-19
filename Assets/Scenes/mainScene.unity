@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 153.93846, g: 177.66638, b: 241.31975, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1434,6 +1434,11 @@ PrefabInstance:
       propertyPath: m_ProbeSettings.cameraSettings.bufferClearing.backgroundColorHDR.b
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1081579341527298861, guid: 35236725e657f7846b91e89b155f2176,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1297073067039238542, guid: 35236725e657f7846b91e89b155f2176,
         type: 3}
       propertyPath: m_CastShadows
@@ -1482,7 +1487,7 @@ PrefabInstance:
     - target: {fileID: 1363224498904614332, guid: 35236725e657f7846b91e89b155f2176,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1363224498904614332, guid: 35236725e657f7846b91e89b155f2176,
         type: 3}
@@ -1618,6 +1623,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Intensity
       value: 4.89
+      objectReference: {fileID: 0}
+    - target: {fileID: 8997320247526601979, guid: 35236725e657f7846b91e89b155f2176,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.056016646
+      objectReference: {fileID: 0}
+    - target: {fileID: 8997320247526601979, guid: 35236725e657f7846b91e89b155f2176,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.33658195
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35236725e657f7846b91e89b155f2176, type: 3}
@@ -2670,7 +2685,7 @@ Transform:
   - {fileID: 6664410439132326869}
   - {fileID: 7729166287562708531}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &9016494803128989113
 Transform:
