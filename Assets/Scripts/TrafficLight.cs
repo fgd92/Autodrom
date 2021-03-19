@@ -1,10 +1,20 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
 
+public enum StateTrafficLight
+{
+    Red,
+    Yellow,
+    Green
+}
+
 public class TrafficLight : MonoBehaviour
 {
+    public StateTrafficLight CurrentStateTrafficeLight { get; private set; }
+
     public Material Green;
     public Material Red;
     public Material Yellow;
@@ -18,21 +28,20 @@ public class TrafficLight : MonoBehaviour
     private int increment = 1;
     private float currentTime = 0;
     private int currentIndex = 0;
-    private List<Material> colors = new List<Material>();
+    private Dictionary<StateTrafficLight, Material> colors = new Dictionary<StateTrafficLight, Material>();
     private List<MeshRenderer> lights = new List<MeshRenderer>();
 
 
     void Start()
     {
-        colors.Add(Red);
-        colors.Add(Yellow);
-        colors.Add(Green);
+        colors.Add(StateTrafficLight.Red, Red);
+        colors.Add(StateTrafficLight.Yellow, Yellow);
+        colors.Add(StateTrafficLight.Green, Green);
 
         lights.Add(First);
         lights.Add(Second);
         lights.Add(Third);
     }
-
 
     void Update()
     {
@@ -58,8 +67,7 @@ public class TrafficLight : MonoBehaviour
     }
     private void SwitchLight(int index)
     {
-        lights[index].material = colors[index];
-        lights[index].GetComponent<Light>().enabled = true;
+        SwitchState(index);
 
         for (int i = 0; i < lights.Count; i++)
         {
@@ -69,5 +77,12 @@ public class TrafficLight : MonoBehaviour
                 lights[i].material = Gray;
             }
         }
+    }
+    private void SwitchState(int index)
+    {
+        CurrentStateTrafficeLight = (StateTrafficLight)Enum.ToObject(typeof(StateTrafficLight), index);
+        lights[index].material = colors[CurrentStateTrafficeLight];
+        lights[index].GetComponent<Light>().enabled = true;
+        Debug.Log(CurrentStateTrafficeLight);
     }
 }
