@@ -567,7 +567,7 @@ GameObject:
   - component: {fileID: 4400316877918734029}
   m_Layer: 0
   m_Name: Trailer
-  m_TagString: Untagged
+  m_TagString: Trailer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -643,6 +643,7 @@ MonoBehaviour:
   rearLeftWheelTransform: {fileID: 7323883164729844779}
   rearRightWheelTransform: {fileID: 3889246980199799505}
   rule: {fileID: 0}
+  Tractor: {fileID: 0}
 --- !u!1 &4524135107341232671
 GameObject:
   m_ObjectHideFlags: 0
@@ -1197,7 +1198,7 @@ GameObject:
   - component: {fileID: 8621940671275019999}
   m_Layer: 0
   m_Name: BackWheelRight
-  m_TagString: Untagged
+  m_TagString: Trailer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1258,7 +1259,7 @@ GameObject:
   - component: {fileID: 8621940671733952256}
   m_Layer: 0
   m_Name: FrontWheelRight
-  m_TagString: Untagged
+  m_TagString: Trailer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1385,7 +1386,7 @@ GameObject:
   - component: {fileID: 8621940672250804319}
   m_Layer: 0
   m_Name: BackWheelLeft
-  m_TagString: Untagged
+  m_TagString: Trailer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1480,7 +1481,7 @@ GameObject:
   - component: {fileID: 8621940673215080649}
   m_Layer: 0
   m_Name: FrontWheelLeft
-  m_TagString: Untagged
+  m_TagString: Trailer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class Car : MonoBehaviour
 {
@@ -42,6 +43,21 @@ public class Car : MonoBehaviour
     [SerializeField]
     private Transform rule;
 
+    private Transform[] ruleComponents;
+
+    private void Start()
+    {
+        if (rule != null)
+        {
+            ruleComponents = new Transform[rule.childCount];
+
+            for (int i = 0; i < rule.childCount; i++)
+            {
+                ruleComponents[i] = rule.GetChild(i);
+            }
+        }
+    }
+
     protected void GetInput()
     {
         horizontalInput = Input.GetAxis(HORIZONTAL);
@@ -52,11 +68,14 @@ public class Car : MonoBehaviour
 
     protected void RotateRule()
     {
-        if (rule != null)
+        if (currentSteerAngle > -maxSteerAngle && currentSteerAngle < maxSteerAngle)
         {
-            if (currentSteerAngle > -maxSteerAngle && currentSteerAngle < maxSteerAngle)
+            for (int i = 0; i < rule.childCount; i++)
             {
-                rule.Rotate(Vector3.up, horizontalInput * maxSteerAngle);
+                //float angle = horizontalInput * maxSteerAngle;
+                //angle = ruleComponents[i].localRotation.eulerAngles.y + angle;
+                ruleComponents[i].localRotation = Quaternion.Euler(0, frontLeftWheelCollider.steerAngle, 0);
+
             }
         }
     }
@@ -81,6 +100,11 @@ public class Car : MonoBehaviour
         currentSteerAngle = maxSteerAngle * horizontalInput;
         frontLeftWheelCollider.steerAngle = currentSteerAngle;
         frontRightWheelCollider.steerAngle = currentSteerAngle;
+    }
+    protected void HandleSteering(float angle)
+    {
+        frontLeftWheelCollider.steerAngle = angle;
+        frontRightWheelCollider.steerAngle = angle;
     }
 
     protected void UpdateWheels()
