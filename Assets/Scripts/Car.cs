@@ -72,9 +72,9 @@ public class Car : MonoBehaviour
         {
             for (int i = 0; i < rule.childCount; i++)
             {
-                float angle = Mathf.Clamp( horizontalInput * maxSteerAngle,-60, 60);
-                angle = angle + ruleComponents[i].localRotation.eulerAngles.y;
-                ruleComponents[i].localRotation = Quaternion.Euler(0,angle, 0);
+                //float angle = horizontalInput * maxSteerAngle;
+                //angle = ruleComponents[i].localRotation.eulerAngles.y + angle;
+                ruleComponents[i].localRotation = Quaternion.Euler(0, frontLeftWheelCollider.steerAngle, 0);
 
             }
         }

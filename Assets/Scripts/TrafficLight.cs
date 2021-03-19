@@ -56,30 +56,16 @@ public class TrafficLight : MonoBehaviour
             SwitchLight(currentIndex);
         }
     }
-
-    // IEnumerator SwitchingLight()
-    // {
-    //     SwitchLight(0);
-    //     yield return new WaitForSeconds(TimeForSwitch);
-    //     SwitchLight(1);
-    //     yield return new WaitForSeconds(TimeForSwitch);
-    //     SwitchLight(2);
-    //     yield return new WaitForSeconds(TimeForSwitch);
-    //     SwitchLight(1);
-    //     yield return new WaitForSeconds(TimeForSwitch);
-    //
-    //     StartCoroutine(SwitchingLight());
-    //
-    // }
-    
     private void SwitchLight(int index)
     {
         lights[index].material = colors[index];
+        lights[index].GetComponent<Light>().enabled = true;
 
         for (int i = 0; i < lights.Count; i++)
         {
             if (i != index)
             {
+                lights[i].GetComponent<Light>().enabled = false;
                 lights[i].material = Gray;
             }
         }
