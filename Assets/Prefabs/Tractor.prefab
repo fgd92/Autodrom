@@ -1425,7 +1425,7 @@ GameObject:
   - component: {fileID: 2643750065512331173}
   m_Layer: 0
   m_Name: Tractor
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2909,7 +2909,7 @@ GameObject:
   - component: {fileID: 4076215409950846845}
   m_Layer: 0
   m_Name: Front right wheel
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4439,7 +4439,7 @@ GameObject:
   - component: {fileID: 4076215410598616870}
   m_Layer: 0
   m_Name: Front left wheel
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4738,7 +4738,7 @@ GameObject:
   - component: {fileID: 4076215410794009423}
   m_Layer: 0
   m_Name: Rear left wheel
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5436,7 +5436,7 @@ GameObject:
   - component: {fileID: 4076215411438288313}
   m_Layer: 0
   m_Name: Rear right wheel
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
