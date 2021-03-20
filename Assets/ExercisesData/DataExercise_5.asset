@@ -13,5 +13,10 @@ MonoBehaviour:
   m_Name: DataExercise_5
   m_EditorClassIdentifier: 
   Attempts: 0
-  Score: 0
+  Score: 5
   IsPassed: 0
+  PrematureTermination: 0
+  IsParkWithTailer: 0
+  IsEstacada: 0
+  IsPark: 0
+  Description: 

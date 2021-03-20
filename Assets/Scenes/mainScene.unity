@@ -1439,6 +1439,21 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1081579341527298861, guid: 35236725e657f7846b91e89b155f2176,
+        type: 3}
+      propertyPath: m_ProbeSettings.cameraSettings.culling.useOcclusionCulling
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1081579341527298861, guid: 35236725e657f7846b91e89b155f2176,
+        type: 3}
+      propertyPath: m_ProbeSettings.proxySettings.useInfluenceVolumeAsProxyVolume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1081579341527298861, guid: 35236725e657f7846b91e89b155f2176,
+        type: 3}
+      propertyPath: m_ProbeSettings.frustum.viewerScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1297073067039238542, guid: 35236725e657f7846b91e89b155f2176,
         type: 3}
       propertyPath: m_CastShadows
@@ -1557,27 +1572,17 @@ PrefabInstance:
     - target: {fileID: 2643750065512331173, guid: 35236725e657f7846b91e89b155f2176,
         type: 3}
       propertyPath: m_Limits.min
-      value: -20
+      value: -15
       objectReference: {fileID: 0}
     - target: {fileID: 2643750065512331173, guid: 35236725e657f7846b91e89b155f2176,
         type: 3}
       propertyPath: m_Limits.max
-      value: 20
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 2643750065512331173, guid: 35236725e657f7846b91e89b155f2176,
         type: 3}
       propertyPath: m_Limits.bounciness
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2643750065512331173, guid: 35236725e657f7846b91e89b155f2176,
-        type: 3}
-      propertyPath: m_Limits.contactDistance
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2643750065512331173, guid: 35236725e657f7846b91e89b155f2176,
-        type: 3}
-      propertyPath: m_EnableCollision
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2643750065512331183, guid: 35236725e657f7846b91e89b155f2176,
         type: 3}

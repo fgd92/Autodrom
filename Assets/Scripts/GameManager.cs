@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     [Header("Игровое UI")]
     public Text MaxScoretext;
     public Text CurrentScoreText;
+    public Text TaskListText;
     public GameObject GameUI;
     public Image AttentionSignImage;
     [Header("Меню проигрыша")]
@@ -131,6 +132,8 @@ public class GameManager : MonoBehaviour
     {
         MaxScoretext.text = "Максимальное количество штрафных баллов - " + exercise.MaxScore;
         CurrentScoreText.text = "Штрафные баллы: " + CurrentScore;
+
+        TaskListText.text = exercise.exercisesScriptable.Description;
     }
 
     private IEnumerator AnimationAttentionSign(float speed)
