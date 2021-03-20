@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bd19ab68b0d9e641be4c3aa73d3db0d, type: 3}
   m_Name: DataExercise_2
   m_EditorClassIdentifier: 
-  Attempts: 0
+  Attempts: 1
   Score: 5
   IsPassed: 0
-  PrematureTermination: 0
+  PrematureTermination: 1
   IsParkWithTailer: 0
   IsEstacada: 0
   IsPark: 0

@@ -27,7 +27,11 @@ public class GameManager : MonoBehaviour
     public Button PauseRestartButton;
 
     private Exercise exercise;
-
+    private TaskManager taskManager;
+    private void Awake()
+    {
+        taskManager = GetComponent<TaskManager>();
+    }
     public void Start()
     {
         LockCursor(true);
@@ -42,6 +46,9 @@ public class GameManager : MonoBehaviour
         exercise.exercisesScriptable.Attempts += 1;
 
         SetUI();
+
+        TaskListText.text = exercise.exercisesScriptable.Description;
+        taskManager.TasksTextArray = TaskListText.text.Split('-');
 
         FindActiveConus(ExerciseObject);
     }
@@ -132,8 +139,18 @@ public class GameManager : MonoBehaviour
     {
         MaxScoretext.text = "Максимальное количество штрафных баллов - " + exercise.MaxScore;
         CurrentScoreText.text = "Штрафные баллы: " + CurrentScore;
+    }
 
-        TaskListText.text = exercise.exercisesScriptable.Description;
+    public void SetTaskText(string[] TasksTextArray)
+    {
+        TaskListText.text = "";
+        for (int i = 0; i < TasksTextArray.Length; i++)
+        {
+            if (i == 0)
+                TaskListText.text += TasksTextArray[i];
+            else if (!TasksTextArray[i].Contains("-"))
+                TaskListText.text += "-" + TasksTextArray[i];
+        }
     }
 
     private IEnumerator AnimationAttentionSign(float speed)

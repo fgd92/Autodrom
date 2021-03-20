@@ -14,7 +14,8 @@ public class StopLineOnEstacada : MonoBehaviour
             dashboard = other.gameObject.GetComponent<Dashboard>();
             if (Mathf.RoundToInt(dashboard.Speed) == 0)
             {
-                performed = true;                
+                performed = true;
+                TaskManager.Instance.SetResult(" Остановка на наклонном участке перед первой линией");
             }
         }
     }

@@ -46,7 +46,7 @@ public class StopZoneDetector : MonoBehaviour
         {
             if (isTrailerFirst)
             {
-                if (Mathf.RoundToInt(dashboard.Speed) == 0)
+                if (dashboard!= null && Mathf.RoundToInt(dashboard.Speed) == 0)
                 {
                     exercise.EndExercise(true);
                 }
