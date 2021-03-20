@@ -16,7 +16,7 @@ public class Exercise : MonoBehaviour
 
     void Start()
     {
-        GameObject tractor = Instantiate(exercisesScriptable.WithTailer == true ? PlayerWithTrailer : Player, StartPoint.position, StartPoint.rotation);
+        GameObject tractor = Instantiate(exercisesScriptable.IsParkWithTailer == true ? PlayerWithTrailer : Player, StartPoint.position, StartPoint.rotation);
         Destroy(tractor.GetComponent<HingeJoint>());
         exercisesScriptable.PrematureTermination = false;
     }

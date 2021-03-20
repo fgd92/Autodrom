@@ -58,8 +58,20 @@ public class GameManager : MonoBehaviour
     }
 
     public void LoadSceneFromPauseMenu(int idScene)
-    {             
+    {
         LoadScene(idScene);
+
+        Unsubscribe();
+    }
+
+    private void Unsubscribe()
+    {
+        for (int i = 0; i < exercise.transform.GetChild(0).childCount-1; i++)
+        {
+            exercise.transform.GetChild(0).GetChild(i).GetComponent<Conus>().AddGrossMistake -= GameManager_AddScoreEvent;
+        }
+        exercise.OnEndEvent -= Exercise_OnEndEvent;
+        exercise.AddMiddleMistake -= Exercise_AddMiddleMistake;
     }
 
     private static void LockCursor(bool isLock)
@@ -91,10 +103,12 @@ public class GameManager : MonoBehaviour
     }
 
     private void FindActiveConus(GameObject exerciseObject)
-    {
-        for (int i = 0; i < exerciseObject.transform.GetChild(0).childCount; i++)
+    {        
+        for (int i = 0; i < exerciseObject.transform.GetChild(0).childCount-1; i++)
         {
-            exerciseObject.transform.GetChild(0).GetChild(i).GetComponent<Conus>().AddGrossMistake += GameManager_AddScoreEvent;            
+            Transform gameObject = exerciseObject.transform.GetChild(0).GetChild(i);
+            gameObject.GetComponent<Conus>().AddGrossMistake += GameManager_AddScoreEvent;
+
         }
     }
     private void Exercise_AddMiddleMistake()

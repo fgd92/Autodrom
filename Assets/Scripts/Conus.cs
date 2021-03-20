@@ -8,6 +8,9 @@ public class Conus : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.transform.CompareTag("Player"))
+        {
+            Destroy(GetComponent<Conus>());
             AddGrossMistake?.Invoke();
+        }
     }
 }
