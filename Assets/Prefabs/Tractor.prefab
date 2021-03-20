@@ -1509,6 +1509,7 @@ MonoBehaviour:
   rearLeftWheelTransform: {fileID: 4307330097046146706}
   rearRightWheelTransform: {fileID: 4545626612462204753}
   rule: {fileID: 6094201394393090216}
+  Reductor: {fileID: 0}
 --- !u!114 &2643750065512331168
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2692,13 +2693,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_RecenterTarget: 2
   m_VerticalAxis:
-    Value: 0
+    Value: 23.596464
     m_SpeedMode: 0
     m_MaxSpeed: 180
     m_AccelTime: 0.1
     m_DecelTime: 0.1
     m_InputAxisName: Mouse Y
-    m_InputAxisValue: 0
+    m_InputAxisValue: -0.45000002
     m_InvertInput: 1
     m_MinValue: -60
     m_MaxValue: 60
@@ -2716,13 +2717,13 @@ MonoBehaviour:
     m_LegacyHeadingDefinition: -1
     m_LegacyVelocityFilterStrength: -1
   m_HorizontalAxis:
-    Value: 0
+    Value: -349.4933
     m_SpeedMode: 0
     m_MaxSpeed: 180
     m_AccelTime: 0.1
     m_DecelTime: 0.1
     m_InputAxisName: Mouse X
-    m_InputAxisValue: 0
+    m_InputAxisValue: 2.2
     m_InvertInput: 0
     m_MinValue: -360
     m_MaxValue: 360
@@ -3064,7 +3065,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4076215409978696433}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -0.20360702, y: -0.089625575, z: 0.018720873, w: -0.974762}
   m_LocalPosition: {x: 0, y: 0.41600013, z: 0.15099975}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -3097,7 +3098,7 @@ Camera:
   near clip plane: 0.1
   far clip plane: 1000
   field of view: 70
-  orthographic: 0
+  orthographic: 1
   orthographic size: 1.97
   m_Depth: -1
   m_CullingMask:
@@ -4639,7 +4640,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4076215410765783679}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -0.20360702, y: -0.089625575, z: 0.018720873, w: -0.974762}
   m_LocalPosition: {x: 0, y: 0.41600013, z: 0.15099975}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:

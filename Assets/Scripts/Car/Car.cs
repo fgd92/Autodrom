@@ -8,6 +8,7 @@ public class Car : MonoBehaviour
 
     protected float horizontalInput;
     protected float verticalInput;
+
     protected float currentSteerAngle;
     protected float currentbreakForce;
     protected bool isBreaking;
@@ -81,12 +82,12 @@ public class Car : MonoBehaviour
     {
         frontLeftWheelCollider.motorTorque = verticalInput * motorForce;
         frontRightWheelCollider.motorTorque = verticalInput * motorForce;
-        currentbreakForce = isBreaking ? breakForce : 0f;
         ApplyBreaking();
     }
 
     protected void ApplyBreaking()
     {
+        currentbreakForce = isBreaking ? breakForce : 0f;
         frontRightWheelCollider.brakeTorque = currentbreakForce;
         frontLeftWheelCollider.brakeTorque = currentbreakForce;
         rearLeftWheelCollider.brakeTorque = currentbreakForce;

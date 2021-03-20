@@ -6,6 +6,8 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class Tractor : Car
 {
+    public Reductor Reductor;
+
     [NonSerialized]
     public float RPMWheel = 0;
 
