@@ -3,19 +3,20 @@
 public class Motor : ScriptableObject, IMotor
 {
     private float motorForce;
-    private bool isBreaking;
     private float breakForce;
     private float currentbreakForce;
-
-    public bool GetIsBreaking()
+    private bool isBreaking;
+    public bool IsBreaking 
     {
-        return isBreaking;
-    }
-
-    public void SetIsBreaking(bool value)
-    {
-        isBreaking = value;
-        currentbreakForce = isBreaking ? breakForce : 0f;
+        get 
+        {
+            return isBreaking;
+        } 
+        set
+        {
+            isBreaking = value;
+            currentbreakForce = isBreaking ? breakForce : 0f;
+        }
     }
 
     public void SetBreakForce(float value)

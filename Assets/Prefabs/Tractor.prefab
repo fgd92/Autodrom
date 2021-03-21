@@ -1421,7 +1421,6 @@ GameObject:
   - component: {fileID: 2643750065512331171}
   - component: {fileID: 2643750065512331168}
   - component: {fileID: 2643750065512331169}
-  - component: {fileID: 2643750065512331182}
   - component: {fileID: 2643750065512331173}
   m_Layer: 0
   m_Name: Tractor
@@ -1522,32 +1521,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04c8dd49874a02142a08b4aa42a05166, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speedometer:
-    Arrow: {fileID: 8487249071652696777}
-    MinAngle: -43
-    MaxAngle: 43
-    MaxValue: 35
-  Tachometer:
-    Arrow: {fileID: 4076215411693829661}
-    MinAngle: -43
-    MaxAngle: 43
-    MaxValue: 1000
-  Voltage:
-    Arrow: {fileID: 0}
-    MinAngle: 0
-    MaxAngle: 0
-    MaxValue: 0
-  OilPressure:
-    Arrow: {fileID: 4076215410016603765}
-    MinAngle: -43
-    MaxAngle: 43
-    MaxValue: 50
-  Temprature:
-    Arrow: {fileID: 4076215410970677319}
-    MinAngle: -43
-    MaxAngle: 43
-    MaxValue: 40
-  Speed: 0
+  Measures:
+    Items:
+    - {fileID: 764309604328774551}
+    - {fileID: 1909477643088877435}
 --- !u!65 &2643750065512331169
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1561,19 +1538,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 100, y: 32.209408, z: 303.58514}
   m_Center: {x: 0, y: -14.096326, z: 69.43431}
---- !u!114 &2643750065512331182
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2643750065512331183}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 87d0cd0817a441c4ea3d66ada8096e7a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CurrentSteps: 0
 --- !u!59 &2643750065512331173
 HingeJoint:
   m_ObjectHideFlags: 0
@@ -2693,13 +2657,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_RecenterTarget: 2
   m_VerticalAxis:
-    Value: 23.596464
+    Value: 23.596462
     m_SpeedMode: 0
     m_MaxSpeed: 180
     m_AccelTime: 0.1
     m_DecelTime: 0.1
     m_InputAxisName: Mouse Y
-    m_InputAxisValue: -0.45000002
+    m_InputAxisValue: 0
     m_InvertInput: 1
     m_MinValue: -60
     m_MaxValue: 60
@@ -2717,13 +2681,13 @@ MonoBehaviour:
     m_LegacyHeadingDefinition: -1
     m_LegacyVelocityFilterStrength: -1
   m_HorizontalAxis:
-    Value: -349.4933
+    Value: 10.506706
     m_SpeedMode: 0
     m_MaxSpeed: 180
     m_AccelTime: 0.1
     m_DecelTime: 0.1
     m_InputAxisName: Mouse X
-    m_InputAxisValue: 2.2
+    m_InputAxisValue: 0
     m_InvertInput: 0
     m_MinValue: -360
     m_MaxValue: 360
@@ -3065,7 +3029,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4076215409978696433}
-  m_LocalRotation: {x: -0.20360702, y: -0.089625575, z: 0.018720873, w: -0.974762}
+  m_LocalRotation: {x: 0.203607, y: 0.089625575, z: -0.01872087, w: 0.974762}
   m_LocalPosition: {x: 0, y: 0.41600013, z: 0.15099975}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -3098,7 +3062,7 @@ Camera:
   near clip plane: 0.1
   far clip plane: 1000
   field of view: 70
-  orthographic: 1
+  orthographic: 0
   orthographic size: 1.97
   m_Depth: -1
   m_CullingMask:
@@ -4404,6 +4368,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4076215410580561399}
+  - component: {fileID: 764309604328774551}
   m_Layer: 0
   m_Name: Temprature
   m_TagString: Untagged
@@ -4428,6 +4393,23 @@ Transform:
   m_Father: {fileID: 1363224498904614332}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &764309604328774551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4076215410580561396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c89919e55b3f9d44a8802db0caafa501, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TypeMeasure: 0
+  Arrow: {fileID: 4076215410970677319}
+  MinAngle: -43
+  MaxAngle: 43
+  MaxValue: 60
 --- !u!1 &4076215410598616868
 GameObject:
   m_ObjectHideFlags: 0
@@ -4640,7 +4622,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4076215410765783679}
-  m_LocalRotation: {x: -0.20360702, y: -0.089625575, z: 0.018720873, w: -0.974762}
+  m_LocalRotation: {x: 0.203607, y: 0.089625575, z: -0.01872087, w: 0.974762}
   m_LocalPosition: {x: 0, y: 0.41600013, z: 0.15099975}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -6594,6 +6576,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6633188228304737107}
+  - component: {fileID: 1909477643088877435}
   m_Layer: 0
   m_Name: Speedometer
   m_TagString: Untagged
@@ -6618,6 +6601,23 @@ Transform:
   m_Father: {fileID: 1363224498904614332}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1909477643088877435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7122765599189451579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c89919e55b3f9d44a8802db0caafa501, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TypeMeasure: 1
+  Arrow: {fileID: 8487249071652696777}
+  MinAngle: -43
+  MaxAngle: 43
+  MaxValue: 40
 --- !u!1 &7239564761963068286
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,4 +1,5 @@
-﻿public enum TypeMeasure
+﻿
+public enum TypeMeasure
 { 
     Temprature,
     Speedometer,
