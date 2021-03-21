@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 
-public class Motor : ScriptableObject, IMotor
+[CreateAssetMenu(fileName ="Engine", menuName = "Car/Components/Engine")]
+public class Engine : CarComponent, IEngine
 {
     private float motorForce;
     private float breakForce;
@@ -27,17 +28,17 @@ public class Motor : ScriptableObject, IMotor
     {
         return breakForce;
     }
-    public void SetMotorForce(float value)
+    public void SetForce(float value)
     {
         motorForce = value;
     }
 
-    public float GetMotorForce()
+    public float GetForce()
     {
         return motorForce;
     }
 
-    public void HandleMotor(ref WheelCollider wheelCollider1, ref WheelCollider wheelCollider2, float delta)
+    public void Work(ref WheelCollider wheelCollider1, ref WheelCollider wheelCollider2, float delta)
     {
         wheelCollider1.motorTorque = delta * motorForce;
         wheelCollider2.motorTorque = delta * motorForce;

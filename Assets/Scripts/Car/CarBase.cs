@@ -1,8 +1,7 @@
 ﻿using UnityEngine;
+using UnityEngine.Assertions;
 
-public abstract class CarBase : MonoBehaviour
+public class CarBase : MonoBehaviour
 {
-    public IMotor Motor;
-    public IWheel Wheels;
-
+    public ComponentProfile ComponentProfile;
 }

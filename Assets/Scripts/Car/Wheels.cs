@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class Wheels : ScriptableObject, IWheel
+public class Wheels : CarComponent, IWheel
 {
     private float maxSteerAngle;
     private float currentSteerAngle;

@@ -3,16 +3,8 @@ using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UIElements;
-
 public class Dashboard : MonoBehaviour, IDashboard
 {
-    private const string HORIZONTAL = "Horizontal";
-    private const string VERTICAL = "Vertical";
-
-    private float horizontalInput;
-    private float verticalInput;
-    private bool SpaceHolds =false;
-
     public Measures Measures;
     public float Speed { get; set; }
     private Vector3 speed;
@@ -25,13 +17,6 @@ public class Dashboard : MonoBehaviour, IDashboard
     {
         CalculateSpeed();
         ShowSpecifications();
-    }
-    public void GetInput()
-    {
-        horizontalInput = Input.GetAxis(HORIZONTAL);
-        verticalInput = Input.GetAxis(VERTICAL);
-
-        SpaceHolds = Input.GetKey(KeyCode.Space);
     }
 
     private void ShowSpecifications()

@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 
-public class Rule : ScriptableObject, IRule
+[CreateAssetMenu(fileName = "Rule", menuName = "Car/Components/Rule")]
+public class Rule : CarComponent, IRule
 {
     private GameObject ruleGO;
     private Transform[] ruleComponents;

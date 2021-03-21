@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Reductor : ScriptableObject
+[CreateAssetMenu(fileName = "Reductor", menuName = "Car/Components/Reductor")]
+public class Reductor : CarComponent
 {
     public Steps CurrentSteps;
 
