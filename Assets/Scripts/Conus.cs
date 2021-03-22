@@ -9,7 +9,7 @@ public class Conus : MonoBehaviour
     {
         if (collision.transform.CompareTag("Player"))
         {
-            Destroy(GetComponent<Conus>());
+            GetComponent<Conus>().enabled = false;
             AddGrossMistake?.Invoke();
         }
     }

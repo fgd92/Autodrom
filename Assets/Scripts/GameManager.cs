@@ -104,16 +104,17 @@ public class GameManager : MonoBehaviour
 
     public void LoadSceneFromPauseMenu(int idScene)
     {
-        LoadScene(idScene);
-
         Unsubscribe();
+
+        LoadScene(idScene);
     }
 
-    private void Unsubscribe()
+    private void Unsubscribe()        
     {
-        for (int i = 0; i < exercise.transform.GetChild(0).childCount-1; i++)
+        Transform conuses = exercise.transform.GetChild(0);
+        for (int i = 0; i < conuses.childCount-1; i++)
         {
-            exercise.transform.GetChild(0).GetChild(i).GetComponent<Conus>().AddGrossMistake -= GameManager_AddScoreEvent;
+            conuses.GetChild(i).GetComponent<Conus>().AddGrossMistake -= GameManager_AddScoreEvent;
         }
         exercise.OnEndEvent -= Exercise_OnEndEvent;
         exercise.AddMiddleMistake -= Exercise_AddMiddleMistake;
