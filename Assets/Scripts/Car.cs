@@ -12,8 +12,8 @@ public class Car : MonoBehaviour
     protected float currentbreakForce;
     protected bool isBreaking;
 
-    [SerializeField]
-    protected float motorForce;
+    //[SerializeField]
+    public float motorForce;
     [SerializeField]
     protected float breakForce;
     [SerializeField]

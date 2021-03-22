@@ -531,11 +531,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5c5dbb764671c44f960db716d448289, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  exercisesScriptable: {fileID: 11400000, guid: a0bf00cd4edbef049a60485c73d4be1b,
-    type: 2}
-  AttempsText: {fileID: 847944655387826304}
-  ScoreText: {fileID: 3946691069073775533}
-  MarkText: {fileID: 6580445950081121929}
+  ExercisesScriptable: {fileID: 0}
+  attempsText: {fileID: 847944655387826304}
+  scoreText: {fileID: 3946691069073775533}
+  markText: {fileID: 6580445950081121929}
   StartButton: {fileID: 2042256223}
 --- !u!1 &9209222718826843024
 GameObject:

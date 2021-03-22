@@ -19,7 +19,7 @@ public class TriggerTaskEvents : MonoBehaviour
     [SerializeField]
     private string secondTaskText;
 
-    private Dashboard dashboard;
+    private Dashboard dashboard;    
     private bool completed;
     private bool onceStart = false;
 

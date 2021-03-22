@@ -14,15 +14,19 @@ public class Exercise : MonoBehaviour
     public event CountScroreOfTasks CountScroreOfTasks;
 
     [SerializeField]
-    private GameObject Player;
+    private GameObject player;
     [SerializeField]
-    private GameObject PlayerWithTrailer;
+    private GameObject playerWithTrailer;
     [SerializeField]
-    private Transform StartPoint;
+    private Transform startPoint;
+
+    [SerializeField]
+    private int delScore12;    
+    public int DelScore { get { return delScore12; } private set { delScore12 = value; } }
 
     void Start()
     {
-        GameObject tractor = Instantiate(exercisesScriptable.IsParkWithTailer == true ? PlayerWithTrailer : Player, StartPoint.position, StartPoint.rotation);
+        GameObject tractor = Instantiate(exercisesScriptable.IsParkWithTailer == true ? playerWithTrailer : player, startPoint.position, startPoint.rotation);
         Destroy(tractor.GetComponent<HingeJoint>());
         exercisesScriptable.PrematureTermination = false;
     }

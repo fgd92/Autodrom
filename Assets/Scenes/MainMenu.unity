@@ -2150,6 +2150,12 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 952947322}
+    - target: {fileID: 842065453468876162, guid: 16c23be854a710f459dd6d8aca9bccac,
+        type: 3}
+      propertyPath: ExercisesScriptable
+      value: 
+      objectReference: {fileID: 11400000, guid: a0bf00cd4edbef049a60485c73d4be1b,
+        type: 2}
     - target: {fileID: 8492517439579884187, guid: 16c23be854a710f459dd6d8aca9bccac,
         type: 3}
       propertyPath: m_Name
@@ -11102,6 +11108,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 734b19dbb187c654dbe159e430bb1568,
         type: 2}
+    - target: {fileID: 842065453468876162, guid: 16c23be854a710f459dd6d8aca9bccac,
+        type: 3}
+      propertyPath: ExercisesScriptable
+      value: 
+      objectReference: {fileID: 11400000, guid: 734b19dbb187c654dbe159e430bb1568,
+        type: 2}
     - target: {fileID: 8492517439579884187, guid: 16c23be854a710f459dd6d8aca9bccac,
         type: 3}
       propertyPath: m_Name
@@ -16952,6 +16964,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 73ddaf202e6beae43a18bf4b61636b05,
         type: 2}
+    - target: {fileID: 842065453468876162, guid: 16c23be854a710f459dd6d8aca9bccac,
+        type: 3}
+      propertyPath: ExercisesScriptable
+      value: 
+      objectReference: {fileID: 11400000, guid: 73ddaf202e6beae43a18bf4b61636b05,
+        type: 2}
     - target: {fileID: 8492517439579884187, guid: 16c23be854a710f459dd6d8aca9bccac,
         type: 3}
       propertyPath: m_Name
@@ -19794,11 +19812,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45b65c85950263149b7112c0a7893dc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MenuObject: {fileID: 636764995}
-  ListExerciseObject: {fileID: 1506692501}
-  HowToPlayObject: {fileID: 317502623}
-  ExerciseContent: {fileID: 2072888490}
-  ExamResultText: {fileID: 806657637}
+  menuObject: {fileID: 636764995}
+  listExerciseObject: {fileID: 1506692501}
+  howToPlayObject: {fileID: 317502623}
+  exerciseContent: {fileID: 2072888490}
+  examResultText: {fileID: 806657637}
 --- !u!4 &953446314 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5165636313853354151, guid: 1f35af3c5e5bcd446b5cfc54eb5b1949,
@@ -22980,6 +22998,12 @@ PrefabInstance:
     - target: {fileID: 842065453468876162, guid: 16c23be854a710f459dd6d8aca9bccac,
         type: 3}
       propertyPath: exercisesScriptable
+      value: 
+      objectReference: {fileID: 11400000, guid: 7738836c43638ba4dbe57d0ef89d05d7,
+        type: 2}
+    - target: {fileID: 842065453468876162, guid: 16c23be854a710f459dd6d8aca9bccac,
+        type: 3}
+      propertyPath: ExercisesScriptable
       value: 
       objectReference: {fileID: 11400000, guid: 7738836c43638ba4dbe57d0ef89d05d7,
         type: 2}
@@ -39087,6 +39111,12 @@ PrefabInstance:
     - target: {fileID: 842065453468876162, guid: 16c23be854a710f459dd6d8aca9bccac,
         type: 3}
       propertyPath: exercisesScriptable
+      value: 
+      objectReference: {fileID: 11400000, guid: 5d665ee6bea05ce4495cdb8e06ed29c4,
+        type: 2}
+    - target: {fileID: 842065453468876162, guid: 16c23be854a710f459dd6d8aca9bccac,
+        type: 3}
+      propertyPath: ExercisesScriptable
       value: 
       objectReference: {fileID: 11400000, guid: 5d665ee6bea05ce4495cdb8e06ed29c4,
         type: 2}

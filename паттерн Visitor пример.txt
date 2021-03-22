@@ -1,0 +1,53 @@
+public interface ICaseVisiter
+{
+    void Visit(Case @case);
+    void Visit(CaseStart @case);
+    void Visit(CaseStop @case);
+}
+public class DoSomething : MonoBehaviour, ICaseVisiter
+{
+    public void Visit(Case @case)
+    {
+        Debug.Log("case");
+    }
+
+    public void Visit(CaseStart @case)
+    {
+        Debug.Log("CaseStart");
+    }
+
+    public void Visit(CaseStop @case)
+    {
+        Debug.Log("CaseStop");
+    }
+    public void foo()
+    {
+
+    }
+}
+public abstract class Case 
+{
+    public abstract void Accept(ICaseVisiter caseVisiter);
+}
+public class CaseStart : Case
+{
+    public override void Accept(ICaseVisiter caseVisiter)
+    {
+        caseVisiter.Visit(this);
+    }
+}
+public class CaseStop : Case
+{
+    public override void Accept(ICaseVisiter caseVisiter)
+    {
+        caseVisiter.Visit(this);
+    }
+}
+
+ private void Start()
+    {        
+        CaseStop @case1 = new CaseStop();
+        Case @case = (Case)@case1;
+        
+        @case.Accept(new DoSomething());
+    }

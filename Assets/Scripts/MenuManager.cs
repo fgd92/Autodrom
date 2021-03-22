@@ -4,38 +4,42 @@ using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour
 {
-    public GameObject MenuObject;
-    public GameObject ListExerciseObject;
-    public GameObject HowToPlayObject;
-    public Transform ExerciseContent;
-
-    public Text ExamResultText;
+    [SerializeField]
+    private GameObject menuObject;
+    [SerializeField]
+    private GameObject listExerciseObject;
+    [SerializeField]
+    private GameObject howToPlayObject;
+    [SerializeField]
+    private Transform exerciseContent;
+    [SerializeField]
+    private Text examResultText;
 
     private void Start()
     {
         EnableMenu();
 
-        ExamResultText.text = CheckExercisesResults() == true ? "Оценка экзамена: \n сдал" : "Оценка экзамена: \n не сдал";
+        examResultText.text = CheckExercisesResults() == true ? "Оценка экзамена: \n сдал" : "Оценка экзамена: \n не сдал";
     }
 
     public void EnableMenu()
     {
-        MenuObject.SetActive(true);
-        ListExerciseObject.SetActive(false);
-        HowToPlayObject.SetActive(false);
+        menuObject.SetActive(true);
+        listExerciseObject.SetActive(false);
+        howToPlayObject.SetActive(false);
     }
 
     public void EnableList()
     {
-        MenuObject.SetActive(false);
-        ListExerciseObject.SetActive(true);
-        HowToPlayObject.SetActive(false);
+        menuObject.SetActive(false);
+        listExerciseObject.SetActive(true);
+        howToPlayObject.SetActive(false);
     }
     public void EnableHowToPlayMenu()
     {
-        MenuObject.SetActive(false);
-        ListExerciseObject.SetActive(false);
-        HowToPlayObject.SetActive(true);
+        menuObject.SetActive(false);
+        listExerciseObject.SetActive(false);
+        howToPlayObject.SetActive(true);
     }
     public void Exit()
     {
@@ -49,13 +53,13 @@ public class MenuManager : MonoBehaviour
 
     public void DeleteData()
     {
-        for (int i = 0; i < ExerciseContent.childCount; i++)
+        for (int i = 0; i < exerciseContent.childCount; i++)
         {
-            ExerciseUI exerciseUI = ExerciseContent.GetChild(i).GetComponent<ExerciseUI>();
-            exerciseUI.exercisesScriptable.Attempts = 0;
-            exerciseUI.exercisesScriptable.Score = 0;
-            exerciseUI.exercisesScriptable.IsPassed = false;
-            exerciseUI.exercisesScriptable.PrematureTermination = false;
+            ExerciseUI exerciseUI = exerciseContent.GetChild(i).GetComponent<ExerciseUI>();
+            exerciseUI.ExercisesScriptable.Attempts = 0;
+            exerciseUI.ExercisesScriptable.Score = 0;
+            exerciseUI.ExercisesScriptable.IsPassed = false;
+            exerciseUI.ExercisesScriptable.PrematureTermination = false;
             exerciseUI.UpdateUI();
         }
     }
@@ -64,10 +68,10 @@ public class MenuManager : MonoBehaviour
     {
         int mistakeCount = 0;
 
-        for (int i = 0; i < ExerciseContent.childCount; i++)
+        for (int i = 0; i < exerciseContent.childCount; i++)
         {
-            ExerciseUI exerciseUI = ExerciseContent.GetChild(i).GetComponent<ExerciseUI>();
-            if (!exerciseUI.exercisesScriptable.IsPassed)
+            ExerciseUI exerciseUI = exerciseContent.GetChild(i).GetComponent<ExerciseUI>();
+            if (!exerciseUI.ExercisesScriptable.IsPassed)
                 mistakeCount += 1;
         }
 
