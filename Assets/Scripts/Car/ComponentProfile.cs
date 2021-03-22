@@ -4,30 +4,41 @@ using UnityEngine;
 
 public class ComponentProfile : ScriptableObject
 {
-    public List<CarComponent> componentCars = new List<CarComponent>();
+    public List<CarComponent> componentsCar = new List<CarComponent>();
 
+    public CarComponent this[int index]
+    {
+        get
+        {
+            return componentsCar[index];
+        }
+        set 
+        {
+            componentsCar[index] = value;
+        }
+    }
     public bool isDirty = true; 
 
     void OnEnable()
     {
-        componentCars.RemoveAll(x => x == null);
+        componentsCar.RemoveAll(x => x == null);
     }
     public void Reset()
     {
         isDirty = true;
     }
-    public T Add<T>(bool overrides = false)
-           where T : CarComponent
+    public int Count()
     {
-        return (T)Add(typeof(T), overrides);
+        return componentsCar != null && componentsCar.Count > 0? componentsCar.Count : 0;
     }
-    public CarComponent Add(Type type, bool overrides = false)
+    public CarComponent Get(int index)
     {
-        if (Has(type))
-            throw new InvalidOperationException("Component already exists in the car");
-
-        var component = (CarComponent)CreateInstance(type);
-        componentCars.Add(component);
+        return componentsCar[index];
+    }
+    public CarComponent Add(CarComponent carComponent)
+    {
+        var component = (CarComponent)CreateInstance(carComponent.GetType());
+        componentsCar.Add(component);
         isDirty = true;
         return component;
     }
@@ -40,9 +51,9 @@ public class ComponentProfile : ScriptableObject
     {
         int toRemove = -1;
 
-        for (int i = 0; i < componentCars.Count; i++)
+        for (int i = 0; i < componentsCar.Count; i++)
         {
-            if (componentCars[i].GetType() == type)
+            if (componentsCar[i].GetType() == type)
             {
                 toRemove = i;
                 break;
@@ -51,8 +62,19 @@ public class ComponentProfile : ScriptableObject
 
         if (toRemove >= 0)
         {
-            componentCars.RemoveAt(toRemove);
+            componentsCar.RemoveAt(toRemove);
             isDirty = true;
+        }
+    }
+    public void RemoveLast()
+    {
+        if (Count() > 0)
+        {
+            componentsCar.RemoveAt(Count() - 1);
+        }
+        else
+        {
+            throw new ArgumentOutOfRangeException();
         }
     }
     public bool Has<T>()
@@ -62,7 +84,7 @@ public class ComponentProfile : ScriptableObject
     }
     public bool Has(Type type)
     {
-        foreach (var component in componentCars)
+        foreach (var component in componentsCar)
         {
             if (component.GetType() == type)
                 return true;

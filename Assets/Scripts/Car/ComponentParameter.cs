@@ -1,10 +1,9 @@
 ﻿using System;
 using UnityEngine;
 
-public class ComponentParameter
+public abstract class ComponentParameter
 {
-    [SerializeField]
-    protected bool m_OverrideState;
+
     public static bool IsObjectParameter(Type type)
     {
         if (type.IsGenericType)
@@ -13,16 +12,75 @@ public class ComponentParameter
         return type.BaseType != null
             && IsObjectParameter(type.BaseType);
     }
-    public virtual bool overrideState
-    {
-        get => m_OverrideState;
-        set => m_OverrideState = value;
-    }
     protected internal virtual void OnEnable()
     {
+
     }
 
     protected internal virtual void OnDisable()
     {
+    }
+    public T GetValue<T>()
+    {
+        return ((ComponentParameter<T>)this).Value;
+    }
+
+    public abstract void SetValue(ComponentParameter parameter);
+
+}
+public class ComponentParameter<T> : ComponentParameter
+{
+    protected T value;
+    public virtual T Value
+    {
+        get => value;
+        set => this.value = value;
+    }
+    protected ComponentParameter(T value)
+    {
+        this.value = value;
+    }
+
+    public override void SetValue(ComponentParameter parameter)
+    {
+        value = parameter.GetValue<T>();
+    }
+    public T GetValue()
+    {
+        return Value;
+    }
+}
+public class FloatParameter : ComponentParameter<float>
+{
+    public FloatParameter(float value) : base(value)
+    {
+    }
+    public override float Value { get => base.Value; set => base.Value = value; }
+
+    public override int GetHashCode()
+    {
+        return base.GetHashCode();
+    }
+
+    public override void SetValue(ComponentParameter parameter)
+    {
+        base.SetValue(parameter);
+    }
+}
+public class BooleanParameter : ComponentParameter<bool>
+{
+    public BooleanParameter(bool value) : base(value)
+    {
+    }
+    public override bool Value { get => base.Value; set => base.Value = value; }
+
+    public override int GetHashCode()
+    {
+        return base.GetHashCode();
+    }
+
+    public override void SetValue(ComponentParameter parameter)
+    {
+        base.SetValue(parameter);
     }
 }

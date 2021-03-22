@@ -5,7 +5,7 @@ using UnityEditor;
 using UnityEngine;
 
 [CustomEditor(typeof(Dashboard))]
-public class DashboardEditor : CarComponentEditor
+public class DashboardEditor : Editor
 {
     Dashboard dashboard;
 
