@@ -10,10 +10,11 @@ public class StopZoneDetector : MonoBehaviour
     private bool isTractorFirst;
     private float minAngle = 150;
     private float maxAngle = 210;
-
+    private TriggerTaskEvents triggerTask;
     private void Awake()
     {
         exercise = transform.parent.GetComponent<Exercise>();
+        triggerTask = GetComponent<TriggerTaskEvents>();
     }
     private void OnTriggerStay(Collider other)
     {
@@ -25,20 +26,19 @@ public class StopZoneDetector : MonoBehaviour
                 {
                     if (exercise.exercisesScriptable.IsPark)
                     {
-                        //вычисление угла для заезда задом
-                        Vector3 collider = transform.position;
-                        collider = new Vector3(collider.x, 0, collider.z);
-                        float angle = Vector3.Angle(other.transform.forward, collider);
-
-                        if (angle > minAngle && angle < maxAngle)
-                        {
+                        if (BackCheck(other))
                             CheckDistance(other);
-                        }
                     }
                     else
                     {
                         CheckDistance(other);
                     }
+                }
+                else
+                {                                 
+                    if (exercise.exercisesScriptable.IsPark && BackCheck(other))
+                        triggerTask.InvokeTriggerTaskEvent();
+
                 }
             }
         }
@@ -54,6 +54,16 @@ public class StopZoneDetector : MonoBehaviour
         }
     }
 
+    private bool BackCheck(Collider other)
+    {
+        //вычисление угла для заезда задом
+        Vector3 collider = transform.position;
+        collider = new Vector3(collider.x, 0, collider.z);
+        float angle = Vector3.Angle(other.transform.forward, collider);
+
+        return angle > minAngle && angle < maxAngle;        
+    }
+
     private void CheckDistance(Collider other)
     {
         //вычисление расстояния от финишной линии
@@ -62,7 +72,7 @@ public class StopZoneDetector : MonoBehaviour
         if (Vector3.Distance(finishLinePos, tractorPos) > 6f)
         {
             //остановился более 0.5 метров перед линией
-            exercise.EndExercise(true);
+            exercise.EndExercise(true);            
         }
         else
         {

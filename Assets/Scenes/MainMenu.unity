@@ -2146,34 +2146,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2072888490}
     m_Modifications:
-    - target: {fileID: 1430604564, guid: 16c23be854a710f459dd6d8aca9bccac, type: 3}
-      propertyPath: m_Text
-      value: "\u0423\u043F\u0440\u0430\u0436\u043D\u0435\u043D\u0438\u0435 \"\u041F\u043E\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0430
-        \u0441\u0430\u043C\u043E\u0445\u043E\u0434\u043D\u043E\u0439  \u043C\u0430\u0448\u0438\u043D\u044B
-        \u0432 \u0431\u043E\u043A\u0441 \u0437\u0430\u0434\u043D\u0438\u043C \u0445\u043E\u0434\u043E\u043C\""
-      objectReference: {fileID: 0}
     - target: {fileID: 2042256223, guid: 16c23be854a710f459dd6d8aca9bccac, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 952947322}
-    - target: {fileID: 2042256223, guid: 16c23be854a710f459dd6d8aca9bccac, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LoadGame
-      objectReference: {fileID: 0}
-    - target: {fileID: 2042256223, guid: 16c23be854a710f459dd6d8aca9bccac, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2042256223, guid: 16c23be854a710f459dd6d8aca9bccac, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 842065453468876162, guid: 16c23be854a710f459dd6d8aca9bccac,
-        type: 3}
-      propertyPath: exercisesScriptable
-      value: 
-      objectReference: {fileID: 11400000, guid: a0bf00cd4edbef049a60485c73d4be1b,
-        type: 2}
     - target: {fileID: 8492517439579884187, guid: 16c23be854a710f459dd6d8aca9bccac,
         type: 3}
       propertyPath: m_Name
@@ -7660,7 +7636,7 @@ RectTransform:
   m_Father: {fileID: 1991840879}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.2120958}
+  m_AnchorMin: {x: 0, y: 0.23597169}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
@@ -9933,7 +9909,8 @@ MonoBehaviour:
     - \u0434\u0432\u0438\u0436\u0435\u043D\u0435\u0438 \u0432\u043F\u0435\u0440\u0435\u0434,
     \u043D\u0430\u0437\u0430\u0434\nA,D - \u043F\u043E\u0432\u043E\u0440\u043E\u0442
     \u0432\u043B\u0435\u0432\u043E, \u0432\u043F\u0440\u0430\u0432\u043E\nSPACE -
-    \u0442\u043E\u0440\u043C\u043E\u0437\nEsc - \u043E\u0442\u043A\u0440\u044B\u0442\u044C
+    \u0442\u043E\u0440\u043C\u043E\u0437\nTAB - \u043F\u043E\u043A\u0430\u0437\u0430\u0442\u044C/\u0441\u043A\u0440\u044B\u0442\u044C
+    \u0441\u043F\u0438\u0441\u043E\u043A \u0437\u0430\u0434\u0430\u0447\nEsc - \u043E\u0442\u043A\u0440\u044B\u0442\u044C
     \u043C\u0435\u043D\u044E \u043F\u0430\u0443\u0437\u044B"
 --- !u!222 &518573415
 CanvasRenderer:
@@ -22992,10 +22969,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2072888490}
     m_Modifications:
+    - target: {fileID: 1430604564, guid: 16c23be854a710f459dd6d8aca9bccac, type: 3}
+      propertyPath: m_Text
+      value: "\u0423\u043F\u0440\u0430\u0436\u043D\u0435\u043D\u0438\u0435 \"\u042D\u0441\u0442\u0430\u043A\u0430\u0434\u0430\""
+      objectReference: {fileID: 0}
     - target: {fileID: 2042256223, guid: 16c23be854a710f459dd6d8aca9bccac, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 952947322}
+    - target: {fileID: 842065453468876162, guid: 16c23be854a710f459dd6d8aca9bccac,
+        type: 3}
+      propertyPath: exercisesScriptable
+      value: 
+      objectReference: {fileID: 11400000, guid: 7738836c43638ba4dbe57d0ef89d05d7,
+        type: 2}
     - target: {fileID: 8492517439579884187, guid: 16c23be854a710f459dd6d8aca9bccac,
         type: 3}
       propertyPath: m_Name
@@ -34214,7 +34201,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 420765632}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.7879042
+  m_Size: 0.7640283
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:

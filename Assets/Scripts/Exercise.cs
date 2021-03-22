@@ -2,17 +2,23 @@
 
 public delegate void OnEnd();
 public delegate void AddMiddleMistake();
+public delegate void CountScroreOfTasks();
 public class Exercise : MonoBehaviour
 {
     public ExercisesScriptableObject exercisesScriptable;
-    public GameObject Player;
-    public GameObject PlayerWithTrailer;
-    public Transform StartPoint;
     public int MaxScore;
     public int CountPathLinesLeft;
 
     public event OnEnd OnEndEvent;
     public event AddMiddleMistake AddMiddleMistake;
+    public event CountScroreOfTasks CountScroreOfTasks;
+
+    [SerializeField]
+    private GameObject Player;
+    [SerializeField]
+    private GameObject PlayerWithTrailer;
+    [SerializeField]
+    private Transform StartPoint;
 
     void Start()
     {
@@ -44,6 +50,8 @@ public class Exercise : MonoBehaviour
     public void EndExercise(bool withMiddleMistake)
     {
         if (withMiddleMistake) AddMiddleMistakeInvoke();
+
+        CountScroreOfTasks?.Invoke();
 
         int currentScore = GameManager.CurrentScore;       
         exercisesScriptable.IsPassed = currentScore < 5;
