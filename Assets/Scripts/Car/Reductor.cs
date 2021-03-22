@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Reductor", menuName = "Car/Components/Reductor")]
 public class Reductor : CarComponent
 {
     public Steps CurrentSteps;
 
+    protected override void StartCall()
+    {
+
+    }
 }

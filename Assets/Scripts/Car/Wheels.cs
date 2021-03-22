@@ -1,19 +1,31 @@
 ﻿using UnityEngine;
 
-public class Wheels : CarComponent, IWheel
+public class Wheels : CarComponent
 {
-    private float maxSteerAngle;
+    private float maxSteerAngle = 30;
     private float currentSteerAngle;
+    [SerializeField]
     private WheelCollider frontLeftWheelCollider;
+    [SerializeField]
     private WheelCollider frontRightWheelCollider;
+    [SerializeField]
     private WheelCollider rearLeftWheelCollider;
+    [SerializeField]
     private WheelCollider rearRightWheelCollider;
 
+    [SerializeField]
     private Transform frontLeftWheelTransform;
+    [SerializeField]
     private Transform frontRightWheelTransform;
+    [SerializeField]
     private Transform rearLeftWheelTransform;
+    [SerializeField]
     private Transform rearRightWheelTransform;
 
+    protected override void StartCall()
+    {
+
+    }
     public void SetMaxSteerAngle(float angle)
     {
         maxSteerAngle = angle;
@@ -23,8 +35,9 @@ public class Wheels : CarComponent, IWheel
         return maxSteerAngle;
     }
 
-    public void HandleSteering(float angle)
+    public void HandleSteering(float delta)
     {
+        float angle = maxSteerAngle * delta;
         currentSteerAngle = angle;
         frontLeftWheelCollider.steerAngle = angle;
         frontRightWheelCollider.steerAngle = angle;
@@ -44,6 +57,11 @@ public class Wheels : CarComponent, IWheel
         wheelTransform.position = pos;
     }
 
+    public void Work(float delta, float motorForce)
+    {
+        frontRightWheelCollider.motorTorque = delta * motorForce;
+        frontRightWheelCollider.motorTorque = delta * motorForce;
+    }
     public void UpdateWheels()
     {
         UpdateSingleWheel(frontRightWheelCollider, frontRightWheelTransform);
@@ -57,5 +75,10 @@ public class Wheels : CarComponent, IWheel
         frontLeftWheelCollider.brakeTorque = breakForce;
         rearLeftWheelCollider.brakeTorque = breakForce;
         rearRightWheelCollider.brakeTorque = breakForce;
+    }
+
+    private void FixedUpdate()
+    {
+        UpdateWheels();
     }
 }

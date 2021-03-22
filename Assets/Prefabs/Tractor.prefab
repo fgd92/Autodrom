@@ -1418,11 +1418,13 @@ GameObject:
   m_Component:
   - component: {fileID: 1363224498904614332}
   - component: {fileID: 2643750065512331170}
-  - component: {fileID: 908019634933123582}
-  - component: {fileID: 2643750065512331171}
   - component: {fileID: 2643750065512331168}
   - component: {fileID: 2643750065512331169}
   - component: {fileID: 2643750065512331173}
+  - component: {fileID: 1144714120616399571}
+  - component: {fileID: 666945250084705982}
+  - component: {fileID: 3513470130445097585}
+  - component: {fileID: 6899135291590051045}
   m_Layer: 0
   m_Name: Tractor
   m_TagString: Player
@@ -1485,44 +1487,6 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!114 &908019634933123582
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2643750065512331183}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37feef4804b365144876e549dc20c6a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ComponentProfile: {fileID: 0}
---- !u!114 &2643750065512331171
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2643750065512331183}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 766980d068467d44f828870a48a4b9bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  motorForce: 800
-  breakForce: 5000
-  maxSteerAngle: 30
-  frontLeftWheelCollider: {fileID: 4076215410598616870}
-  frontRightWheelCollider: {fileID: 4076215409950846845}
-  rearLeftWheelCollider: {fileID: 4076215410794009423}
-  rearRightWheelCollider: {fileID: 4076215411438288313}
-  frontLeftWheelTransform: {fileID: 806951968735235500}
-  frontRightWheelTransform: {fileID: 1443101914421288375}
-  rearLeftWheelTransform: {fileID: 4307330097046146706}
-  rearRightWheelTransform: {fileID: 4545626612462204753}
-  rule: {fileID: 6094201394393090216}
-  Reductor: {fileID: 0}
 --- !u!114 &2643750065512331168
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1587,6 +1551,66 @@ HingeJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &1144714120616399571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2643750065512331183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9e3ab749aa3cdf44957949c4422a5a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &666945250084705982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2643750065512331183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2afd5e7b4db6e845b170535525b1921, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RuleGO: {fileID: 2803186209301961780}
+  MaxSteeringRule: 60
+--- !u!114 &3513470130445097585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2643750065512331183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e944477499a4f7349b0df7d84be3fbf1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  frontLeftWheelCollider: {fileID: 4076215410598616870}
+  frontRightWheelCollider: {fileID: 4076215409950846845}
+  rearLeftWheelCollider: {fileID: 4076215410794009423}
+  rearRightWheelCollider: {fileID: 4076215411438288313}
+  frontLeftWheelTransform: {fileID: 806951968735235500}
+  frontRightWheelTransform: {fileID: 1443101914421288375}
+  rearLeftWheelTransform: {fileID: 4307330097046146706}
+  rearRightWheelTransform: {fileID: 4545626612462204753}
+--- !u!114 &6899135291590051045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2643750065512331183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 176c3d8d74077754c8bd2ec2c37d619b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  motorForce: 800
+  breakForce: 5000
 --- !u!1 &2709913845551938665
 GameObject:
   m_ObjectHideFlags: 0

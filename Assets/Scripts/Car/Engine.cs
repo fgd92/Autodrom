@@ -1,46 +1,55 @@
 ﻿using UnityEngine;
 
-[CreateAssetMenu(fileName ="Engine", menuName = "Car/Components/Engine")]
-public class Engine : CarComponent, IEngine
+[RequireComponent(typeof(Wheels))]
+public class Engine : CarComponent
 {
-    private FloatParameter motorForce;
-    private FloatParameter breakForce;
-    private FloatParameter currentbreakForce;
-    private BooleanParameter isBreaking;
+    Wheels wheels;
+    [SerializeField]
+    private float motorForce;
+    [SerializeField]
+    private float breakForce;
+    private float currentbreakForce;
+    private bool isBreaking;
     public bool IsBreaking 
     {
         get 
         {
-            return isBreaking.Value;
+            return isBreaking;
         } 
         set
         {
-            isBreaking.Value = value;
-            currentbreakForce.Value = isBreaking.Value ? breakForce.Value : 0f;
+            isBreaking = value;
+            currentbreakForce = isBreaking ? breakForce : 0f;
         }
     }
+    protected override void StartCall()
+    {
+        wheels = GetComponent<Wheels>();
+        playerInput.Braked += PlayerInput_Braked;
+        playerInput.Moved += PlayerInput_Moved;
+        playerInput.Rotated += PlayerInput_Rotated;
 
-    public void SetBreakForce(float value)
-    {
-        breakForce.Value = value;
-    }
-    public float GetBreakForce()
-    {
-        return breakForce.Value;
-    }
-    public void SetForce(float value)
-    {
-        motorForce.Value = value;
     }
 
-    public float GetForce()
+    private void OnDestroy()
     {
-        return motorForce.Value;
+        playerInput.Braked -= PlayerInput_Braked;
+        playerInput.Moved -= PlayerInput_Moved;
+        playerInput.Rotated -= PlayerInput_Rotated;
     }
 
-    public void Work(ref WheelCollider wheelCollider1, ref WheelCollider wheelCollider2, float delta)
+    private void PlayerInput_Braked(bool isBracked)
     {
-        wheelCollider1.motorTorque = delta * motorForce.Value;
-        wheelCollider2.motorTorque = delta * motorForce.Value;
+        IsBreaking = isBracked;
+        wheels.ApplyBreaking(currentbreakForce);
+    }
+    private void PlayerInput_Moved(float delta)
+    {
+        wheels.Work(delta, motorForce);
+    }
+
+    private void PlayerInput_Rotated(float delta)
+    {
+        wheels.HandleSteering(delta);
     }
 }

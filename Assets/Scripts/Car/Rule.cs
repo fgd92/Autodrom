@@ -1,15 +1,31 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
-[CreateAssetMenu(fileName = "Rule", menuName = "Car/Components/Rule")]
-public class Rule : CarComponent, IRule
+public class Rule : CarComponent
 {
-    private GameObject ruleGO;
+    public GameObject RuleGO;
+    public float MaxSteeringRule = 60;
     private Transform[] ruleComponents;
 
     public void SetRule(GameObject ruleGO)
     {
-        this.ruleGO = ruleGO;
+        this.RuleGO = ruleGO;
         GetChildFromRule(ruleGO);
+    }
+    protected override void StartCall()
+    {
+        GetChildFromRule(RuleGO);
+
+        playerInput.Rotated += PlayerInput_Rotated;
+    }
+    private void OnDestroy()
+    {
+        playerInput.Rotated -= PlayerInput_Rotated;
+    }
+
+    private void PlayerInput_Rotated(float horizontal)
+    {
+        HandleRule(horizontal);
     }
 
     private void GetChildFromRule(GameObject ruleGO)
@@ -25,15 +41,13 @@ public class Rule : CarComponent, IRule
         }
     }
 
-    public void HandleRule(float minAngle,float maxAngle, float angle)
+    public void HandleRule(float delta)
     {
-        if (angle > minAngle && angle < maxAngle)
+        float angle = delta * MaxSteeringRule;
+        for (int i = 0; i < ruleComponents.Length; i++)
         {
-            for (int i = 0; i < ruleComponents.Length; i++)
-            {
-                ruleComponents[i].localRotation = Quaternion.Euler(0, angle, 0);
+            ruleComponents[i].localRotation = Quaternion.Euler(0, angle, 0);
 
-            }
         }
     }
 }

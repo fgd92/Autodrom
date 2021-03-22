@@ -22,7 +22,7 @@ public class Dashboard : MonoBehaviour, IDashboard
     private void ShowSpecifications()
     {
         SetValueMeasure(TypeMeasure.Speedometer, Speed);
-        SetValueMeasure(TypeMeasure.Tachometer, Speed);
+        SetValueMeasure(TypeMeasure.Temprature, Speed);
     }
     private void CalculateSpeed()
     {

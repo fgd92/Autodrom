@@ -1,29 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Reflection;
-using UnityEngine;
+﻿using UnityEngine;
 
-[Serializable]
-public class CarComponent : ScriptableObject
+[RequireComponent(typeof(PlayerInput))]
+public abstract class CarComponent : MonoBehaviour
 {
-    public string displayName { get; protected set; } = "";
-    public List<ComponentParameter> parameters { get; private set; }
+    protected PlayerInput playerInput;
 
-    protected virtual void OnEnable()
+    private void Start()
     {
-        parameters = GetType()
-            .GetFields(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance)
-            .Where(t => t.FieldType.IsSubclassOf(typeof(ComponentParameter)))
-            .OrderBy(t => t.MetadataToken)
-            .Select(t => (ComponentParameter)t.GetValue(this))
-            .ToList();
-
-        foreach (var parameter in parameters)
-        {
-            if(parameter != null)
-                parameter.OnEnable();
-        }
+        playerInput = GetComponent<PlayerInput>();
+        StartCall();
     }
+    protected abstract void StartCall();
 }
