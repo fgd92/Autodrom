@@ -6,7 +6,7 @@ public class MakeMiddleMistake : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            transform.parent.GetComponent<Exercise>().AddMiddleMistakeInvoke();
+            transform.parent.GetComponent<Exercise>().AddMistakeInvoke(3);
         }
     }
 }

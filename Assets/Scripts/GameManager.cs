@@ -57,7 +57,7 @@ public class GameManager : MonoBehaviour
         ExerciseObject.SetActive(true);
         exercise = ExerciseObject.GetComponent<Exercise>();
         exercise.OnEndEvent += Exercise_OnEndEvent;
-        exercise.AddMiddleMistake += Exercise_AddMiddleMistake;
+        exercise.AddMistake += Exercise_AddMistake;
         exercise.CountScroreOfTasks += Exercise_CountScroreOfTasks;
         exercise.exercisesScriptable.Attempts += 1;
 
@@ -95,11 +95,11 @@ public class GameManager : MonoBehaviour
             pauseMenu.SetActive(!pauseMenu.activeSelf);            
             Time.timeScale = pauseMenu.activeSelf == true ? 0 : 1;
             LockCursor(!pauseMenu.activeSelf);
-            pauseRestartButton.interactable = exercise.exercisesScriptable.Attempts < 2; 
+            pauseRestartButton.interactable = exercise.exercisesScriptable.Attempts < 2;             
         }
         if (Input.GetKeyDown(KeyCode.Tab))
         {
-            taskListText.gameObject.SetActive(!taskListText.gameObject.activeSelf);
+            taskListText.gameObject.SetActive(!taskListText.gameObject.activeSelf);            
         }
     }
 
@@ -118,7 +118,7 @@ public class GameManager : MonoBehaviour
             conuses.GetChild(i).GetComponent<Conus>().AddGrossMistake -= GameManager_AddScoreEvent;
         }
         exercise.OnEndEvent -= Exercise_OnEndEvent;
-        exercise.AddMiddleMistake -= Exercise_AddMiddleMistake;
+        exercise.AddMistake -= Exercise_AddMistake;
     }
 
     private static void LockCursor(bool isLock)
@@ -139,6 +139,7 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0;
         LockCursor(false);
         DisplayEndmenu(true);
+
         markText.text = "Ваша оценка:  \n" + (exercise.exercisesScriptable.IsPassed == true ? "сдал" : "не сдал");
         restartButton.interactable = exercise.exercisesScriptable.Attempts < 2;
         attempsText.text = exercise.exercisesScriptable.Attempts < 2 ? "У вас есть еще одна попытка" : "Ваши попытки кончились";
@@ -146,6 +147,7 @@ public class GameManager : MonoBehaviour
             endScoreText.text = "Вы набрали " + CurrentScore + " штрафных баллов";
         else
             endScoreText.text = "Вы выехали за границу упражнения";
+
         CurrentScore = 0;
         isEnd = true;
     }
@@ -159,9 +161,9 @@ public class GameManager : MonoBehaviour
 
         }
     }
-    private void Exercise_AddMiddleMistake()
+    private void Exercise_AddMistake(int scoreCount)
     {
-        CurrentScore += 3;
+        CurrentScore += scoreCount;
         SetUI();
         StopCoroutine(nameof(AnimationAttentionSign));
         StartCoroutine(nameof(AnimationAttentionSign), 2f);

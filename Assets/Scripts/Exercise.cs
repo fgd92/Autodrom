@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 public delegate void OnEnd();
-public delegate void AddMiddleMistake();
+public delegate void AddMistake(int scoreCount);
 public delegate void CountScroreOfTasks();
 public class Exercise : MonoBehaviour
 {
@@ -10,7 +10,7 @@ public class Exercise : MonoBehaviour
     public int CountPathLinesLeft;
 
     public event OnEnd OnEndEvent;
-    public event AddMiddleMistake AddMiddleMistake;
+    public event AddMistake AddMistake;
     public event CountScroreOfTasks CountScroreOfTasks;
 
     [SerializeField]
@@ -18,11 +18,7 @@ public class Exercise : MonoBehaviour
     [SerializeField]
     private GameObject playerWithTrailer;
     [SerializeField]
-    private Transform startPoint;
-
-    [SerializeField]
-    private int delScore12;    
-    public int DelScore { get { return delScore12; } private set { delScore12 = value; } }
+    private Transform startPoint;     
 
     void Start()
     {
@@ -46,14 +42,14 @@ public class Exercise : MonoBehaviour
         }
     }
 
-    public void AddMiddleMistakeInvoke()
+    public void AddMistakeInvoke(int scoreCount)
     {
-        AddMiddleMistake?.Invoke();
+        AddMistake?.Invoke(scoreCount);
     }
 
     public void EndExercise(bool withMiddleMistake)
     {
-        if (withMiddleMistake) AddMiddleMistakeInvoke();
+        if (withMiddleMistake) AddMistakeInvoke(3);
 
         CountScroreOfTasks?.Invoke();
 

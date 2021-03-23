@@ -7,7 +7,8 @@ public class TriggerTaskEvents : MonoBehaviour
     {
         Stop,
         Start,
-        StopStart
+        StopStart,
+        GreenStart
     }
     public event Action<string> TriggerTaskEvent;
     [SerializeField]
@@ -19,6 +20,7 @@ public class TriggerTaskEvents : MonoBehaviour
     [SerializeField]
     private string secondTaskText;
 
+    private TrafficLight trafficLight;
     private Dashboard dashboard;    
     private bool completed;
     private bool onceStart = false;
@@ -27,7 +29,7 @@ public class TriggerTaskEvents : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            dashboard = other.GetComponent<Dashboard>();
+            dashboard = other.GetComponent<Dashboard>();            
 
             if (isEnter)
             {
@@ -41,6 +43,11 @@ public class TriggerTaskEvents : MonoBehaviour
                         break;
                 }
             }
+        }
+        else if (other.CompareTag("TrafficLight"))
+        {
+            if (cases == Cases.GreenStart)
+                trafficLight = other.GetComponent<TrafficLight>();            
         }
     }
 
@@ -73,6 +80,18 @@ public class TriggerTaskEvents : MonoBehaviour
                             TriggerTaskEvent?.Invoke(secondTaskText);
                         }                        
                         break;
+                    case Cases.GreenStart:
+                        if (dashboard.Speed > 0.5f)
+                        {
+                            if (trafficLight.CurrentStateTrafficeLight == StateTrafficLight.Green)
+                                TriggerTaskEvent?.Invoke(taskText);
+                            else
+                            {
+                                transform.parent.GetComponent<Exercise>().AddMistakeInvoke(5);
+                                DestroyComponents();
+                            }
+                        }                       
+                        break;
                     default:
                         break;
                 }
@@ -87,7 +106,7 @@ public class TriggerTaskEvents : MonoBehaviour
             case Cases.Stop:                    
                 //если выехал из зоны фиксации и не зафиксироавл машину на сколне
                 if (!completed)                                            
-                    transform.parent.GetComponent<Exercise>().AddMiddleMistakeInvoke();                                       
+                    transform.parent.GetComponent<Exercise>().AddMistakeInvoke(3);                                       
                 break;
             default:
                 break;

@@ -22,13 +22,13 @@ public class Dashboard : MonoBehaviour, IDashboard
     private void ShowSpecifications()
     {
         SetValueMeasure(TypeMeasure.Speedometer, Speed);
-        SetValueMeasure(TypeMeasure.Temprature, Speed);
+        SetValueMeasure(TypeMeasure.Temprature, 40);
     }
     private void CalculateSpeed()
     {
         speed = ((transform.position - old_position) / Time.fixedDeltaTime);
         old_position = transform.position;
-        Speed = speed.magnitude;
+        Speed = speed.magnitude;        
     }
     public void SetValueMeasure(TypeMeasure typeMeasure, float value)
     {
