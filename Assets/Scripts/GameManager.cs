@@ -104,7 +104,7 @@ public class GameManager : MonoBehaviour
     public void LoadSceneFromPauseMenu(int idScene)
     {
         Unsubscribe();
-
+        CurrentScore = 0;
         LoadScene(idScene);
     }
 
