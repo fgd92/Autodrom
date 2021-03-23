@@ -19,7 +19,7 @@ public class MenuManager : MonoBehaviour
     {
         EnableMenu();
 
-        examResultText.text = CheckExercisesResults() == true ? "Оценка экзамена: \n сдал" : "Оценка экзамена: \n не сдал";
+        examResultText.text = CheckExercisesResults() == true ? "Оценка экзамена: \n <color=lime>сдал</color>" : "Оценка экзамена: \n <color=red>не сдал</color>";
     }
 
     public void EnableMenu()

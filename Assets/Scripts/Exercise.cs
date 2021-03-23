@@ -6,8 +6,7 @@ public delegate void CountScroreOfTasks();
 public class Exercise : MonoBehaviour
 {
     public ExercisesScriptableObject exercisesScriptable;
-    public int MaxScore;
-    public int CountPathLinesLeft;
+    public int MaxScore;    
 
     public event OnEnd OnEndEvent;
     public event AddMistake AddMistake;

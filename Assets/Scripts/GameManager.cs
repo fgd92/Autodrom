@@ -63,8 +63,6 @@ public class GameManager : MonoBehaviour
 
         SetUI();
         SetTaskManagerArray();
-
-        FindActiveConus(ExerciseObject);
     }
 
     private void Exercise_CountScroreOfTasks()
@@ -112,11 +110,6 @@ public class GameManager : MonoBehaviour
 
     private void Unsubscribe()        
     {
-        Transform conuses = exercise.transform.GetChild(0);
-        for (int i = 0; i < conuses.childCount-1; i++)
-        {
-            conuses.GetChild(i).GetComponent<Conus>().AddGrossMistake -= GameManager_AddScoreEvent;
-        }
         exercise.OnEndEvent -= Exercise_OnEndEvent;
         exercise.AddMistake -= Exercise_AddMistake;
     }
@@ -152,26 +145,9 @@ public class GameManager : MonoBehaviour
         isEnd = true;
     }
 
-    private void FindActiveConus(GameObject exerciseObject)
-    {        
-        for (int i = 0; i < exerciseObject.transform.GetChild(0).childCount-1; i++)
-        {
-            Transform gameObject = exerciseObject.transform.GetChild(0).GetChild(i);
-            gameObject.GetComponent<Conus>().AddGrossMistake += GameManager_AddScoreEvent;
-
-        }
-    }
     private void Exercise_AddMistake(int scoreCount)
     {
         CurrentScore += scoreCount;
-        SetUI();
-        StopCoroutine(nameof(AnimationAttentionSign));
-        StartCoroutine(nameof(AnimationAttentionSign), 2f);
-    }
-
-    private void GameManager_AddScoreEvent()
-    {
-        CurrentScore += 5;
         SetUI();
         StopCoroutine(nameof(AnimationAttentionSign));
         StartCoroutine(nameof(AnimationAttentionSign), 2f);
