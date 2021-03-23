@@ -6,26 +6,22 @@ public class TemporarySpeedup : MonoBehaviour
     private float speedupPower;
     private float lastSpeed;
 
-    private Tractor tractor;
+    private Engine engine;
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            tractor = other.gameObject.GetComponent<Tractor>();
-            //сохранить прошлую скорость
-            //установить новую
-
-            lastSpeed = tractor.motorForce;
-            tractor.motorForce = lastSpeed * speedupPower;
+            engine = other.gameObject.GetComponent<Engine>();
+            
+            lastSpeed = engine.GetMotorForce();
+            engine.SetMotorForce(lastSpeed * speedupPower);
         }
     }
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
-        {
-            //установить старую
-
-            tractor.motorForce = lastSpeed;
+        {           
+            engine.SetMotorForce(lastSpeed);
         }
     }
 }

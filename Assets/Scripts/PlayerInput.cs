@@ -13,14 +13,12 @@ public class PlayerInput : MonoBehaviour
     public float Vertival { get; private set; }
 
     public event Action<bool> Braked;
-    public event Action<float> Rotated;
-    public event Action<float> Moved;
 
     public void GetInput()
     {
-        Rotated?.Invoke(Horizontal = Input.GetAxis(HORIZONTAL));
-        Moved?.Invoke(Vertival = Input.GetAxis(VERTICAL));
         Braked?.Invoke(isBraking = Input.GetKey(KeyCode.Space));
+        Horizontal = Input.GetAxis(HORIZONTAL);
+        Vertival = Input.GetAxis(VERTICAL);
     }
 
     void Update()

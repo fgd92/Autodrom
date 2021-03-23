@@ -13,7 +13,7 @@ public class Dashboard : MonoBehaviour, IDashboard
     {
         old_position = transform.position;
     }
-    private void Update()
+    private void FixedUpdate()
     {
         CalculateSpeed();
         ShowSpecifications();
@@ -26,7 +26,7 @@ public class Dashboard : MonoBehaviour, IDashboard
     }
     private void CalculateSpeed()
     {
-        speed = ((transform.position - old_position) / Time.deltaTime);
+        speed = ((transform.position - old_position) / Time.fixedDeltaTime);
         old_position = transform.position;
         Speed = speed.magnitude;
     }

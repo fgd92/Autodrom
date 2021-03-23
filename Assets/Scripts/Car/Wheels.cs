@@ -2,6 +2,9 @@
 
 public class Wheels : CarComponent
 {
+    public bool isFreeRotation = false;
+    public Transform parent;
+    [Space(4)]
     private float maxSteerAngle = 30;
     private float currentSteerAngle;
     [SerializeField]
@@ -21,18 +24,32 @@ public class Wheels : CarComponent
     private Transform rearLeftWheelTransform;
     [SerializeField]
     private Transform rearRightWheelTransform;
+    private Vector3 oldPosition = Vector3.zero;
 
     protected override void StartCall()
     {
+        oldPosition = transform.position;
+    }
+    private void FixedUpdate()
+    {
+        UpdateWheels();
 
-    }
-    public void SetMaxSteerAngle(float angle)
-    {
-        maxSteerAngle = angle;
-    }
-    public float GetMaxSteerAngle()
-    {
-        return maxSteerAngle;
+        if (isFreeRotation)
+        {
+            Vector3 direction = Vector3.zero;
+            float angle = 0;
+            Vector3 currentPosition = transform.position;
+            Vector3 constraint = new Vector3(1, 0, 1);
+            currentPosition = Vector3.Scale(currentPosition, constraint);
+            oldPosition = Vector3.Scale(oldPosition, constraint);
+            Vector3 parentPosition = Vector3.Scale(parent.position, constraint);
+
+            angle = Vector3.SignedAngle(parentPosition - currentPosition, transform.forward, 
+                Vector3.up);
+
+            RotateWheels(angle);
+        }
+        oldPosition = transform.position;
     }
 
     public void HandleSteering(float delta)
@@ -41,6 +58,14 @@ public class Wheels : CarComponent
         currentSteerAngle = angle;
         frontLeftWheelCollider.steerAngle = angle;
         frontRightWheelCollider.steerAngle = angle;
+    }
+    public void RotateWheels(float angle)
+    {
+        currentSteerAngle = angle;
+        frontLeftWheelCollider.steerAngle = angle;
+        frontRightWheelCollider.steerAngle = angle;
+        rearRightWheelCollider.steerAngle = angle;
+        rearLeftWheelCollider.steerAngle = angle;
     }
     public float GetRPMWheel()
     {
@@ -59,8 +84,8 @@ public class Wheels : CarComponent
 
     public void Work(float delta, float motorForce)
     {
-        frontRightWheelCollider.motorTorque = delta * motorForce;
-        frontRightWheelCollider.motorTorque = delta * motorForce;
+        rearRightWheelCollider.motorTorque = delta * motorForce;
+        rearLeftWheelCollider.motorTorque = delta * motorForce;
     }
     public void UpdateWheels()
     {
@@ -75,10 +100,5 @@ public class Wheels : CarComponent
         frontLeftWheelCollider.brakeTorque = breakForce;
         rearLeftWheelCollider.brakeTorque = breakForce;
         rearRightWheelCollider.brakeTorque = breakForce;
-    }
-
-    private void FixedUpdate()
-    {
-        UpdateWheels();
     }
 }

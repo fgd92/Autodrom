@@ -40,6 +40,7 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private Button pauseRestartButton;
 
+    private bool isEnd;
     private Exercise exercise;
     private TaskManager taskManager;
     private void Awake()
@@ -89,7 +90,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && !isEnd)
         {
             pauseMenu.SetActive(!pauseMenu.activeSelf);            
             Time.timeScale = pauseMenu.activeSelf == true ? 0 : 1;
@@ -146,6 +147,7 @@ public class GameManager : MonoBehaviour
         else
             endScoreText.text = "Вы выехали за границу упражнения";
         CurrentScore = 0;
+        isEnd = true;
     }
 
     private void FindActiveConus(GameObject exerciseObject)
