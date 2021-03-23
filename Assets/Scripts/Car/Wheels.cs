@@ -59,8 +59,8 @@ public class Wheels : CarComponent
 
     public void Work(float delta, float motorForce)
     {
-        frontRightWheelCollider.motorTorque = delta * motorForce;
-        frontRightWheelCollider.motorTorque = delta * motorForce;
+        rearRightWheelCollider.motorTorque = delta * motorForce;
+        rearLeftWheelCollider.motorTorque = delta * motorForce;
     }
     public void UpdateWheels()
     {

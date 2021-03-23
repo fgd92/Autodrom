@@ -15,17 +15,10 @@ public class Rule : CarComponent
     protected override void StartCall()
     {
         GetChildFromRule(RuleGO);
-
-        playerInput.Rotated += PlayerInput_Rotated;
     }
-    private void OnDestroy()
+    private void FixedUpdate()
     {
-        playerInput.Rotated -= PlayerInput_Rotated;
-    }
-
-    private void PlayerInput_Rotated(float horizontal)
-    {
-        HandleRule(horizontal);
+        HandleRule(playerInput.Horizontal);
     }
 
     private void GetChildFromRule(GameObject ruleGO)

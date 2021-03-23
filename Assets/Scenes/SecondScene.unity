@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 153.93846, g: 177.66638, b: 241.31975, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -802,7 +802,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73b1756a2febe5d4bb99e6202a765ccd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedupPower: 2.5
+  speedupPower: 3
 --- !u!65 &28684295
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -35841,32 +35841,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04c8dd49874a02142a08b4aa42a05166, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speedometer:
-    Arrow: {fileID: 0}
-    MinAngle: 0
-    MaxAngle: 0
-    MaxValue: 0
-  Tachometer:
-    Arrow: {fileID: 0}
-    MinAngle: 0
-    MaxAngle: 0
-    MaxValue: 0
-  Voltage:
-    Arrow: {fileID: 0}
-    MinAngle: 0
-    MaxAngle: 0
-    MaxValue: 0
-  OilPressure:
-    Arrow: {fileID: 0}
-    MinAngle: 0
-    MaxAngle: 0
-    MaxValue: 0
-  Temprature:
-    Arrow: {fileID: 0}
-    MinAngle: 0
-    MaxAngle: 0
-    MaxValue: 0
-  Speed: 0
+  Measures:
+    Items: []
 --- !u!114 &1244705772
 MonoBehaviour:
   m_ObjectHideFlags: 0
