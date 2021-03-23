@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class MakeMiddleMistkae : MonoBehaviour
+public class MakeMiddleMistake : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {

@@ -28,7 +28,6 @@ public class Engine : CarComponent
         playerInput.Braked += PlayerInput_Braked;
         playerInput.Moved += PlayerInput_Moved;
         playerInput.Rotated += PlayerInput_Rotated;
-
     }
 
     private void OnDestroy()

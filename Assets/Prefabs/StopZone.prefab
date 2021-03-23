@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5874723766338317991}
   - component: {fileID: 5874723766338317990}
   - component: {fileID: 5874723766338317993}
+  - component: {fileID: 5697866609304769908}
   m_Layer: 0
   m_Name: StopZone
   m_TagString: Untagged
@@ -43,8 +44,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 12.643009, y: 3.0357885, z: 9.964014}
-  m_Center: {x: 0.82878304, y: 1.0178943, z: 3.4293623}
+  m_Size: {x: 9.932655, y: 3.0357885, z: 7.2726383}
+  m_Center: {x: 0.8229294, y: 1.0178943, z: 4.77505}
 --- !u!114 &5874723766338317993
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58,3 +59,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FinishLinePlane: {fileID: 0}
+--- !u!114 &5697866609304769908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5874723766338317988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 716c2759c1bca7642b40afd4c5358664, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cases: 0
+  isEnter: 0
+  taskText: "- \u0412\u044A\u0435\u0437\u0434 \u0432 \u0431\u043E\u043A\u0441 \u0437\u0430\u0434\u043D\u0438\u043C
+    \u0445\u043E\u0434\u043E\u043C"
+  secondTaskText: 

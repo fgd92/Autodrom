@@ -9,24 +9,43 @@ public class GameManager : MonoBehaviour
     [Header("Упражнения")]
     public List<GameObject> ExercisesListObjects;
     public static int CurrentExercise;    
-    public static int CurrentScore;
+    public static int CurrentScore;    
     [Header("Игровое UI")]
-    public Text MaxScoretext;
-    public Text CurrentScoreText;
-    public GameObject GameUI;
-    public Image AttentionSignImage;
+    [SerializeField]
+    private Text maxScoreText;
+    [SerializeField]
+    private Text currentScoreText;
+    [SerializeField]
+    private Text taskListText;
+    [SerializeField]
+    private GameObject gameUI;
+    [SerializeField]
+    private Image attentionSignImage;
+
     [Header("Меню проигрыша")]
-    public Text AttempsText;
-    public Text MarkText;
-    public Text EndScoreText;
-    public Button RestartButton;
-    public GameObject EndMenu;
+    [SerializeField]
+    private Text attempsText;
+    [SerializeField]
+    private Text markText;
+    [SerializeField]
+    private Text endScoreText;
+    [SerializeField]
+    private Button restartButton;
+    [SerializeField]
+    private GameObject endMenu;
+
     [Header("Меню паузы")]
-    public GameObject PauseMenu;
-    public Button PauseRestartButton;
+    [SerializeField]
+    private GameObject pauseMenu;
+    [SerializeField]
+    private Button pauseRestartButton;
 
     private Exercise exercise;
-
+    private TaskManager taskManager;
+    private void Awake()
+    {
+        taskManager = GetComponent<TaskManager>();
+    }
     public void Start()
     {
         LockCursor(true);
@@ -38,28 +57,67 @@ public class GameManager : MonoBehaviour
         exercise = ExerciseObject.GetComponent<Exercise>();
         exercise.OnEndEvent += Exercise_OnEndEvent;
         exercise.AddMiddleMistake += Exercise_AddMiddleMistake;
+        exercise.CountScroreOfTasks += Exercise_CountScroreOfTasks;
         exercise.exercisesScriptable.Attempts += 1;
 
         SetUI();
+        SetTaskManagerArray();
 
         FindActiveConus(ExerciseObject);
     }
 
+    private void Exercise_CountScroreOfTasks()
+    {
+        for (int i = 0; i < taskManager.CompletedTasks.Count; i++)
+        {
+            if (!taskManager.CompletedTasks[i])
+                CurrentScore += 5;
+        }
+    }
+
+    private void SetTaskManagerArray()
+    {
+        taskListText.text = exercise.exercisesScriptable.Description;
+        taskManager.TasksTextArray = taskListText.text.Split('\n');
+
+        taskManager.CompletedTasks = new List<bool>();
+        for (int i = 1; i < taskManager.TasksTextArray.Length-1; i++)
+        {
+            taskManager.CompletedTasks.Add(false);
+        }        
+    }
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            PauseMenu.SetActive(!PauseMenu.activeSelf);            
-            Time.timeScale = PauseMenu.activeSelf == true ? 0 : 1;
-            LockCursor(!PauseMenu.activeSelf);
-            PauseRestartButton.interactable = exercise.exercisesScriptable.Attempts < 2; 
+            pauseMenu.SetActive(!pauseMenu.activeSelf);            
+            Time.timeScale = pauseMenu.activeSelf == true ? 0 : 1;
+            LockCursor(!pauseMenu.activeSelf);
+            pauseRestartButton.interactable = exercise.exercisesScriptable.Attempts < 2; 
+        }
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            taskListText.gameObject.SetActive(!taskListText.gameObject.activeSelf);
         }
     }
 
     public void LoadSceneFromPauseMenu(int idScene)
-    {             
+    {
+        Unsubscribe();
+
         LoadScene(idScene);
+    }
+
+    private void Unsubscribe()        
+    {
+        Transform conuses = exercise.transform.GetChild(0);
+        for (int i = 0; i < conuses.childCount-1; i++)
+        {
+            conuses.GetChild(i).GetComponent<Conus>().AddGrossMistake -= GameManager_AddScoreEvent;
+        }
+        exercise.OnEndEvent -= Exercise_OnEndEvent;
+        exercise.AddMiddleMistake -= Exercise_AddMiddleMistake;
     }
 
     private static void LockCursor(bool isLock)
@@ -70,9 +128,9 @@ public class GameManager : MonoBehaviour
 
     private void DisplayEndmenu(bool enable)
     {
-        GameUI.SetActive(!enable);
-        EndMenu.SetActive(enable);
-        PauseMenu.SetActive(false);
+        gameUI.SetActive(!enable);
+        endMenu.SetActive(enable);
+        pauseMenu.SetActive(false);
     }
 
     private void Exercise_OnEndEvent()
@@ -80,21 +138,23 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0;
         LockCursor(false);
         DisplayEndmenu(true);
-        MarkText.text = "Ваша оценка:  \n" + (exercise.exercisesScriptable.IsPassed == true ? "сдал" : "не сдал");
-        RestartButton.interactable = exercise.exercisesScriptable.Attempts < 2;
-        AttempsText.text = exercise.exercisesScriptable.Attempts < 2 ? "У вас есть еще одна попытка" : "Ваши попытки кончились";
+        markText.text = "Ваша оценка:  \n" + (exercise.exercisesScriptable.IsPassed == true ? "сдал" : "не сдал");
+        restartButton.interactable = exercise.exercisesScriptable.Attempts < 2;
+        attempsText.text = exercise.exercisesScriptable.Attempts < 2 ? "У вас есть еще одна попытка" : "Ваши попытки кончились";
         if (!exercise.exercisesScriptable.PrematureTermination)
-            EndScoreText.text = "Вы набрали " + CurrentScore + " штрафных баллов";
+            endScoreText.text = "Вы набрали " + CurrentScore + " штрафных баллов";
         else
-            EndScoreText.text = "Вы выехали за границу упражнения";
+            endScoreText.text = "Вы выехали за границу упражнения";
         CurrentScore = 0;
     }
 
     private void FindActiveConus(GameObject exerciseObject)
-    {
-        for (int i = 0; i < exerciseObject.transform.GetChild(0).childCount; i++)
+    {        
+        for (int i = 0; i < exerciseObject.transform.GetChild(0).childCount-1; i++)
         {
-            exerciseObject.transform.GetChild(0).GetChild(i).GetComponent<Conus>().AddGrossMistake += GameManager_AddScoreEvent;            
+            Transform gameObject = exerciseObject.transform.GetChild(0).GetChild(i);
+            gameObject.GetComponent<Conus>().AddGrossMistake += GameManager_AddScoreEvent;
+
         }
     }
     private void Exercise_AddMiddleMistake()
@@ -115,38 +175,52 @@ public class GameManager : MonoBehaviour
 
     private void SetUI()
     {
-        MaxScoretext.text = "Максимальное количество штрафных баллов - " + exercise.MaxScore;
-        CurrentScoreText.text = "Штрафные баллы: " + CurrentScore;
+        maxScoreText.text = "Максимальное количество штрафных баллов - " + exercise.MaxScore;
+        currentScoreText.text = "Штрафные баллы: " + CurrentScore;
+    }
+
+    public void SetTaskText(string[] TasksTextArray)
+    {
+        taskListText.text = "";
+        for (int i = 0; i < TasksTextArray.Length; i++)
+        {
+            if (i == 0)
+                taskListText.text += TasksTextArray[i] + "\n";            
+            else if (i == TasksTextArray.Length-1)
+                taskListText.text += TasksTextArray[i];
+            else
+                taskListText.text += TasksTextArray[i] + "\n";
+        }
     }
 
     private IEnumerator AnimationAttentionSign(float speed)
     {
-        AttentionSignImage.gameObject.SetActive(true);
-        AttentionSignImage.color = new Color(AttentionSignImage.color.r, AttentionSignImage.color.g, AttentionSignImage.color.b, 1);
+        attentionSignImage.gameObject.SetActive(true);
+        attentionSignImage.color = new Color(attentionSignImage.color.r, attentionSignImage.color.g, attentionSignImage.color.b, 1);
 
-        while (AttentionSignImage.color.a > 0)
+        while (attentionSignImage.color.a > 0)
         {
-            AttentionSignImage.color = new Color(AttentionSignImage.color.r, AttentionSignImage.color.g, AttentionSignImage.color.b, AttentionSignImage.color.a - (Time.deltaTime * speed));
+            attentionSignImage.color = new Color(attentionSignImage.color.r, attentionSignImage.color.g, attentionSignImage.color.b, attentionSignImage.color.a - (Time.deltaTime * speed));
+            yield return null;
+        }
+
+        yield return new WaitForSeconds(0.2f);
+
+        while (attentionSignImage.color.a < 1)
+        {
+            attentionSignImage.color = new Color(attentionSignImage.color.r, attentionSignImage.color.g, attentionSignImage.color.b, attentionSignImage.color.a + (Time.deltaTime * speed));
+            yield return null;
+        }
+
+        while (attentionSignImage.color.a > 0)
+        {
+            attentionSignImage.color = new Color(attentionSignImage.color.r, attentionSignImage.color.g, attentionSignImage.color.b, attentionSignImage.color.a - (Time.deltaTime * speed));
             yield return null;
         }
 
         yield return new WaitForSeconds(0.5f);
 
-        while (AttentionSignImage.color.a < 1)
-        {
-            AttentionSignImage.color = new Color(AttentionSignImage.color.r, AttentionSignImage.color.g, AttentionSignImage.color.b, AttentionSignImage.color.a + (Time.deltaTime * speed));
-            yield return null;
-        }
-
-        while (AttentionSignImage.color.a > 0)
-        {
-            AttentionSignImage.color = new Color(AttentionSignImage.color.r, AttentionSignImage.color.g, AttentionSignImage.color.b, AttentionSignImage.color.a - (Time.deltaTime * speed));
-            yield return null;
-        }
-
-        yield return new WaitForSeconds(0.5f);
-
-        AttentionSignImage.gameObject.SetActive(false);
+        attentionSignImage.gameObject.SetActive(false);
     }
    
 

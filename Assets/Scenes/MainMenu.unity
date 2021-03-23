@@ -2146,30 +2146,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2072888490}
     m_Modifications:
-    - target: {fileID: 1430604564, guid: 16c23be854a710f459dd6d8aca9bccac, type: 3}
-      propertyPath: m_Text
-      value: "\u0423\u043F\u0440\u0430\u0436\u043D\u0435\u043D\u0438\u0435 \"\u041F\u0430\u0440\u043A\u043E\u0432\u043A\u0430
-        \u0437\u0430\u0434\u043D\u0438\u043C \u0445\u043E\u0434\u043E\u043C\""
-      objectReference: {fileID: 0}
     - target: {fileID: 2042256223, guid: 16c23be854a710f459dd6d8aca9bccac, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 952947322}
-    - target: {fileID: 2042256223, guid: 16c23be854a710f459dd6d8aca9bccac, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LoadGame
-      objectReference: {fileID: 0}
-    - target: {fileID: 2042256223, guid: 16c23be854a710f459dd6d8aca9bccac, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2042256223, guid: 16c23be854a710f459dd6d8aca9bccac, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 842065453468876162, guid: 16c23be854a710f459dd6d8aca9bccac,
         type: 3}
-      propertyPath: exercisesScriptable
+      propertyPath: ExercisesScriptable
       value: 
       objectReference: {fileID: 11400000, guid: a0bf00cd4edbef049a60485c73d4be1b,
         type: 2}
@@ -7659,7 +7642,7 @@ RectTransform:
   m_Father: {fileID: 1991840879}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.2120958}
+  m_AnchorMin: {x: 0, y: 0.23597169}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
@@ -9871,6 +9854,7 @@ GameObject:
   - component: {fileID: 518573413}
   - component: {fileID: 518573415}
   - component: {fileID: 518573414}
+  - component: {fileID: 518573416}
   m_Layer: 5
   m_Name: Description
   m_TagString: Untagged
@@ -9889,8 +9873,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 916990587}
-  m_RootOrder: 2
+  m_Father: {fileID: 889276200}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -9932,7 +9916,8 @@ MonoBehaviour:
     - \u0434\u0432\u0438\u0436\u0435\u043D\u0435\u0438 \u0432\u043F\u0435\u0440\u0435\u0434,
     \u043D\u0430\u0437\u0430\u0434\nA,D - \u043F\u043E\u0432\u043E\u0440\u043E\u0442
     \u0432\u043B\u0435\u0432\u043E, \u0432\u043F\u0440\u0430\u0432\u043E\nSPACE -
-    \u0442\u043E\u0440\u043C\u043E\u0437\nEsc - \u043E\u0442\u043A\u0440\u044B\u0442\u044C
+    \u0442\u043E\u0440\u043C\u043E\u0437\nTAB - \u043F\u043E\u043A\u0430\u0437\u0430\u0442\u044C/\u0441\u043A\u0440\u044B\u0442\u044C
+    \u0441\u043F\u0438\u0441\u043E\u043A \u0437\u0430\u0434\u0430\u0447\nEsc - \u043E\u0442\u043A\u0440\u044B\u0442\u044C
     \u043C\u0435\u043D\u044E \u043F\u0430\u0443\u0437\u044B"
 --- !u!222 &518573415
 CanvasRenderer:
@@ -9942,6 +9927,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 518573412}
   m_CullTransparentMesh: 0
+--- !u!114 &518573416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 518573412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 1, g: 1, b: 1, a: 0.5}
+  m_EffectDistance: {x: 1.5, y: -1.5}
+  m_UseGraphicAlpha: 1
 --- !u!1001 &520396076
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11121,6 +11121,12 @@ PrefabInstance:
     - target: {fileID: 842065453468876162, guid: 16c23be854a710f459dd6d8aca9bccac,
         type: 3}
       propertyPath: exercisesScriptable
+      value: 
+      objectReference: {fileID: 11400000, guid: 734b19dbb187c654dbe159e430bb1568,
+        type: 2}
+    - target: {fileID: 842065453468876162, guid: 16c23be854a710f459dd6d8aca9bccac,
+        type: 3}
+      propertyPath: ExercisesScriptable
       value: 
       objectReference: {fileID: 11400000, guid: 734b19dbb187c654dbe159e430bb1568,
         type: 2}
@@ -15881,11 +15887,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 806657635}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
-  m_EffectDistance: {x: 1, y: -1}
+  m_EffectDistance: {x: 1.5, y: -1.5}
   m_UseGraphicAlpha: 1
 --- !u!4 &809091300 stripped
 Transform:
@@ -16974,6 +16980,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 73ddaf202e6beae43a18bf4b61636b05,
         type: 2}
+    - target: {fileID: 842065453468876162, guid: 16c23be854a710f459dd6d8aca9bccac,
+        type: 3}
+      propertyPath: ExercisesScriptable
+      value: 
+      objectReference: {fileID: 11400000, guid: 73ddaf202e6beae43a18bf4b61636b05,
+        type: 2}
     - target: {fileID: 8492517439579884187, guid: 16c23be854a710f459dd6d8aca9bccac,
         type: 3}
       propertyPath: m_Name
@@ -18026,7 +18038,8 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 518573413}
   m_Father: {fileID: 916990587}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -18792,7 +18805,6 @@ RectTransform:
   m_Children:
   - {fileID: 889276200}
   - {fileID: 1570926010}
-  - {fileID: 518573413}
   m_Father: {fileID: 317502624}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -19816,11 +19828,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45b65c85950263149b7112c0a7893dc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MenuObject: {fileID: 636764995}
-  ListExerciseObject: {fileID: 1506692501}
-  HowToPlayObject: {fileID: 317502623}
-  ExerciseContent: {fileID: 2072888490}
-  ExamResultText: {fileID: 806657637}
+  menuObject: {fileID: 636764995}
+  listExerciseObject: {fileID: 1506692501}
+  howToPlayObject: {fileID: 317502623}
+  exerciseContent: {fileID: 2072888490}
+  examResultText: {fileID: 806657637}
 --- !u!4 &953446314 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5165636313853354151, guid: 1f35af3c5e5bcd446b5cfc54eb5b1949,
@@ -22991,10 +23003,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2072888490}
     m_Modifications:
+    - target: {fileID: 1430604564, guid: 16c23be854a710f459dd6d8aca9bccac, type: 3}
+      propertyPath: m_Text
+      value: "\u0423\u043F\u0440\u0430\u0436\u043D\u0435\u043D\u0438\u0435 \"\u042D\u0441\u0442\u0430\u043A\u0430\u0434\u0430\""
+      objectReference: {fileID: 0}
     - target: {fileID: 2042256223, guid: 16c23be854a710f459dd6d8aca9bccac, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 952947322}
+    - target: {fileID: 2042256223, guid: 16c23be854a710f459dd6d8aca9bccac, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 842065453468876162, guid: 16c23be854a710f459dd6d8aca9bccac,
+        type: 3}
+      propertyPath: exercisesScriptable
+      value: 
+      objectReference: {fileID: 11400000, guid: 7738836c43638ba4dbe57d0ef89d05d7,
+        type: 2}
+    - target: {fileID: 842065453468876162, guid: 16c23be854a710f459dd6d8aca9bccac,
+        type: 3}
+      propertyPath: ExercisesScriptable
+      value: 
+      objectReference: {fileID: 11400000, guid: 7738836c43638ba4dbe57d0ef89d05d7,
+        type: 2}
     - target: {fileID: 8492517439579884187, guid: 16c23be854a710f459dd6d8aca9bccac,
         type: 3}
       propertyPath: m_Name
@@ -34213,7 +34245,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 420765632}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.7879042
+  m_Size: 0.7640283
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -39074,9 +39106,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1430604564, guid: 16c23be854a710f459dd6d8aca9bccac, type: 3}
       propertyPath: m_Text
-      value: "\u0423\u043F\u0440\u0430\u0436\u043D\u0435\u043D\u0438\u0435 \"\u041F\u0430\u0440\u043A\u043E\u0432\u043A\u0430
-        \u0437\u0430\u0434\u043D\u0438\u043C \u0445\u043E\u0434\u043E\u043C \u0441
-        \u043F\u0440\u0438\u0446\u0435\u043F\u043E\u043C\""
+      value: "\u0423\u043F\u0440\u0430\u0436\u043D\u0435\u043D\u0438\u0435 \"\u041F\u043E\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0430
+        \u0441\u0430\u043C\u043E\u0445\u043E\u0434\u043D\u043E\u0439 \u043C\u0430\u0448\u0438\u043D\u044B
+        \u0432 \u0430\u0433\u0440\u0435\u0433\u0430\u0442\u0435 \u0441 \u043F\u0440\u0438\u0446\u0435\u043F\u043E\u043C
+        \u0432 \u0431\u043E\u043A\u0441 \u0437\u0430\u0434\u043D\u0438\u043C \u0445\u043E\u0434\u043E\u043C
+        \""
       objectReference: {fileID: 0}
     - target: {fileID: 2042256223, guid: 16c23be854a710f459dd6d8aca9bccac, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -39097,6 +39131,12 @@ PrefabInstance:
     - target: {fileID: 842065453468876162, guid: 16c23be854a710f459dd6d8aca9bccac,
         type: 3}
       propertyPath: exercisesScriptable
+      value: 
+      objectReference: {fileID: 11400000, guid: 5d665ee6bea05ce4495cdb8e06ed29c4,
+        type: 2}
+    - target: {fileID: 842065453468876162, guid: 16c23be854a710f459dd6d8aca9bccac,
+        type: 3}
+      propertyPath: ExercisesScriptable
       value: 
       objectReference: {fileID: 11400000, guid: 5d665ee6bea05ce4495cdb8e06ed29c4,
         type: 2}

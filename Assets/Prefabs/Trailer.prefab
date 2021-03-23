@@ -328,7 +328,7 @@ GameObject:
   - component: {fileID: 3210253567067680111}
   - component: {fileID: 4888606803820134159}
   m_Layer: 0
-  m_Name: BackWheelRight
+  m_Name: RearWheelRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -564,7 +564,9 @@ GameObject:
   - component: {fileID: 813543196554851361}
   - component: {fileID: 4400316877918734028}
   - component: {fileID: 4400316877918733875}
-  - component: {fileID: 4400316877918734029}
+  - component: {fileID: 6633707017867607156}
+  - component: {fileID: -6599539942100270599}
+  - component: {fileID: -8404070736250470921}
   m_Layer: 0
   m_Name: Trailer
   m_TagString: Trailer
@@ -619,7 +621,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2, y: 1.0990357, z: 4}
   m_Center: {x: 0, y: 0.6285517, z: 0}
---- !u!114 &4400316877918734029
+--- !u!114 &6633707017867607156
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -628,12 +630,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 4400316877918733874}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 130b7774b2a8b6c4da47805214d3c06e, type: 3}
+  m_Script: {fileID: 11500000, guid: e9e3ab749aa3cdf44957949c4422a5a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  motorForce: 800
-  breakForce: 5000
-  maxSteerAngle: 30
+--- !u!114 &-6599539942100270599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4400316877918733874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e944477499a4f7349b0df7d84be3fbf1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   frontLeftWheelCollider: {fileID: 8621940673215080649}
   frontRightWheelCollider: {fileID: 8621940671733952256}
   rearLeftWheelCollider: {fileID: 8621940672250804319}
@@ -642,8 +653,20 @@ MonoBehaviour:
   frontRightWheelTransform: {fileID: 6503607516063311888}
   rearLeftWheelTransform: {fileID: 7323883164729844779}
   rearRightWheelTransform: {fileID: 3889246980199799505}
-  rule: {fileID: 0}
-  Tractor: {fileID: 0}
+--- !u!114 &-8404070736250470921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4400316877918733874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 176c3d8d74077754c8bd2ec2c37d619b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  motorForce: 800
+  breakForce: 5000
 --- !u!1 &4524135107341232671
 GameObject:
   m_ObjectHideFlags: 0
@@ -656,7 +679,7 @@ GameObject:
   - component: {fileID: 4421106497659017475}
   - component: {fileID: 5339139718985419682}
   m_Layer: 0
-  m_Name: BackWheelLeft
+  m_Name: RearWheelLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1197,7 +1220,7 @@ GameObject:
   - component: {fileID: 8621940671275019998}
   - component: {fileID: 8621940671275019999}
   m_Layer: 0
-  m_Name: BackWheelRight
+  m_Name: RearWheelRight
   m_TagString: Trailer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1385,7 +1408,7 @@ GameObject:
   - component: {fileID: 8621940672250804318}
   - component: {fileID: 8621940672250804319}
   m_Layer: 0
-  m_Name: BackWheelLeft
+  m_Name: RearWheelLeft
   m_TagString: Trailer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

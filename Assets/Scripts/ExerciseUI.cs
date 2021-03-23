@@ -3,11 +3,14 @@ using UnityEngine.UI;
 
 public class ExerciseUI : MonoBehaviour
 {
-    public ExercisesScriptableObject exercisesScriptable;
+    public ExercisesScriptableObject ExercisesScriptable;
 
-    public Text AttempsText;
-    public Text ScoreText;
-    public Text MarkText;
+    [SerializeField]
+    private Text attempsText;
+    [SerializeField]
+    private Text scoreText;
+    [SerializeField]
+    private Text markText;
 
     public Button StartButton;
 
@@ -18,10 +21,10 @@ public class ExerciseUI : MonoBehaviour
 
     public void UpdateUI()
     {
-        AttempsText.text = "Попытки: " + exercisesScriptable.Attempts + "/2";
-        ScoreText.text = "Штрафные баллы - " + exercisesScriptable.Score;
-        MarkText.text = "Оценка - " + (exercisesScriptable.IsPassed == true ? "сдал" : "не сдал");
+        attempsText.text = "Попытки: " + ExercisesScriptable.Attempts + "/2";
+        scoreText.text = "Штрафные баллы - " + ExercisesScriptable.Score;
+        markText.text = "Оценка - " + (ExercisesScriptable.IsPassed == true ? "сдал" : "не сдал");
 
-        StartButton.interactable = exercisesScriptable.Attempts < 2;
+        StartButton.interactable = ExercisesScriptable.Attempts < 2;
     }
 }
