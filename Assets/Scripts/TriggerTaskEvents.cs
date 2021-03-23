@@ -28,7 +28,7 @@ public class TriggerTaskEvents : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
-        {
+        {            
             dashboard = other.GetComponent<Dashboard>();            
 
             if (isEnter)

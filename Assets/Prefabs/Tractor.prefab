@@ -1185,7 +1185,7 @@ GameObject:
   - component: {fileID: 8596326587814550858}
   m_Layer: 0
   m_Name: FrontLeftWheel
-  m_TagString: Player
+  m_TagString: Wheel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1279,7 +1279,7 @@ GameObject:
   - component: {fileID: 6635678431377030969}
   m_Layer: 0
   m_Name: RearLeftWheel
-  m_TagString: Player
+  m_TagString: Wheel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2942,7 +2942,7 @@ GameObject:
   - component: {fileID: 4076215409950846845}
   m_Layer: 0
   m_Name: Front right wheel
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4490,7 +4490,7 @@ GameObject:
   - component: {fileID: 4076215410598616870}
   m_Layer: 0
   m_Name: Front left wheel
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4789,7 +4789,7 @@ GameObject:
   - component: {fileID: 4076215410794009423}
   m_Layer: 0
   m_Name: Rear left wheel
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5487,7 +5487,7 @@ GameObject:
   - component: {fileID: 4076215411438288313}
   m_Layer: 0
   m_Name: Rear right wheel
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5723,7 +5723,7 @@ GameObject:
   - component: {fileID: 4076215411762342947}
   m_Layer: 0
   m_Name: Wheel Transforms
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6858,7 +6858,7 @@ GameObject:
   - component: {fileID: 7633078060197812287}
   m_Layer: 0
   m_Name: RearRightWheel
-  m_TagString: Player
+  m_TagString: Wheel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6952,7 +6952,7 @@ GameObject:
   - component: {fileID: 4127529168216446670}
   m_Layer: 0
   m_Name: FrontRightWheel
-  m_TagString: Player
+  m_TagString: Wheel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
