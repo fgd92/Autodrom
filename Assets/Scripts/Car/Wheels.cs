@@ -2,8 +2,6 @@
 
 public class Wheels : CarComponent
 {
-    public bool isFreeRotation = false;
-    public Transform parent;
     [Space(4)]
     private float maxSteerAngle = 30;
     private float currentSteerAngle;
@@ -24,32 +22,13 @@ public class Wheels : CarComponent
     private Transform rearLeftWheelTransform;
     [SerializeField]
     private Transform rearRightWheelTransform;
-    private Vector3 oldPosition = Vector3.zero;
 
     protected override void StartCall()
     {
-        oldPosition = transform.position;
     }
     private void FixedUpdate()
     {
         UpdateWheels();
-
-        if (isFreeRotation)
-        {
-            Vector3 direction = Vector3.zero;
-            float angle = 0;
-            Vector3 currentPosition = transform.position;
-            Vector3 constraint = new Vector3(1, 0, 1);
-            currentPosition = Vector3.Scale(currentPosition, constraint);
-            oldPosition = Vector3.Scale(oldPosition, constraint);
-            Vector3 parentPosition = Vector3.Scale(parent.position, constraint);
-
-            angle = Vector3.SignedAngle(parentPosition - currentPosition, transform.forward, 
-                Vector3.up);
-
-            RotateWheels(angle);
-        }
-        oldPosition = transform.position;
     }
 
     public void HandleSteering(float delta)
