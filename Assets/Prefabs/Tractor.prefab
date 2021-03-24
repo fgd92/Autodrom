@@ -488,7 +488,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 73c176f402d2c2f4d929aa5da7585d17, type: 2}
+  - {fileID: 2100000, guid: e2a5beac99d83fa4e93097f13c9a51fa, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1450,7 +1450,6 @@ GameObject:
   - component: {fileID: 2643750065512331170}
   - component: {fileID: 2643750065512331168}
   - component: {fileID: 2643750065512331169}
-  - component: {fileID: 2643750065512331173}
   - component: {fileID: 1144714120616399571}
   - component: {fileID: 666945250084705982}
   - component: {fileID: 3513470130445097585}
@@ -1546,41 +1545,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 100, y: 32.209408, z: 303.58514}
   m_Center: {x: 0, y: -14.096326, z: 69.43431}
---- !u!59 &2643750065512331173
-HingeJoint:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2643750065512331183}
-  m_ConnectedBody: {fileID: 0}
-  m_Anchor: {x: 0, y: 0, z: 0}
-  m_Axis: {x: 0, y: 1, z: 0}
-  m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 50.99, y: 0.64, z: -31.24}
-  m_UseSpring: 0
-  m_Spring:
-    spring: 0
-    damper: 0
-    targetPosition: 0
-  m_UseMotor: 0
-  m_Motor:
-    targetVelocity: 0
-    force: 0
-    freeSpin: 0
-  m_UseLimits: 1
-  m_Limits:
-    min: -15
-    max: 15
-    bounciness: 0
-    bounceMinVelocity: 0.2
-    contactDistance: 0
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_EnableCollision: 0
-  m_EnablePreprocessing: 1
-  m_MassScale: 1
-  m_ConnectedMassScale: 1
 --- !u!114 &1144714120616399571
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1639,6 +1603,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 176c3d8d74077754c8bd2ec2c37d619b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isSteeringWheels: 1
   motorForce: 800
   breakForce: 5000
 --- !u!1 &2709913845551938665
@@ -2049,7 +2014,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 73c176f402d2c2f4d929aa5da7585d17, type: 2}
+  - {fileID: 2100000, guid: e2a5beac99d83fa4e93097f13c9a51fa, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3129,7 +3094,7 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 1000
-  field of view: 70
+  field of view: 60
   orthographic: 0
   orthographic size: 1.97
   m_Depth: -1
@@ -3612,7 +3577,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 73c176f402d2c2f4d929aa5da7585d17, type: 2}
+  - {fileID: 2100000, guid: e2a5beac99d83fa4e93097f13c9a51fa, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4719,7 +4684,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 4076215409884455794}
   m_Follow: {fileID: 4076215409884455794}
   m_Lens:
-    FieldOfView: 70
+    FieldOfView: 60
     OrthographicSize: 1.97
     NearClipPlane: 0.1
     FarClipPlane: 1000

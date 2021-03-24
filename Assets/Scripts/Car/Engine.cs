@@ -3,6 +3,7 @@
 [RequireComponent(typeof(Wheels))]
 public class Engine : CarComponent
 {
+    public bool isSteeringWheels;
     Wheels wheels;
     [SerializeField]
     private float motorForce;
@@ -39,7 +40,9 @@ public class Engine : CarComponent
     private void FixedUpdate()
     {
         wheels.Work(playerInput.Vertival, motorForce);
-        wheels.HandleSteering(playerInput.Horizontal);
+
+        if(isSteeringWheels)
+            wheels.HandleSteering(playerInput.Horizontal);
     }
     private void OnDestroy()
     {

@@ -13,7 +13,6 @@ public class Measure : MonoBehaviour
     private float MaxAngle;
     [SerializeField]
     private float MaxValue;
-
     private float currentValue;
     public void SetValue(float currentValue)
     {

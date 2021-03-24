@@ -2,6 +2,7 @@
 
 public class Wheels : CarComponent
 {
+    [Space(4)]
     private float maxSteerAngle = 30;
     private float currentSteerAngle;
     [SerializeField]
@@ -24,15 +25,10 @@ public class Wheels : CarComponent
 
     protected override void StartCall()
     {
-
     }
-    public void SetMaxSteerAngle(float angle)
+    private void FixedUpdate()
     {
-        maxSteerAngle = angle;
-    }
-    public float GetMaxSteerAngle()
-    {
-        return maxSteerAngle;
+        UpdateWheels();
     }
 
     public void HandleSteering(float delta)
@@ -41,6 +37,14 @@ public class Wheels : CarComponent
         currentSteerAngle = angle;
         frontLeftWheelCollider.steerAngle = angle;
         frontRightWheelCollider.steerAngle = angle;
+    }
+    public void RotateWheels(float angle)
+    {
+        currentSteerAngle = angle;
+        frontLeftWheelCollider.steerAngle = angle;
+        frontRightWheelCollider.steerAngle = angle;
+        rearRightWheelCollider.steerAngle = angle;
+        rearLeftWheelCollider.steerAngle = angle;
     }
     public float GetRPMWheel()
     {
@@ -75,10 +79,5 @@ public class Wheels : CarComponent
         frontLeftWheelCollider.brakeTorque = breakForce;
         rearLeftWheelCollider.brakeTorque = breakForce;
         rearRightWheelCollider.brakeTorque = breakForce;
-    }
-
-    private void FixedUpdate()
-    {
-        UpdateWheels();
     }
 }
