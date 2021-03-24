@@ -639,12 +639,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e944477499a4f7349b0df7d84be3fbf1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  frontLeftWheelCollider: {fileID: 0}
-  frontRightWheelCollider: {fileID: 0}
+  frontLeftWheelCollider: {fileID: 206343018642091580}
+  frontRightWheelCollider: {fileID: 6895277128826143742}
   rearLeftWheelCollider: {fileID: 3747090852664392103}
   rearRightWheelCollider: {fileID: 3747090853567033127}
-  frontLeftWheelTransform: {fileID: 0}
-  frontRightWheelTransform: {fileID: 0}
+  frontLeftWheelTransform: {fileID: 8506130258820531258}
+  frontRightWheelTransform: {fileID: 2761006797753776832}
   rearLeftWheelTransform: {fileID: 8506130258820531258}
   rearRightWheelTransform: {fileID: 2761006797753776832}
 --- !u!1 &3747090852664392101
