@@ -128,6 +128,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 245156336, guid: 9425d9ad99131984cb65f7c3a31227e4, type: 3}
+      propertyPath: m_ConnectedBody
+      value: 
+      objectReference: {fileID: 885188428}
     - target: {fileID: 1589640190, guid: 9425d9ad99131984cb65f7c3a31227e4, type: 3}
       propertyPath: m_ConnectedBody
       value: 
