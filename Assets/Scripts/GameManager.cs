@@ -30,6 +30,8 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private Text endScoreText;
     [SerializeField]
+    private Text timerText;
+    [SerializeField]
     private Button restartButton;
     [SerializeField]
     private GameObject endMenu;
@@ -43,9 +45,12 @@ public class GameManager : MonoBehaviour
     private bool isEnd;
     private Exercise exercise;
     private TaskManager taskManager;
+    private Timer timer;
+
     private void Awake()
     {
         taskManager = GetComponent<TaskManager>();
+        timer = GetComponent<Timer>();
     }
     public void Start()
     {
@@ -136,6 +141,7 @@ public class GameManager : MonoBehaviour
         markText.text = "Ваша оценка:  \n" + (exercise.exercisesScriptable.IsPassed == true ? "сдал" : "не сдал");
         restartButton.interactable = exercise.exercisesScriptable.Attempts < 2;
         attempsText.text = exercise.exercisesScriptable.Attempts < 2 ? "У вас есть еще одна попытка" : "Ваши попытки кончились";
+        timerText.text = "Затраченное время:\n" + timer.TimerString;
         if (!exercise.exercisesScriptable.PrematureTermination)
             endScoreText.text = "Вы набрали " + CurrentScore + " штрафных баллов";
         else
@@ -143,6 +149,8 @@ public class GameManager : MonoBehaviour
 
         CurrentScore = 0;
         isEnd = true;
+
+        exercise.exercisesScriptable.timer = timer.TimerString;
     }
 
     private void Exercise_AddMistake(int scoreCount)

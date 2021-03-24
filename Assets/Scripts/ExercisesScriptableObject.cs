@@ -5,6 +5,7 @@ public class ExercisesScriptableObject : ScriptableObject
 {    
     public int Attempts;
     public int Score;
+    public string timer;
     public bool IsPassed;
     public bool PrematureTermination;
     public bool IsParkWithTailer;
