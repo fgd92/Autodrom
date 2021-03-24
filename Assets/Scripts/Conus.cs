@@ -7,8 +7,7 @@ public class Conus : MonoBehaviour
     {
         if (collision.transform.CompareTag("Player"))
         {
-            AddScore();
-            print(gameObject.name + " collision");
+            AddScore();            
         }
     }
     private void OnTriggerEnter(Collider other)
@@ -16,7 +15,6 @@ public class Conus : MonoBehaviour
         if (other.CompareTag("Wheel"))
         {
             AddScore();
-            print(gameObject.name + " Trigger");
         }
     }
     private void AddScore()
