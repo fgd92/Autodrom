@@ -7492,7 +7492,7 @@ GameObject:
   - component: {fileID: 6670701883371851606}
   m_Layer: 0
   m_Name: Trailer
-  m_TagString: Untagged
+  m_TagString: Trailer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

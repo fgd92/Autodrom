@@ -19,6 +19,8 @@ public class TriggerTaskEvents : MonoBehaviour
     private string taskText;
     [SerializeField]
     private string secondTaskText;
+    [SerializeField]
+    private GameObject invisibleBorder;
 
     private TrafficLight trafficLight;
     private Dashboard dashboard;    
@@ -36,6 +38,7 @@ public class TriggerTaskEvents : MonoBehaviour
                 switch (cases)
                 {
                     case Cases.Stop:
+                        TriggerTaskEvent?.Invoke(taskText);
                         break;
                     case Cases.Start:
                         if (Mathf.RoundToInt(dashboard.Speed) > 0.5f)
@@ -74,6 +77,7 @@ public class TriggerTaskEvents : MonoBehaviour
                         {
                             onceStart = true;
                             TriggerTaskEvent?.Invoke(taskText);
+                            invisibleBorder.SetActive(true);
                         }
                         if (dashboard.Speed > 0.5f && onceStart)
                         {

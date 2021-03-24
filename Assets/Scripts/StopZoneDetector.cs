@@ -48,7 +48,7 @@ public class StopZoneDetector : MonoBehaviour
             {
                 if (dashboard!= null && Mathf.RoundToInt(dashboard.Speed) == 0)
                 {
-                    exercise.EndExercise(true);
+                    exercise.EndExercise(false);
                 }
             }
         }
@@ -82,17 +82,14 @@ public class StopZoneDetector : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (dashboard != other.gameObject.GetComponent<Dashboard>())
-        {
-            if (!isTractorFirst && !isTrailerFirst)
-            {
-                isTractorFirst = other.CompareTag("Player");
-                isTrailerFirst = other.CompareTag("Trailer");
-            }
-        }
         if (other.CompareTag("Player"))
         {
             dashboard = other.gameObject.GetComponent<Dashboard>();
+        }
+        if (!isTractorFirst && !isTrailerFirst)
+        {
+            isTractorFirst = other.CompareTag("Player");
+            isTrailerFirst = other.CompareTag("Trailer");
         }
     }
 }

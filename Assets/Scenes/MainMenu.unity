@@ -43337,7 +43337,7 @@ Transform:
   m_LocalScale: {x: 14.043888, y: 25, z: 49.010906}
   m_Children: []
   m_Father: {fileID: 2098306299}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 17.29, z: 0}
 --- !u!23 &1736705180
 MeshRenderer:
@@ -52897,8 +52897,8 @@ Transform:
   - {fileID: 1111097892}
   - {fileID: 1652876755}
   - {fileID: 44175886}
-  - {fileID: 1383800840}
   - {fileID: 1736705179}
+  - {fileID: 1383800840}
   - {fileID: 1518845063}
   - {fileID: 1702120834}
   - {fileID: 354757855}
