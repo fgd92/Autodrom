@@ -29,10 +29,10 @@ public class Wheels : CarComponent
     }
     private void FixedUpdate()
     {
-        if(isSteeringWheel == false)
-            UpdateWheels();
         if(isSteeringWheel == true)
             SteeringWheels();
+
+        UpdateWheels();
     }
 
     public void HandleSteering(float delta)
