@@ -22,7 +22,7 @@ public class Conus : MonoBehaviour
         if (once) return;
 
         transform.parent.parent.GetComponent<Exercise>().AddMistakeInvoke(5);        
-        Destroy(GetComponent<Conus>());
         once = true;
+        Destroy(GetComponent<Conus>());
     }
 }

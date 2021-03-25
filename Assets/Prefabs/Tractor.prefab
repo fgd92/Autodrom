@@ -1182,9 +1182,10 @@ GameObject:
   - component: {fileID: 806951968735235500}
   - component: {fileID: 7335709236692829379}
   - component: {fileID: 603847577564194165}
+  - component: {fileID: 1085714839731231120}
   m_Layer: 0
   m_Name: FrontLeftWheel
-  m_TagString: Untagged
+  m_TagString: Wheel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1250,6 +1251,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &1085714839731231120
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1933995186861549338}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 9219646412372733158, guid: bdb77221bc54cda4680a29c580895051, type: 3}
 --- !u!1 &2077735188200492520
 GameObject:
   m_ObjectHideFlags: 0
@@ -1261,9 +1276,10 @@ GameObject:
   - component: {fileID: 4307330097046146706}
   - component: {fileID: 1537630449635065384}
   - component: {fileID: 6707702156634784603}
+  - component: {fileID: 6495271559751870398}
   m_Layer: 0
   m_Name: RearLeftWheel
-  m_TagString: Untagged
+  m_TagString: Wheel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1329,6 +1345,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &6495271559751870398
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2077735188200492520}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -922399708783296898, guid: 20a5d962fdb7c0e4fa2bbc000317cd22, type: 3}
 --- !u!1 &2415095070278061079
 GameObject:
   m_ObjectHideFlags: 0
@@ -6791,9 +6821,10 @@ GameObject:
   - component: {fileID: 4545626612462204753}
   - component: {fileID: 2920891991415460887}
   - component: {fileID: 5571246536834995429}
+  - component: {fileID: 7239061260623877138}
   m_Layer: 0
   m_Name: RearRightWheel
-  m_TagString: Untagged
+  m_TagString: Wheel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6859,6 +6890,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &7239061260623877138
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8309226769050669390}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -922399708783296898, guid: 20a5d962fdb7c0e4fa2bbc000317cd22, type: 3}
 --- !u!1 &8404339798830701012
 GameObject:
   m_ObjectHideFlags: 0
@@ -6870,9 +6915,10 @@ GameObject:
   - component: {fileID: 1443101914421288375}
   - component: {fileID: 4835458578801452281}
   - component: {fileID: 3215918789712915273}
+  - component: {fileID: 439320886828304302}
   m_Layer: 0
   m_Name: FrontRightWheel
-  m_TagString: Untagged
+  m_TagString: Wheel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6938,6 +6984,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &439320886828304302
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8404339798830701012}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 7480506055397496993, guid: bdb77221bc54cda4680a29c580895051, type: 3}
 --- !u!1 &8473275266323386290
 GameObject:
   m_ObjectHideFlags: 0
