@@ -1536,8 +1536,6 @@ GameObject:
   - component: {fileID: 1055779215741391090}
   - component: {fileID: 3973807398850616381}
   - component: {fileID: 6366172664544445097}
-  - component: {fileID: 569589568577256882}
-  - component: {fileID: 5872010513560256479}
   m_Layer: 0
   m_Name: Tractor
   m_TagString: Player
@@ -1692,55 +1690,6 @@ MonoBehaviour:
   isSteeringWheels: 1
   motorForce: 800
   breakForce: 5000
---- !u!138 &569589568577256882
-FixedJoint:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2546761524201419235}
-  m_ConnectedBody: {fileID: 0}
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_EnableCollision: 0
-  m_EnablePreprocessing: 1
-  m_MassScale: 1
-  m_ConnectedMassScale: 1
---- !u!59 &5872010513560256479
-HingeJoint:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2546761524201419235}
-  m_ConnectedBody: {fileID: 0}
-  m_Anchor: {x: 0, y: 0, z: 0}
-  m_Axis: {x: 0, y: 0, z: 0}
-  m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: -0.39600047, z: 4.086012}
-  m_UseSpring: 0
-  m_Spring:
-    spring: 0
-    damper: 0
-    targetPosition: 0
-  m_UseMotor: 0
-  m_Motor:
-    targetVelocity: 0
-    force: 0
-    freeSpin: 0
-  m_UseLimits: 1
-  m_Limits:
-    min: 0
-    max: 0
-    bounciness: 0
-    bounceMinVelocity: 0.2
-    contactDistance: 0
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_EnableCollision: 0
-  m_EnablePreprocessing: 1
-  m_MassScale: 1
-  m_ConnectedMassScale: 1
 --- !u!1 &2766250971483327067
 GameObject:
   m_ObjectHideFlags: 0
@@ -3199,7 +3148,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4572902807672169661}
   m_LocalRotation: {x: 0.203607, y: 0.089625575, z: -0.01872087, w: 0.974762}
-  m_LocalPosition: {x: 0, y: 0.41599998, z: 0.15099975}
+  m_LocalPosition: {x: 48.17842, y: 0.9061318, z: -31.371958}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4572902807583815310}
@@ -4792,7 +4741,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4572902808462140467}
   m_LocalRotation: {x: 0.203607, y: 0.089625575, z: -0.01872087, w: 0.974762}
-  m_LocalPosition: {x: 0, y: 0.41599998, z: 0.15099975}
+  m_LocalPosition: {x: 0, y: 0.41599998, z: 0.151}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4572902807483944955}
