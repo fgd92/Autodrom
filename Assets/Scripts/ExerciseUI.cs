@@ -26,7 +26,7 @@ public class ExerciseUI : MonoBehaviour
         attempsText.text = "Попытки: " + ExercisesScriptable.Attempts + "/2";
         scoreText.text = "Штрафные баллы - " + ExercisesScriptable.Score;
         markText.text = "Оценка - " + (ExercisesScriptable.IsPassed == true ? "<color=lime>сдал</color>" : "<color=red>не сдал</color>");
-        timerText.text = "Затраченное время:\n" + ExercisesScriptable.timer;
+        timerText.text = "Время:" + ExercisesScriptable.timer;
 
         startButton.interactable = ExercisesScriptable.Attempts < 2;
     }

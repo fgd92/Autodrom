@@ -7,7 +7,9 @@ public class MenuManager : MonoBehaviour
     [SerializeField]
     private GameObject menuObject;
     [SerializeField]
-    private GameObject secondCanvas;
+    private GameObject leftMenuPlane;
+    [SerializeField]
+    private GameObject chooseMenuPlane;
     [SerializeField]
     private GameObject listExerciseObject;
     [SerializeField]
@@ -27,23 +29,26 @@ public class MenuManager : MonoBehaviour
     public void EnableMenu()
     {
         menuObject.SetActive(true);
-        secondCanvas.SetActive(true);
+        leftMenuPlane.SetActive(true);
         listExerciseObject.SetActive(false);
+        chooseMenuPlane.SetActive(false);
         howToPlayObject.SetActive(false);
     }
 
     public void EnableList()
     {
         menuObject.SetActive(false);
-        secondCanvas.SetActive(false);
+        leftMenuPlane.SetActive(false);
         listExerciseObject.SetActive(true);
+        chooseMenuPlane.SetActive(true);
         howToPlayObject.SetActive(false);
     }
     public void EnableHowToPlayMenu()
     {
         menuObject.SetActive(false);
-        secondCanvas.SetActive(false);
+        leftMenuPlane.SetActive(false);
         listExerciseObject.SetActive(false);
+        chooseMenuPlane.SetActive(true);
         howToPlayObject.SetActive(true);
     }
     public void Exit()
