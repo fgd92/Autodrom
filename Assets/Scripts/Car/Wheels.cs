@@ -2,6 +2,7 @@
 
 public class Wheels : CarComponent
 {
+    public bool isSteeringWheel = false;
     [Space(4)]
     private float maxSteerAngle = 30;
     private float currentSteerAngle;
@@ -28,6 +29,9 @@ public class Wheels : CarComponent
     }
     private void FixedUpdate()
     {
+        if(isSteeringWheel == true)
+            SteeringWheels();
+
         UpdateWheels();
     }
 
@@ -72,6 +76,11 @@ public class Wheels : CarComponent
         UpdateSingleWheel(frontLeftWheelCollider, frontLeftWheelTransform);
         UpdateSingleWheel(rearRightWheelCollider, rearRightWheelTransform);
         UpdateSingleWheel(rearLeftWheelCollider, rearLeftWheelTransform);
+    }
+    public void SteeringWheels()
+    {
+        frontRightWheelCollider.steerAngle = frontRightWheelTransform.parent.parent.localEulerAngles.y;
+        frontLeftWheelCollider.steerAngle = frontLeftWheelTransform.parent.parent.localEulerAngles.y;
     }
     public void ApplyBreaking(float breakForce)
     {
