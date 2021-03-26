@@ -7,6 +7,8 @@ public class MenuManager : MonoBehaviour
     [SerializeField]
     private GameObject menuObject;
     [SerializeField]
+    private GameObject secondCanvas;
+    [SerializeField]
     private GameObject listExerciseObject;
     [SerializeField]
     private GameObject howToPlayObject;
@@ -25,6 +27,7 @@ public class MenuManager : MonoBehaviour
     public void EnableMenu()
     {
         menuObject.SetActive(true);
+        secondCanvas.SetActive(true);
         listExerciseObject.SetActive(false);
         howToPlayObject.SetActive(false);
     }
@@ -32,12 +35,14 @@ public class MenuManager : MonoBehaviour
     public void EnableList()
     {
         menuObject.SetActive(false);
+        secondCanvas.SetActive(false);
         listExerciseObject.SetActive(true);
         howToPlayObject.SetActive(false);
     }
     public void EnableHowToPlayMenu()
     {
         menuObject.SetActive(false);
+        secondCanvas.SetActive(false);
         listExerciseObject.SetActive(false);
         howToPlayObject.SetActive(true);
     }
