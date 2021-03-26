@@ -594,7 +594,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3366828207362549283}
   serializedVersion: 2
-  m_Mass: 600
+  m_Mass: 500
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
@@ -639,6 +639,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e944477499a4f7349b0df7d84be3fbf1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isSteeringWheel: 1
   frontLeftWheelCollider: {fileID: 206343018642091580}
   frontRightWheelCollider: {fileID: 6895277128826143742}
   rearLeftWheelCollider: {fileID: 3747090852664392103}
