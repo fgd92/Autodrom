@@ -126,7 +126,7 @@ public class TriggerTaskEvents : MonoBehaviour
 
     private void DestroyComponents()
     {
-        Destroy(GetComponent<BoxCollider>());
+        //Destroy(GetComponent<BoxCollider>());
         Destroy(this);
     }
 }
