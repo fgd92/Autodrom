@@ -79,8 +79,8 @@ public class StopZoneDetector : MonoBehaviour
         {
             perp = new Vector3(finishLinePos.x, 0, tractorPos.z);
         }
-        float distance = Vector3.Distance(perp, tractorPos) - 2.5f;
-
+        float distance = Vector3.Distance(perp, tractorPos) - 3.5f;
+        Debug.Log(distance);
         if (distance > 1f)
         {
             //остановился более 0.5 метров перед линией
