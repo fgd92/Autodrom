@@ -406,9 +406,10 @@ GameObject:
   - component: {fileID: 8006125237804674052}
   - component: {fileID: 6390751917063477229}
   - component: {fileID: 1751179624440550821}
+  - component: {fileID: 4010172382796853971}
   m_Layer: 0
   m_Name: FrontRightWheel
-  m_TagString: Untagged
+  m_TagString: Trailer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -474,6 +475,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &4010172382796853971
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 103287785600564495}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5753121525062783368, guid: 13423b9e0c57da541ba2e97d40cf7d25, type: 3}
 --- !u!1 &106456740355521948
 GameObject:
   m_ObjectHideFlags: 0
@@ -3472,8 +3487,8 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_MotionVectors: 0
-  m_LightProbeUsage: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RenderingLayerMask: 1
@@ -3610,7 +3625,7 @@ MonoBehaviour:
   m_ProbeSettings:
     frustum:
       fieldOfViewMode: 1
-      fixedValue: 70
+      fixedValue: 42.7
       automaticScale: 1
       viewerScale: 1
     type: 1
@@ -3654,7 +3669,7 @@ MonoBehaviour:
       m_BoxSize: {x: 1, y: 1, z: 1}
       m_SphereRadius: 1
     proxySettings:
-      useInfluenceVolumeAsProxyVolume: 0
+      useInfluenceVolumeAsProxyVolume: 1
       capturePositionProxySpace: {x: 0, y: 0, z: 0}
       captureRotationProxySpace: {x: 0, y: 0, z: 0, w: 1}
       mirrorPositionProxySpace: {x: 0, y: -0.0000002460266, z: -0.0145768635}
@@ -3664,7 +3679,7 @@ MonoBehaviour:
       customRenderingSettings: 1
       renderingPathCustomFrameSettings:
         bitDatas:
-          data1: 70043410438159
+          data1: 70297877216367
           data2: 4539628425463136256
         lodBias: 1
         lodBiasMode: 0
@@ -3675,7 +3690,7 @@ MonoBehaviour:
         materialQuality: 0
       renderingPathCustomFrameSettingsOverrideMask:
         mask:
-          data1: 356607353612
+          data1: 0
           data2: 0
       bufferClearing:
         clearColorMode: 0
@@ -4433,13 +4448,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_RecenterTarget: 2
   m_VerticalAxis:
-    Value: -6.2839775
+    Value: 9.88836
     m_SpeedMode: 0
     m_MaxSpeed: 180
     m_AccelTime: 0.1
     m_DecelTime: 0.1
     m_InputAxisName: Mouse Y
-    m_InputAxisValue: 0
+    m_InputAxisValue: -0.15
     m_InvertInput: 1
     m_MinValue: -60
     m_MaxValue: 60
@@ -4457,13 +4472,13 @@ MonoBehaviour:
     m_LegacyHeadingDefinition: -1
     m_LegacyVelocityFilterStrength: -1
   m_HorizontalAxis:
-    Value: 13.689335
+    Value: -51.726734
     m_SpeedMode: 0
     m_MaxSpeed: 180
     m_AccelTime: 0.1
     m_DecelTime: 0.1
     m_InputAxisName: Mouse X
-    m_InputAxisValue: 0
+    m_InputAxisValue: 0.15
     m_InvertInput: 0
     m_MinValue: -360
     m_MaxValue: 360
@@ -4664,7 +4679,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5385135540594560547}
-  m_LocalRotation: {x: -0.054419927, y: 0.11899889, z: 0.0065322164, w: 0.9913804}
+  m_LocalRotation: {x: 0.077552594, y: -0.4346034, z: 0.037596256, w: 0.8964887}
   m_LocalPosition: {x: 0, y: 0.41599998, z: 0.15099975}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -5137,8 +5152,8 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_MotionVectors: 0
-  m_LightProbeUsage: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RenderingLayerMask: 1
@@ -5275,7 +5290,7 @@ MonoBehaviour:
   m_ProbeSettings:
     frustum:
       fieldOfViewMode: 1
-      fixedValue: 70
+      fixedValue: 90
       automaticScale: 1
       viewerScale: 1
     type: 1
@@ -5319,7 +5334,7 @@ MonoBehaviour:
       m_BoxSize: {x: 1, y: 1, z: 1}
       m_SphereRadius: 1
     proxySettings:
-      useInfluenceVolumeAsProxyVolume: 0
+      useInfluenceVolumeAsProxyVolume: 1
       capturePositionProxySpace: {x: 0, y: 0, z: 0}
       captureRotationProxySpace: {x: 0, y: 0, z: 0, w: 1}
       mirrorPositionProxySpace: {x: -0.00000058108424, y: 0, z: -0.024944294}
@@ -5330,7 +5345,7 @@ MonoBehaviour:
       customRenderingSettings: 1
       renderingPathCustomFrameSettings:
         bitDatas:
-          data1: 70043410438159
+          data1: 70297877216367
           data2: 4539628425463136256
         lodBias: 1
         lodBiasMode: 0
@@ -5341,7 +5356,7 @@ MonoBehaviour:
         materialQuality: 0
       renderingPathCustomFrameSettingsOverrideMask:
         mask:
-          data1: 356607353612
+          data1: 0
           data2: 0
       bufferClearing:
         clearColorMode: 0
@@ -6202,7 +6217,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5385135541409959597}
-  m_LocalRotation: {x: -0.054419927, y: 0.11899889, z: 0.0065322164, w: 0.9913804}
+  m_LocalRotation: {x: 0.077552594, y: -0.4346034, z: 0.037596256, w: 0.8964887}
   m_LocalPosition: {x: 0, y: 0.41599998, z: 0.15099975}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -7842,9 +7857,10 @@ GameObject:
   - component: {fileID: 8950259825266283654}
   - component: {fileID: 3625579546241291549}
   - component: {fileID: 7745988086105112993}
+  - component: {fileID: 6810096473652166963}
   m_Layer: 0
   m_Name: FrontLeftRight
-  m_TagString: Untagged
+  m_TagString: Trailer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7910,6 +7926,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &6810096473652166963
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6318469108863579554}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4436261425170135314, guid: 13423b9e0c57da541ba2e97d40cf7d25, type: 3}
 --- !u!1 &6319100202392326331
 GameObject:
   m_ObjectHideFlags: 0
@@ -8241,7 +8271,7 @@ GameObject:
   - component: {fileID: 6670701883371851606}
   m_Layer: 0
   m_Name: Trailer
-  m_TagString: Untagged
+  m_TagString: Trailer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8338,9 +8368,10 @@ GameObject:
   - component: {fileID: 297695009242066252}
   - component: {fileID: 6690347970883948644}
   - component: {fileID: 3141937689266619077}
+  - component: {fileID: 2930172625890189245}
   m_Layer: 0
   m_Name: RearLeftWheel
-  m_TagString: Untagged
+  m_TagString: Trailer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8406,6 +8437,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &2930172625890189245
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6866577722489611128}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 735763686855033882, guid: 13423b9e0c57da541ba2e97d40cf7d25, type: 3}
 --- !u!1 &7077710407422252407
 GameObject:
   m_ObjectHideFlags: 0
@@ -9670,6 +9715,8 @@ GameObject:
   - component: {fileID: 6929449359719335260}
   - component: {fileID: 9018725167900794879}
   - component: {fileID: 1580293804}
+  - component: {fileID: 3411992720209469519}
+  - component: {fileID: 219198651077376535}
   m_Layer: 0
   m_Name: 'LeftMirror '
   m_TagString: Untagged
@@ -9715,8 +9762,8 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_MotionVectors: 0
-  m_LightProbeUsage: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RenderingLayerMask: 1
@@ -9853,7 +9900,7 @@ MonoBehaviour:
   m_ProbeSettings:
     frustum:
       fieldOfViewMode: 1
-      fixedValue: 70
+      fixedValue: 90
       automaticScale: 0.3
       viewerScale: 1
     type: 1
@@ -9897,7 +9944,7 @@ MonoBehaviour:
       m_BoxSize: {x: 1, y: 1, z: 1}
       m_SphereRadius: 1
     proxySettings:
-      useInfluenceVolumeAsProxyVolume: 0
+      useInfluenceVolumeAsProxyVolume: 1
       capturePositionProxySpace: {x: 0, y: 0, z: 0}
       captureRotationProxySpace: {x: 0, y: 0, z: 0, w: 1}
       mirrorPositionProxySpace: {x: -0.00000058108424, y: 0, z: -0.024944294}
@@ -9908,7 +9955,7 @@ MonoBehaviour:
       customRenderingSettings: 1
       renderingPathCustomFrameSettings:
         bitDatas:
-          data1: 70043410438159
+          data1: 70297877216367
           data2: 4539628425463136256
         lodBias: 1
         lodBiasMode: 0
@@ -9919,7 +9966,7 @@ MonoBehaviour:
         materialQuality: 0
       renderingPathCustomFrameSettingsOverrideMask:
         mask:
-          data1: 356607353612
+          data1: 0
           data2: 0
       bufferClearing:
         clearColorMode: 0
@@ -10115,6 +10162,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce6492bfb1663b74bac8c7506c4e4e0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!222 &3411992720209469519
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9018725167900794872}
+  m_CullTransparentMesh: 0
+--- !u!114 &219198651077376535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9018725167900794872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Texture: {fileID: 0}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
 --- !u!1 &9032578391870304824
 GameObject:
   m_ObjectHideFlags: 0
@@ -10126,9 +10206,10 @@ GameObject:
   - component: {fileID: 6087575192794158006}
   - component: {fileID: 5552679386644734984}
   - component: {fileID: 2474122281960978024}
+  - component: {fileID: 8615909983618580441}
   m_Layer: 0
   m_Name: RearRightWheel
-  m_TagString: Untagged
+  m_TagString: Trailer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10194,6 +10275,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &8615909983618580441
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9032578391870304824}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6580315171149848965, guid: 13423b9e0c57da541ba2e97d40cf7d25, type: 3}
 --- !u!1001 &8226520089677183787
 PrefabInstance:
   m_ObjectHideFlags: 0
