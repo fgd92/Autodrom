@@ -68,16 +68,9 @@ public class StopZoneDetector : MonoBehaviour
     {
         //вычисление расстояния от финишной линии
         Vector3 finishLinePos = new Vector3(FinishLinePlane.position.x, 0, FinishLinePlane.position.z);
-        Vector3 tractorPos = new Vector3(other.transform.position.x, 0, other.transform.position.z);
-        if (Vector3.Distance(finishLinePos, tractorPos) > 6f)
-        {
-            //остановился более 0.5 метров перед линией
-            exercise.EndExercise(true);            
-        }
-        else
-        {
-            exercise.EndExercise(false);
-        }
+        Vector3 tractorPos = new Vector3(other.transform.position.x, 0, other.transform.position.z + 2.5f);
+        //остановился более 0.5 метров перед линией
+                 exercise.EndExercise(Vector3.Distance(finishLinePos, tractorPos) > 2f);            
     }
 
     private void OnTriggerEnter(Collider other)

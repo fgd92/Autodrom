@@ -4407,7 +4407,7 @@ MonoBehaviour:
   m_BlockingObjects: 3
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 279
 --- !u!114 &194626673
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32565,7 +32565,7 @@ GameObject:
   - component: {fileID: 1299055527}
   m_Layer: 0
   m_Name: SecondCamera
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

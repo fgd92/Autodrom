@@ -409,7 +409,7 @@ GameObject:
   - component: {fileID: 4010172382796853971}
   m_Layer: 0
   m_Name: FrontRightWheel
-  m_TagString: Trailer
+  m_TagString: Wheel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7860,7 +7860,7 @@ GameObject:
   - component: {fileID: 6810096473652166963}
   m_Layer: 0
   m_Name: FrontLeftRight
-  m_TagString: Trailer
+  m_TagString: Wheel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8371,7 +8371,7 @@ GameObject:
   - component: {fileID: 2930172625890189245}
   m_Layer: 0
   m_Name: RearLeftWheel
-  m_TagString: Trailer
+  m_TagString: Wheel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10209,7 +10209,7 @@ GameObject:
   - component: {fileID: 8615909983618580441}
   m_Layer: 0
   m_Name: RearRightWheel
-  m_TagString: Trailer
+  m_TagString: Wheel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

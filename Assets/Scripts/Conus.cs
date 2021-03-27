@@ -5,7 +5,7 @@ public class Conus : MonoBehaviour
     private bool once = false;
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.transform.CompareTag("Player"))
+        if (collision.transform.CompareTag("Player") || collision.transform.CompareTag("Trailer"))
         {
             AddScore();            
         }
