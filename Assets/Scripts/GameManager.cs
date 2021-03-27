@@ -18,6 +18,8 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private Text taskListText;
     [SerializeField]
+    private GameObject taskListTextContainerObject;
+    [SerializeField]
     private GameObject gameUI;
     [SerializeField]
     private Image attentionSignImage;
@@ -102,7 +104,7 @@ public class GameManager : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Tab))
         {
-            taskListText.gameObject.SetActive(!taskListText.gameObject.activeSelf);            
+            taskListTextContainerObject.SetActive(!taskListTextContainerObject.activeSelf);            
         }
     }
 
@@ -138,7 +140,7 @@ public class GameManager : MonoBehaviour
         LockCursor(false);
         DisplayEndmenu(true);
 
-        markText.text = "Ваша оценка:  \n" + (exercise.exercisesScriptable.IsPassed == true ? "сдал" : "не сдал");
+        markText.text = "Ваша оценка: " + (exercise.exercisesScriptable.IsPassed == true ? "сдал" : "не сдал");
         restartButton.interactable = exercise.exercisesScriptable.Attempts < 2;
         attempsText.text = exercise.exercisesScriptable.Attempts < 2 ? "У вас есть еще одна попытка" : "Ваши попытки кончились";
         timerText.text = "Затраченное время:\n" + timer.TimerString;
