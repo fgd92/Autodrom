@@ -406,9 +406,10 @@ GameObject:
   - component: {fileID: 8006125237804674052}
   - component: {fileID: 6390751917063477229}
   - component: {fileID: 1751179624440550821}
+  - component: {fileID: 6718031551550827571}
   m_Layer: 0
   m_Name: FrontRightWheel
-  m_TagString: Untagged
+  m_TagString: Trailer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -474,6 +475,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &6718031551550827571
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 103287785600564495}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5753121525062783368, guid: 13423b9e0c57da541ba2e97d40cf7d25, type: 3}
 --- !u!1 &106456740355521948
 GameObject:
   m_ObjectHideFlags: 0
@@ -7816,9 +7831,10 @@ GameObject:
   - component: {fileID: 8950259825266283654}
   - component: {fileID: 3625579546241291549}
   - component: {fileID: 7745988086105112993}
+  - component: {fileID: 2127086734752391446}
   m_Layer: 0
   m_Name: FrontLeftRight
-  m_TagString: Untagged
+  m_TagString: Trailer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7884,6 +7900,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &2127086734752391446
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6318469108863579554}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4436261425170135314, guid: 13423b9e0c57da541ba2e97d40cf7d25, type: 3}
 --- !u!1 &6319100202392326331
 GameObject:
   m_ObjectHideFlags: 0
@@ -8215,7 +8245,7 @@ GameObject:
   - component: {fileID: 6670701883371851606}
   m_Layer: 0
   m_Name: Trailer
-  m_TagString: Untagged
+  m_TagString: Trailer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8312,9 +8342,10 @@ GameObject:
   - component: {fileID: 297695009242066252}
   - component: {fileID: 6690347970883948644}
   - component: {fileID: 3141937689266619077}
+  - component: {fileID: 6116102026259590845}
   m_Layer: 0
   m_Name: RearLeftWheel
-  m_TagString: Untagged
+  m_TagString: Trailer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8380,6 +8411,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &6116102026259590845
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6866577722489611128}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 735763686855033882, guid: 13423b9e0c57da541ba2e97d40cf7d25, type: 3}
 --- !u!1 &7077710407422252407
 GameObject:
   m_ObjectHideFlags: 0
@@ -10082,9 +10127,10 @@ GameObject:
   - component: {fileID: 6087575192794158006}
   - component: {fileID: 5552679386644734984}
   - component: {fileID: 2474122281960978024}
+  - component: {fileID: 895050690230341184}
   m_Layer: 0
   m_Name: RearRightWheel
-  m_TagString: Untagged
+  m_TagString: Trailer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10150,6 +10196,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!64 &895050690230341184
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9032578391870304824}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6580315171149848965, guid: 13423b9e0c57da541ba2e97d40cf7d25, type: 3}
 --- !u!1001 &8226520089677183787
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -70,6 +70,7 @@ public class MenuManager : MonoBehaviour
             exerciseUI.ExercisesScriptable.Score = 0;
             exerciseUI.ExercisesScriptable.IsPassed = false;
             exerciseUI.ExercisesScriptable.PrematureTermination = false;
+            exerciseUI.ExercisesScriptable.timer = "00:00";
             exerciseUI.UpdateUI();
         }
     }
