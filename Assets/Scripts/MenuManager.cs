@@ -7,6 +7,10 @@ public class MenuManager : MonoBehaviour
     [SerializeField]
     private GameObject menuObject;
     [SerializeField]
+    private GameObject leftMenuPlane;
+    [SerializeField]
+    private GameObject chooseMenuPlane;
+    [SerializeField]
     private GameObject listExerciseObject;
     [SerializeField]
     private GameObject howToPlayObject;
@@ -19,26 +23,32 @@ public class MenuManager : MonoBehaviour
     {
         EnableMenu();
 
-        examResultText.text = CheckExercisesResults() == true ? "Оценка экзамена: \n сдал" : "Оценка экзамена: \n не сдал";
+        examResultText.text = CheckExercisesResults() == true ? "Оценка экзамена: \n <color=lime>сдал</color>" : "Оценка экзамена: \n <color=red>не сдал</color>";
     }
 
     public void EnableMenu()
     {
         menuObject.SetActive(true);
+        leftMenuPlane.SetActive(true);
         listExerciseObject.SetActive(false);
+        chooseMenuPlane.SetActive(false);
         howToPlayObject.SetActive(false);
     }
 
     public void EnableList()
     {
         menuObject.SetActive(false);
+        leftMenuPlane.SetActive(false);
         listExerciseObject.SetActive(true);
+        chooseMenuPlane.SetActive(true);
         howToPlayObject.SetActive(false);
     }
     public void EnableHowToPlayMenu()
     {
         menuObject.SetActive(false);
+        leftMenuPlane.SetActive(false);
         listExerciseObject.SetActive(false);
+        chooseMenuPlane.SetActive(true);
         howToPlayObject.SetActive(true);
     }
     public void Exit()
@@ -60,6 +70,7 @@ public class MenuManager : MonoBehaviour
             exerciseUI.ExercisesScriptable.Score = 0;
             exerciseUI.ExercisesScriptable.IsPassed = false;
             exerciseUI.ExercisesScriptable.PrematureTermination = false;
+            exerciseUI.ExercisesScriptable.timer = "00:00";
             exerciseUI.UpdateUI();
         }
     }

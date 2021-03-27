@@ -18,6 +18,8 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private Text taskListText;
     [SerializeField]
+    private GameObject taskListTextContainerObject;
+    [SerializeField]
     private GameObject gameUI;
     [SerializeField]
     private Image attentionSignImage;
@@ -29,6 +31,8 @@ public class GameManager : MonoBehaviour
     private Text markText;
     [SerializeField]
     private Text endScoreText;
+    [SerializeField]
+    private Text timerText;
     [SerializeField]
     private Button restartButton;
     [SerializeField]
@@ -43,9 +47,12 @@ public class GameManager : MonoBehaviour
     private bool isEnd;
     private Exercise exercise;
     private TaskManager taskManager;
+    private Timer timer;
+
     private void Awake()
     {
         taskManager = GetComponent<TaskManager>();
+        timer = GetComponent<Timer>();
     }
     public void Start()
     {
@@ -57,14 +64,12 @@ public class GameManager : MonoBehaviour
         ExerciseObject.SetActive(true);
         exercise = ExerciseObject.GetComponent<Exercise>();
         exercise.OnEndEvent += Exercise_OnEndEvent;
-        exercise.AddMiddleMistake += Exercise_AddMiddleMistake;
+        exercise.AddMistake += Exercise_AddMistake;
         exercise.CountScroreOfTasks += Exercise_CountScroreOfTasks;
         exercise.exercisesScriptable.Attempts += 1;
 
         SetUI();
         SetTaskManagerArray();
-
-        FindActiveConus(ExerciseObject);
     }
 
     private void Exercise_CountScroreOfTasks()
@@ -95,30 +100,25 @@ public class GameManager : MonoBehaviour
             pauseMenu.SetActive(!pauseMenu.activeSelf);            
             Time.timeScale = pauseMenu.activeSelf == true ? 0 : 1;
             LockCursor(!pauseMenu.activeSelf);
-            pauseRestartButton.interactable = exercise.exercisesScriptable.Attempts < 2; 
+            pauseRestartButton.interactable = exercise.exercisesScriptable.Attempts < 2;             
         }
         if (Input.GetKeyDown(KeyCode.Tab))
         {
-            taskListText.gameObject.SetActive(!taskListText.gameObject.activeSelf);
+            taskListTextContainerObject.SetActive(!taskListTextContainerObject.activeSelf);              
         }
     }
 
     public void LoadSceneFromPauseMenu(int idScene)
     {
         Unsubscribe();
-
+        CurrentScore = 0;
         LoadScene(idScene);
     }
 
     private void Unsubscribe()        
     {
-        Transform conuses = exercise.transform.GetChild(0);
-        for (int i = 0; i < conuses.childCount-1; i++)
-        {
-            conuses.GetChild(i).GetComponent<Conus>().AddGrossMistake -= GameManager_AddScoreEvent;
-        }
         exercise.OnEndEvent -= Exercise_OnEndEvent;
-        exercise.AddMiddleMistake -= Exercise_AddMiddleMistake;
+        exercise.AddMistake -= Exercise_AddMistake;
     }
 
     private static void LockCursor(bool isLock)
@@ -139,37 +139,25 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0;
         LockCursor(false);
         DisplayEndmenu(true);
-        markText.text = "Ваша оценка:  \n" + (exercise.exercisesScriptable.IsPassed == true ? "сдал" : "не сдал");
+
+        markText.text = "Ваша оценка: " + (exercise.exercisesScriptable.IsPassed == true ? "сдал" : "не сдал");
         restartButton.interactable = exercise.exercisesScriptable.Attempts < 2;
         attempsText.text = exercise.exercisesScriptable.Attempts < 2 ? "У вас есть еще одна попытка" : "Ваши попытки кончились";
+        timerText.text = "Затраченное время:\n" + timer.TimerString;
         if (!exercise.exercisesScriptable.PrematureTermination)
             endScoreText.text = "Вы набрали " + CurrentScore + " штрафных баллов";
         else
             endScoreText.text = "Вы выехали за границу упражнения";
+
         CurrentScore = 0;
         isEnd = true;
+
+        exercise.exercisesScriptable.timer = timer.TimerString;
     }
 
-    private void FindActiveConus(GameObject exerciseObject)
-    {        
-        for (int i = 0; i < exerciseObject.transform.GetChild(0).childCount-1; i++)
-        {
-            Transform gameObject = exerciseObject.transform.GetChild(0).GetChild(i);
-            gameObject.GetComponent<Conus>().AddGrossMistake += GameManager_AddScoreEvent;
-
-        }
-    }
-    private void Exercise_AddMiddleMistake()
+    private void Exercise_AddMistake(int scoreCount)
     {
-        CurrentScore += 3;
-        SetUI();
-        StopCoroutine(nameof(AnimationAttentionSign));
-        StartCoroutine(nameof(AnimationAttentionSign), 2f);
-    }
-
-    private void GameManager_AddScoreEvent()
-    {
-        CurrentScore += 5;
+        CurrentScore += scoreCount;
         SetUI();
         StopCoroutine(nameof(AnimationAttentionSign));
         StartCoroutine(nameof(AnimationAttentionSign), 2f);

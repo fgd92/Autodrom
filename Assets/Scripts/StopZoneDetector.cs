@@ -48,7 +48,7 @@ public class StopZoneDetector : MonoBehaviour
             {
                 if (dashboard!= null && Mathf.RoundToInt(dashboard.Speed) == 0)
                 {
-                    exercise.EndExercise(true);
+                    exercise.EndExercise(false);
                 }
             }
         }
@@ -86,7 +86,6 @@ public class StopZoneDetector : MonoBehaviour
         {
             dashboard = other.gameObject.GetComponent<Dashboard>();
         }
-
         if (!isTractorFirst && !isTrailerFirst)
         {
             isTractorFirst = other.CompareTag("Player");

@@ -795,6 +795,11 @@ PrefabInstance:
       propertyPath: m_Axis.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2643750065579611457, guid: da9522781c6e4d44e9979fb465997a6e,
+        type: 3}
+      propertyPath: m_UseLimits
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8226520091267082997, guid: da9522781c6e4d44e9979fb465997a6e,
         type: 3}
       propertyPath: m_LocalPosition.x

@@ -11,8 +11,10 @@ public class ExerciseUI : MonoBehaviour
     private Text scoreText;
     [SerializeField]
     private Text markText;
-
-    public Button StartButton;
+    [SerializeField]
+    private Text timerText;
+    [SerializeField]
+    private Button startButton;
 
     private void Start()
     {
@@ -23,8 +25,9 @@ public class ExerciseUI : MonoBehaviour
     {
         attempsText.text = "Попытки: " + ExercisesScriptable.Attempts + "/2";
         scoreText.text = "Штрафные баллы - " + ExercisesScriptable.Score;
-        markText.text = "Оценка - " + (ExercisesScriptable.IsPassed == true ? "сдал" : "не сдал");
+        markText.text = "Оценка - " + (ExercisesScriptable.IsPassed == true ? "<color=lime>сдал</color>" : "<color=red>не сдал</color>");
+        timerText.text = "Время: " + ExercisesScriptable.timer;
 
-        StartButton.interactable = ExercisesScriptable.Attempts < 2;
+        startButton.interactable = ExercisesScriptable.Attempts < 2;
     }
 }

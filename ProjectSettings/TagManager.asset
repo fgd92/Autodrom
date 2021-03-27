@@ -8,6 +8,8 @@ TagManager:
   - Border
   - FinishLine
   - Trailer
+  - TrafficLight
+  - Wheel
   layers:
   - Default
   - TransparentFX

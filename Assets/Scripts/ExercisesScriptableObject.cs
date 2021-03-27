@@ -5,11 +5,12 @@ public class ExercisesScriptableObject : ScriptableObject
 {    
     public int Attempts;
     public int Score;
+    public string timer;
     public bool IsPassed;
     public bool PrematureTermination;
     public bool IsParkWithTailer;
     public bool IsEstacada;
     public bool IsPark;
-    [Multiline()]
+    [Multiline(10)]
     public string Description;    
 }

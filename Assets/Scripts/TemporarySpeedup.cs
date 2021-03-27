@@ -6,22 +6,22 @@ public class TemporarySpeedup : MonoBehaviour
     private float speedupPower;
     private float lastSpeed;
 
-    private Engine engine;
+    private Engine playerEngine;
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            engine = other.gameObject.GetComponent<Engine>();
+            playerEngine = other.gameObject.GetComponent<Engine>();
             
-            lastSpeed = engine.GetMotorForce();
-            engine.SetMotorForce(lastSpeed * speedupPower);
+            lastSpeed = playerEngine.GetMotorForce();
+            playerEngine.SetMotorForce(lastSpeed * speedupPower);
         }
     }
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
         {           
-            engine.SetMotorForce(lastSpeed);
+            playerEngine.SetMotorForce(lastSpeed);
         }
     }
 }

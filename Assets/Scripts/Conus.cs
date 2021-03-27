@@ -1,16 +1,28 @@
 ﻿using UnityEngine;
 
-public delegate void AddGrossMistake();
 public class Conus : MonoBehaviour
 {
-    public event AddGrossMistake AddGrossMistake;
-
+    private bool once = false;
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.transform.CompareTag("Player"))
         {
-            GetComponent<Conus>().enabled = false;
-            AddGrossMistake?.Invoke();
+            AddScore();            
         }
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Wheel"))
+        {
+            AddScore();
+        }
+    }
+    private void AddScore()
+    {
+        if (once) return;
+
+        transform.parent.parent.GetComponent<Exercise>().AddMistakeInvoke(5);        
+        once = true;
+        Destroy(GetComponent<Conus>());
     }
 }

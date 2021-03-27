@@ -7,7 +7,8 @@ public class TriggerTaskEvents : MonoBehaviour
     {
         Stop,
         Start,
-        StopStart
+        StopStart,
+        GreenStart
     }
     public event Action<string> TriggerTaskEvent;
     [SerializeField]
@@ -18,7 +19,10 @@ public class TriggerTaskEvents : MonoBehaviour
     private string taskText;
     [SerializeField]
     private string secondTaskText;
+    [SerializeField]
+    private GameObject invisibleBorder;
 
+    private TrafficLight trafficLight;
     private Dashboard dashboard;    
     private bool completed;
     private bool onceStart = false;
@@ -26,14 +30,15 @@ public class TriggerTaskEvents : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
-        {
-            dashboard = other.GetComponent<Dashboard>();
+        {            
+            dashboard = other.GetComponent<Dashboard>();            
 
             if (isEnter)
             {
                 switch (cases)
                 {
                     case Cases.Stop:
+                        TriggerTaskEvent?.Invoke(taskText);
                         break;
                     case Cases.Start:
                         if (Mathf.RoundToInt(dashboard.Speed) > 0.5f)
@@ -41,6 +46,11 @@ public class TriggerTaskEvents : MonoBehaviour
                         break;
                 }
             }
+        }
+        else if (other.CompareTag("TrafficLight"))
+        {
+            if (cases == Cases.GreenStart)
+                trafficLight = other.GetComponent<TrafficLight>();            
         }
     }
 
@@ -67,11 +77,24 @@ public class TriggerTaskEvents : MonoBehaviour
                         {
                             onceStart = true;
                             TriggerTaskEvent?.Invoke(taskText);
+                            invisibleBorder.SetActive(true);
                         }
                         if (dashboard.Speed > 0.5f && onceStart)
                         {
                             TriggerTaskEvent?.Invoke(secondTaskText);
                         }                        
+                        break;
+                    case Cases.GreenStart:
+                        if (dashboard.Speed > 0.5f)
+                        {
+                            if (trafficLight.CurrentStateTrafficeLight == StateTrafficLight.Green)
+                                TriggerTaskEvent?.Invoke(taskText);
+                            else
+                            {
+                                transform.parent.GetComponent<Exercise>().AddMistakeInvoke(5);
+                                DestroyComponents();
+                            }
+                        }                       
                         break;
                     default:
                         break;
@@ -87,7 +110,7 @@ public class TriggerTaskEvents : MonoBehaviour
             case Cases.Stop:                    
                 //если выехал из зоны фиксации и не зафиксироавл машину на сколне
                 if (!completed)                                            
-                    transform.parent.GetComponent<Exercise>().AddMiddleMistakeInvoke();                                       
+                    transform.parent.GetComponent<Exercise>().AddMistakeInvoke(3);                                       
                 break;
             default:
                 break;
@@ -103,7 +126,7 @@ public class TriggerTaskEvents : MonoBehaviour
 
     private void DestroyComponents()
     {
-        Destroy(GetComponent<BoxCollider>());
+        //Destroy(GetComponent<BoxCollider>());
         Destroy(this);
     }
 }
