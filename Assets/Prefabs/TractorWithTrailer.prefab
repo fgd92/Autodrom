@@ -2123,11 +2123,11 @@ HingeJoint:
   m_Anchor: {x: 0, y: -0.4, z: 0}
   m_Axis: {x: 0, y: 1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0.27000007, z: 1.1441307}
-  m_UseSpring: 0
+  m_ConnectedAnchor: {x: 0, y: 0.27000007, z: 1.1441288}
+  m_UseSpring: 1
   m_Spring:
-    spring: 0
-    damper: 0
+    spring: 5000
+    damper: 100
     targetPosition: 0
   m_UseMotor: 0
   m_Motor:
@@ -4680,7 +4680,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5385135540594560547}
   m_LocalRotation: {x: 0.010485059, y: -0.988966, z: 0.11973404, w: 0.08660332}
-  m_LocalPosition: {x: 0, y: 0.41599998, z: 0.15099975}
+  m_LocalPosition: {x: 0, y: 0.41600013, z: 0.15099975}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5385135540414487568}
@@ -6218,7 +6218,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5385135541409959597}
   m_LocalRotation: {x: 0.010485059, y: -0.988966, z: 0.11973404, w: 0.08660332}
-  m_LocalPosition: {x: 0, y: 0.41599998, z: 0.15099975}
+  m_LocalPosition: {x: 0, y: 0.41600013, z: 0.15099975}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5385135540513301861}
@@ -7579,7 +7579,6 @@ GameObject:
   - component: {fileID: 8893218675454540396}
   - component: {fileID: 4821140889346291363}
   - component: {fileID: 3284494743134709815}
-  - component: {fileID: 8226520091123472172}
   - component: {fileID: 2643750065579611457}
   m_Layer: 0
   m_Name: Tractor
@@ -7734,22 +7733,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSteeringWheels: 1
-  motorForce: 800
+  motorForce: 700
   breakForce: 5000
---- !u!138 &8226520091123472172
-FixedJoint:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6240305468946750333}
-  m_ConnectedBody: {fileID: 2960316264008648398}
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_EnableCollision: 0
-  m_EnablePreprocessing: 1
-  m_MassScale: 1
-  m_ConnectedMassScale: 1
 --- !u!59 &2643750065579611457
 HingeJoint:
   m_ObjectHideFlags: 0
@@ -8957,7 +8942,7 @@ ParentConstraint:
   m_TranslationAtRest: {x: 0, y: 0, z: 0}
   m_RotationAtRest: {x: 0, y: 0, z: 0}
   m_TranslationOffsets:
-  - {x: 0, y: -0.6700002, z: -1.1441307}
+  - {x: 0, y: -0.67000014, z: -1.1441269}
   m_RotationOffsets:
   - {x: 0, y: 0, z: 0}
   m_AffectTranslationX: 1
