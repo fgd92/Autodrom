@@ -1,8 +1,4 @@
-﻿using System.Collections;
-using UnityEditor.UIElements;
-using UnityEngine;
-using UnityEngine.Serialization;
-using UnityEngine.UIElements;
+﻿using UnityEngine;
 public class Dashboard : MonoBehaviour, IDashboard
 {
     public Measures Measures;
