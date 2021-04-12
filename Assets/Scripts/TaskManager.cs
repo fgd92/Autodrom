@@ -26,6 +26,7 @@ public class TaskManager : MonoBehaviour
 
     public void SetResult(string taskName)
     {
+        print("Засчитываю - " + taskName);
         for (int i = 1; i < TasksTextArray.Length; i++)
         {
             if (TasksTextArray[i] == taskName)

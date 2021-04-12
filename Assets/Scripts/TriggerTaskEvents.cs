@@ -65,7 +65,8 @@ public class TriggerTaskEvents : MonoBehaviour
                 {
                     case Cases.Stop:
                         completed = true;
-                        if (Mathf.RoundToInt(dashboard.Speed) == 0)
+                        print("Целочисленная скорость - "+Mathf.RoundToInt(dashboard.Speed));
+                        if (Mathf.RoundToInt(dashboard.Speed) == 0)                            
                             TriggerTaskEvent?.Invoke(taskText);
                         break;
                     case Cases.Start:
@@ -91,9 +92,9 @@ public class TriggerTaskEvents : MonoBehaviour
                                 TriggerTaskEvent?.Invoke(taskText);
                             else
                             {
-                                transform.parent.GetComponent<Exercise>().AddMistakeInvoke(5);
-                                DestroyComponents();
+                                transform.parent.GetComponent<Exercise>().AddMistakeInvoke(5);                                
                             }
+                            DestroyComponents();
                         }                       
                         break;
                     default:
@@ -113,6 +114,7 @@ public class TriggerTaskEvents : MonoBehaviour
                     transform.parent.GetComponent<Exercise>().AddMistakeInvoke(3);                                       
                 break;
             default:
+                DestroyComponents();
                 break;
         }
 
@@ -121,7 +123,7 @@ public class TriggerTaskEvents : MonoBehaviour
 
     public void InvokeTriggerTaskEvent()
     {
-        TriggerTaskEvent?.Invoke(taskText);
+        TriggerTaskEvent?.Invoke(taskText);        
     }
 
     private void DestroyComponents()
