@@ -207,55 +207,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2164995600376572028, guid: ced4667155a11e940b3186286b174710,
-        type: 3}
-      propertyPath: m_TranslationOffsets.Array.data[0].y
-      value: -0.67000014
-      objectReference: {fileID: 0}
-    - target: {fileID: 2164995600376572028, guid: ced4667155a11e940b3186286b174710,
-        type: 3}
-      propertyPath: m_TranslationOffsets.Array.data[0].z
-      value: -1.1441269
-      objectReference: {fileID: 0}
-    - target: {fileID: 3284494743134709815, guid: ced4667155a11e940b3186286b174710,
-        type: 3}
-      propertyPath: motorForce
-      value: 700
-      objectReference: {fileID: 0}
-    - target: {fileID: 5385135540594560551, guid: ced4667155a11e940b3186286b174710,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.41600013
-      objectReference: {fileID: 0}
-    - target: {fileID: 5385135541409959587, guid: ced4667155a11e940b3186286b174710,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.41600013
-      objectReference: {fileID: 0}
-    - target: {fileID: 7947561833025862821, guid: ced4667155a11e940b3186286b174710,
-        type: 3}
-      propertyPath: m_ConnectedAnchor.z
-      value: 1.1441288
-      objectReference: {fileID: 0}
-    - target: {fileID: 7947561833025862821, guid: ced4667155a11e940b3186286b174710,
-        type: 3}
-      propertyPath: m_UseSpring
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7947561833025862821, guid: ced4667155a11e940b3186286b174710,
+    - target: {fileID: 2643750065579611457, guid: ced4667155a11e940b3186286b174710,
         type: 3}
       propertyPath: m_Spring.spring
-      value: 5000
+      value: 3.4028233e+38
       objectReference: {fileID: 0}
     - target: {fileID: 7947561833025862821, guid: ced4667155a11e940b3186286b174710,
         type: 3}
-      propertyPath: m_Spring.damper
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 7947561833025862821, guid: ced4667155a11e940b3186286b174710,
-        type: 3}
-      propertyPath: m_Spring.targetPosition
-      value: 0
+      propertyPath: m_Limits.bounceMinVelocity
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 8226520091267082997, guid: ced4667155a11e940b3186286b174710,
         type: 3}
@@ -317,8 +277,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: TractorWithTrailer
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 8226520091123472172, guid: ced4667155a11e940b3186286b174710, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ced4667155a11e940b3186286b174710, type: 3}
 --- !u!1 &1409360768
 GameObject:
