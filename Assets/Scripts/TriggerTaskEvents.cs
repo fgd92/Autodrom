@@ -65,7 +65,6 @@ public class TriggerTaskEvents : MonoBehaviour
                 {
                     case Cases.Stop:
                         completed = true;
-                        print("Целочисленная скорость - "+Mathf.RoundToInt(dashboard.Speed));
                         if (Mathf.RoundToInt(dashboard.Speed) == 0)                            
                             TriggerTaskEvent?.Invoke(taskText);
                         break;

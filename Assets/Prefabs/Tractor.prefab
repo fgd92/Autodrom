@@ -114,7 +114,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 37670618207809421}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 52, y: 0.652, z: -31.700037}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_Children:
@@ -2020,7 +2020,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2409721145381177374}
   m_LocalRotation: {x: 0.203607, y: 0.089625575, z: -0.01872087, w: 0.974762}
-  m_LocalPosition: {x: 0, y: 0.41599998, z: 0.15099975}
+  m_LocalPosition: {x: 0, y: 0.41600028, z: 0.15099975}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5231853844619256240}
@@ -3477,7 +3477,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4028205850198652885}
   m_LocalRotation: {x: 0.203607, y: 0.089625575, z: -0.01872087, w: 0.974762}
-  m_LocalPosition: {x: 0, y: 0.41599998, z: 0.15099975}
+  m_LocalPosition: {x: 0, y: 0.41600028, z: 0.15099975}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3746582479956374720}
@@ -7189,7 +7189,7 @@ MonoBehaviour:
       m_BoxSize: {x: 1, y: 1, z: 1}
       m_SphereRadius: 1
     proxySettings:
-      useInfluenceVolumeAsProxyVolume: 1
+      useInfluenceVolumeAsProxyVolume: 0
       capturePositionProxySpace: {x: 0, y: 0, z: 0}
       captureRotationProxySpace: {x: 0, y: 0, z: 0, w: 1}
       mirrorPositionProxySpace: {x: -0.00000058108424, y: 0, z: -0.024944294}
