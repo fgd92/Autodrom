@@ -11,6 +11,7 @@ public class ExercisesScriptableObject : ScriptableObject
     public bool IsParkWithTailer;
     public bool IsEstacada;
     public bool IsPark;
+    public bool isFreeRide;
     [Multiline(10)]
     public string Description;    
 }

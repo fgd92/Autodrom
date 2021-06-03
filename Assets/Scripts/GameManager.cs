@@ -43,6 +43,8 @@ public class GameManager : MonoBehaviour
     private GameObject pauseMenu;
     [SerializeField]
     private Button pauseRestartButton;
+    [SerializeField]
+    private GameObject trailerToggle;
 
     private bool isEnd;
     private Exercise exercise;
@@ -66,7 +68,8 @@ public class GameManager : MonoBehaviour
         exercise.OnEndEvent += Exercise_OnEndEvent;
         exercise.AddMistake += Exercise_AddMistake;
         exercise.CountScroreOfTasks += Exercise_CountScroreOfTasks;
-        exercise.exercisesScriptable.Attempts += 1;
+        if (!exercise.exercisesScriptable.isFreeRide)
+            exercise.exercisesScriptable.Attempts += 1;
 
         SetUI();
         SetTaskManagerArray();
@@ -167,6 +170,9 @@ public class GameManager : MonoBehaviour
     {
         maxScoreText.text = "Максимальное количество штрафных баллов - " + exercise.MaxScore;
         currentScoreText.text = "Штрафные баллы: " + CurrentScore;
+        
+        trailerToggle.SetActive(exercise.exercisesScriptable.isFreeRide);
+        trailerToggle.GetComponent<Toggle>().isOn = exercise.exercisesScriptable.IsParkWithTailer;
     }
 
     public void SetTaskText(string[] TasksTextArray)
@@ -218,5 +224,10 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 1;
         SceneManager.LoadScene(idScene);
+    }
+
+    public void SetTrailerOnExercise(Toggle toggle)
+    {
+        exercise.exercisesScriptable.IsParkWithTailer = toggle.isOn;
     }
 }

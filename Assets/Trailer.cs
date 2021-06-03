@@ -27,17 +27,27 @@ public class Trailer : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.LeftShift))
+        if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             JointLimits limits = new JointLimits()
             {
                 max = StopHingeJointTransform.eulerAngles.y,
-                min = StopHingeJointTransform.eulerAngles.y
+                min = -StopHingeJointTransform.eulerAngles.y
             };
 
             HingeJoint.limits = limits;
         }
-        else
+        //if (Input.GetKey(KeyCode.LeftShift))
+        //{
+        //    JointLimits limits = new JointLimits()
+        //    {
+        //        max = StopHingeJointTransform.eulerAngles.y,
+        //        min = -StopHingeJointTransform.eulerAngles.y
+        //    };
+
+        //    HingeJoint.limits = limits;
+        //}
+        else if(Input.GetKeyUp(KeyCode.LeftShift))
         {
             HingeJoint.limits = defaultHingeJoint;
         }

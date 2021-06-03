@@ -537,7 +537,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: -0.4, z: 0}
   m_Axis: {x: 0, y: 1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0.27000007, z: 1.1441307}
+  m_ConnectedAnchor: {x: 0, y: 0.2699999, z: 1.1441326}
   m_UseSpring: 1
   m_Spring:
     spring: 10
@@ -1253,7 +1253,7 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 500
   m_Drag: 0
-  m_AngularDrag: 0
+  m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 1
@@ -1536,7 +1536,7 @@ ParentConstraint:
   m_TranslationAtRest: {x: 0, y: 0, z: 0}
   m_RotationAtRest: {x: 0, y: 0, z: 0}
   m_TranslationOffsets:
-  - {x: 0, y: -0.6700002, z: -1.1441307}
+  - {x: 0, y: -0.6700001, z: -1.1441345}
   m_RotationOffsets:
   - {x: 0, y: 0, z: 0}
   m_AffectTranslationX: 1
@@ -1834,6 +1834,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tractor
       objectReference: {fileID: 0}
+    - target: {fileID: 2587931422433190146, guid: 29d656136d82f2c45a5c3317456baf53,
+        type: 3}
+      propertyPath: m_ProbeSettings.lighting.fadeDistance
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 2587931422433190146, guid: 29d656136d82f2c45a5c3317456baf53,
+        type: 3}
+      propertyPath: m_ProbeSettings.resolution
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 2909342058929572401, guid: 29d656136d82f2c45a5c3317456baf53,
+        type: 3}
+      propertyPath: m_Mass
+      value: 163
+      objectReference: {fileID: 0}
     - target: {fileID: 3630725188610709819, guid: 29d656136d82f2c45a5c3317456baf53,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1889,20 +1904,55 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3906418587187491022, guid: 29d656136d82f2c45a5c3317456baf53,
+        type: 3}
+      propertyPath: m_Mass
+      value: 3370
+      objectReference: {fileID: 0}
+    - target: {fileID: 4153659402017633632, guid: 29d656136d82f2c45a5c3317456baf53,
+        type: 3}
+      propertyPath: m_Mass
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 4181177356084863120, guid: 29d656136d82f2c45a5c3317456baf53,
+        type: 3}
+      propertyPath: m_ProbeSettings.lighting.fadeDistance
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 4181177356084863120, guid: 29d656136d82f2c45a5c3317456baf53,
+        type: 3}
+      propertyPath: m_ProbeSettings.resolution
+      value: 512
+      objectReference: {fileID: 0}
     - target: {fileID: 4988288226739771215, guid: 29d656136d82f2c45a5c3317456baf53,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.623554
+      value: 0.00000023841858
       objectReference: {fileID: 0}
     - target: {fileID: 4988288226739771215, guid: 29d656136d82f2c45a5c3317456baf53,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.5352129
+      value: 0.15099971
       objectReference: {fileID: 0}
     - target: {fileID: 4988288226739771215, guid: 29d656136d82f2c45a5c3317456baf53,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.598658
+      value: 0.41599968
+      objectReference: {fileID: 0}
+    - target: {fileID: 5442992497377095382, guid: 29d656136d82f2c45a5c3317456baf53,
+        type: 3}
+      propertyPath: m_ProbeSettings.lighting.fadeDistance
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 5442992497377095382, guid: 29d656136d82f2c45a5c3317456baf53,
+        type: 3}
+      propertyPath: m_ProbeSettings.resolution
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 5605302605656744496, guid: 29d656136d82f2c45a5c3317456baf53,
+        type: 3}
+      propertyPath: m_Mass
+      value: 163
       objectReference: {fileID: 0}
     - target: {fileID: 5961283416785138615, guid: 29d656136d82f2c45a5c3317456baf53,
         type: 3}
@@ -1917,7 +1967,22 @@ PrefabInstance:
     - target: {fileID: 5961283416785138615, guid: 29d656136d82f2c45a5c3317456baf53,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.41599998
+      value: 0.41599968
+      objectReference: {fileID: 0}
+    - target: {fileID: 6029460237772615383, guid: 29d656136d82f2c45a5c3317456baf53,
+        type: 3}
+      propertyPath: m_Mass
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 7620941355249066709, guid: 29d656136d82f2c45a5c3317456baf53,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -9.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7620941355249066709, guid: 29d656136d82f2c45a5c3317456baf53,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -9.51
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 29d656136d82f2c45a5c3317456baf53, type: 3}
