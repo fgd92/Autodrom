@@ -19,6 +19,7 @@ public class Timer : MonoBehaviour
     private void Update()
     {
         timer += Time.deltaTime;    
+        //вывод отформатированного времени в текст
         timerText.text = ConvertSecondsToSring(timer);
     }
 
