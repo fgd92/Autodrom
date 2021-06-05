@@ -37,16 +37,6 @@ public class Trailer : MonoBehaviour
 
             HingeJoint.limits = limits;
         }
-        //if (Input.GetKey(KeyCode.LeftShift))
-        //{
-        //    JointLimits limits = new JointLimits()
-        //    {
-        //        max = StopHingeJointTransform.eulerAngles.y,
-        //        min = -StopHingeJointTransform.eulerAngles.y
-        //    };
-
-        //    HingeJoint.limits = limits;
-        //}
         else if(Input.GetKeyUp(KeyCode.LeftShift))
         {
             HingeJoint.limits = defaultHingeJoint;
