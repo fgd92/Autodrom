@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 153.93846, g: 177.66638, b: 241.31975, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -15072,7 +15072,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -39982,7 +39982,6 @@ MonoBehaviour:
   pauseMenu: {fileID: 1016308554}
   pauseRestartButton: {fileID: 364430034}
   trailerToggle: {fileID: 98681665}
-  audioMixer: {fileID: 0}
   normal: {fileID: -8466903804595952101, guid: 36dd6900d3280e043b96b0bbe74b7400, type: 2}
   inMenu: {fileID: -1346572082564038586, guid: 36dd6900d3280e043b96b0bbe74b7400, type: 2}
 --- !u!4 &1013605831
