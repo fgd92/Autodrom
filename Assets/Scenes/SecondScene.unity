@@ -18963,7 +18963,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!54 &454470956
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -51271,7 +51271,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.71037287}
   m_AnchorMax: {x: 0.2324375, y: 1}
-  m_AnchoredPosition: {x: -0.15002441, y: 1}
+  m_AnchoredPosition: {x: -0.15002441, y: 1.0000305}
   m_SizeDelta: {x: -0.2999878, y: -1.7999878}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1293977040
@@ -69140,7 +69140,12 @@ PrefabInstance:
     - target: {fileID: 7376111068450129942, guid: 1eadb42cd45951647866648c4d49e03a,
         type: 3}
       propertyPath: m_Name
-      value: TerrainGroup_0
+      value: Terrain
+      objectReference: {fileID: 0}
+    - target: {fileID: 7376111068450129942, guid: 1eadb42cd45951647866648c4d49e03a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1eadb42cd45951647866648c4d49e03a, type: 3}
