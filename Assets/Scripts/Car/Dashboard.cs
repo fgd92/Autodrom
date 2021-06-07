@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-public class Dashboard : MonoBehaviour, IDashboard
+public class Dashboard : MonoBehaviour
 {
     public Measures Measures;
     public float Speed { get; set; }
