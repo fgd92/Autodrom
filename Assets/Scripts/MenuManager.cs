@@ -75,7 +75,7 @@ public class MenuManager : MonoBehaviour
     public void LoadGame(int idExercise)
     {        
         GameManager.CurrentExercise = idExercise;
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(1);
     }
 
     public void DeleteData()
