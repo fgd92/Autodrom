@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -45,6 +46,10 @@ public class GameManager : MonoBehaviour
     private Button pauseRestartButton;
     [SerializeField]
     private GameObject trailerToggle;
+    [SerializeField]
+    private AudioMixerSnapshot normal;
+    [SerializeField]
+    private AudioMixerSnapshot inMenu;
 
     private bool isEnd;
     private Exercise exercise;
@@ -59,7 +64,7 @@ public class GameManager : MonoBehaviour
     public void Start()
     {
         LockCursor(true);
-
+        normal.TransitionTo(1f);
         DisplayEndmenu(false);
 
         GameObject ExerciseObject = ExercisesListObjects[CurrentExercise];
@@ -103,7 +108,12 @@ public class GameManager : MonoBehaviour
             pauseMenu.SetActive(!pauseMenu.activeSelf);            
             Time.timeScale = pauseMenu.activeSelf == true ? 0 : 1;
             LockCursor(!pauseMenu.activeSelf);
-            pauseRestartButton.interactable = exercise.exercisesScriptable.Attempts < 2;             
+            pauseRestartButton.interactable = exercise.exercisesScriptable.Attempts < 2;
+
+            if (pauseMenu.activeSelf)
+                inMenu.TransitionTo(1f);
+            else
+                normal.TransitionTo(1f);
         }
         if (Input.GetKeyDown(KeyCode.Tab))
         {

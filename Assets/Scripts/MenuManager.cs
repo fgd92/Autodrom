@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -18,11 +19,24 @@ public class MenuManager : MonoBehaviour
     private Transform exerciseContent;
     [SerializeField]
     private Text examResultText;
+    [SerializeField]
+    private AudioMixerSnapshot normal;
+    [SerializeField]
+    private AudioMixerSnapshot inMenu;
+    [SerializeField]
+    private AudioMixerGroup mixerGroup;
+    [SerializeField]
+    private Color enableColor;
+    [SerializeField]
+    private Color disableColor;
+    [SerializeField]
+    private Image soundImage;
+    private float currentVolume;
 
     private void Start()
     {
         EnableMenu();
-
+        SetSoundImageColor(soundImage);
         examResultText.text = CheckExercisesResults() == true ? "Оценка экзамена: \n <color=lime>сдал</color>" : "Оценка экзамена: \n <color=red>не сдал</color>";
     }
 
@@ -33,6 +47,7 @@ public class MenuManager : MonoBehaviour
         listExerciseObject.SetActive(false);
         chooseMenuPlane.SetActive(false);
         howToPlayObject.SetActive(false);
+        normal.TransitionTo(1f);
     }
 
     public void EnableList()
@@ -42,6 +57,7 @@ public class MenuManager : MonoBehaviour
         listExerciseObject.SetActive(true);
         chooseMenuPlane.SetActive(true);
         howToPlayObject.SetActive(false);
+        inMenu.TransitionTo(1f);
     }
     public void EnableHowToPlayMenu()
     {
@@ -50,6 +66,7 @@ public class MenuManager : MonoBehaviour
         listExerciseObject.SetActive(false);
         chooseMenuPlane.SetActive(true);
         howToPlayObject.SetActive(true);
+        inMenu.TransitionTo(1f);
     }
     public void Exit()
     {
@@ -87,5 +104,16 @@ public class MenuManager : MonoBehaviour
         }
 
         return mistakeCount < 2;
+    }
+    public void ToggleSounds(Image image)
+    {
+        mixerGroup.audioMixer.GetFloat("SoundsVolume", out currentVolume);
+        mixerGroup.audioMixer.SetFloat("SoundsVolume",  currentVolume == 0 ? -80 : 0);
+        SetSoundImageColor(image);
+    }
+    private void SetSoundImageColor(Image image)
+    {
+        mixerGroup.audioMixer.GetFloat("SoundsVolume", out currentVolume);
+        image.color = currentVolume == 0 ? enableColor : disableColor;
     }
 }
