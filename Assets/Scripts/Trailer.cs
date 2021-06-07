@@ -29,17 +29,11 @@ public class Trailer : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
-            JointLimits limits = new JointLimits()
-            {
-                max = StopHingeJointTransform.eulerAngles.y,
-                min = -StopHingeJointTransform.eulerAngles.y
-            };
-
-            HingeJoint.limits = limits;
+            HingeJoint.axis = Vector3.zero;
         }
-        else if(Input.GetKeyUp(KeyCode.LeftShift))
+        else if (Input.GetKeyUp(KeyCode.LeftShift))
         {
-            HingeJoint.limits = defaultHingeJoint;
+            HingeJoint.axis = Vector3.up;
         }
     }
 }
